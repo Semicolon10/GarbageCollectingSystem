@@ -5,6 +5,7 @@ body {
 
 * {
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 /* Add padding to containers */
@@ -38,12 +39,16 @@ hr {
 .signUpButton {
     background-color: #1597a9;
     color: white;
+    font-size: 16pt; 
     padding: 16px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border-radius: 50px;
+    
+    
 }
 
 .signUpButton:hover {
@@ -55,8 +60,11 @@ hr {
     color: red;
 }
 
-.containerSignIn{
-    padding: 16px;
+
+#signUpPageHeading{
     text-align: center;
-    background-color: #1597a9;
+}
+
+input{
+    border-radius: 50px;
 }
