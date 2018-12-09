@@ -1,24 +1,22 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #242f34;
-    overflow: auto;
 }
-
 * {
     box-sizing: border-box;
     border-radius: 30px;
 }
-
-/* Add padding to containers */
-.containerSignUp {
+.containerLogIn {
     padding: 16px;
     background-color: white;
     width: 60%;
-    margin:auto;
-    
+  	height: 70%;
+  	margin: auto;
+  	overflow: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+  	
 }
-
-/* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
@@ -33,15 +31,11 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
     
 }
-
-/* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
-
-/* Set a style for the submit button */
-.signUpButton {
+.logInButton {
     background-color: #242f34;
     color: white;
     font-size: 16pt; 
@@ -53,11 +47,10 @@ hr {
     opacity: 0.9;
 }
 
-.signUpButton:hover {
+.logInButton:hover {
     opacity: 1;
 }
-
-#signUpPageHeading{
+#logInPageHeading{
     text-align: center;
     color: #242f34;
 }
@@ -67,4 +60,3 @@ label{
 p{
     color: #242f34;
 }
-
