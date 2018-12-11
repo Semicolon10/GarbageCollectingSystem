@@ -12,42 +12,60 @@ if ($connection->connect_error) {
 } 
 //echo "Connected successfully";
 
-if( isset( $_POST['userName'] ) && !empty( $_POST['userName'] ) )
-    {
-        $userName = $_POST['userName'];
-    } else {
-        echo "No data";
-        exit();
-    }
- if( isset( $_POST['email'] ) && !empty( $_POST['email'] ) )
-    {
-        $email = $_POST['email'];
-    } else {
-        echo "No data";
-        exit();
-    }
-if(isset($_POST['password'])&&!empty($_POST['password']))
+if(!empty( $_POST['userName']))
 {
-	$password=$_POST['password'];
+    $username=$_POST['userName'];
 }
-else {
-        echo "No data";
-        exit();
-    }
-$selectQuery="SELECT* from UserDetails where email='$email'";
-if ($connection->query($selectQuery)->num_rows>0) {
-    echo "This email is already in use. Please use a different email";
-    
+else
+{
+    echo "No data has been entered for username";
     exit();
-    }
-
-$insertQuery="INSERT INTO UserDetails VALUES('$userName','$email','$password')";
-
-if ($connection->query($insertQuery) == TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $insertQuery . "<br>" . $connection->error;
+}
+if(!empty($_POST['email']))
+{
+    $email=$_POST['email'];
+}
+else
+{
+    echo "No data has been entered for email";
+    exit();
+}
+if(!empty($_POST['password']))
+{
+    $password=$_POST['password'];
+}
+else
+{
+    echo "No data has been entered for password";
+    exit();
 }
 
+
+
+
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validating the email address
+
+
+if(filter_var($email, FILTER_VALIDATE_EMAIL))
+{
+    $insertQuery="INSERT INTO UserDetails values('$username','$email','$password')";
+    if($connection->query($insertQuery) === TRUE)
+    {
+        echo "New Record created";
+    }
+    else
+    {
+        echo "Record Creating Failed";
+    }
+}
+else
+{
+    echo "Invalid Email address";
+}
 $connection->close();
-?>
+?> 
+
+
