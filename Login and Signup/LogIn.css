@@ -46,12 +46,12 @@ hr {
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 1;
     float: bottom;
 }
 
 .logInButton:hover {
-    opacity: 1;
+    background-color: #111;
 }
 #logInPageHeading{
     text-align: center;

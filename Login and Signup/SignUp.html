@@ -37,10 +37,23 @@
     <hr/>
     <p>By creating an account you agree to our <a href="#">Terms & Conditions</a>.</p>
 
-    <button type="submit" class="signUpButton">Sign Up</button>
+    <button type="submit" class="signUpButton" id="signUpButton" onclick="setColor();">Sign Up</button>
   </div>
 </form>
-
+<script type="text/javascript">
+    var count = 1;
+    function setColor() {
+        var property = document.getElementById('signUpButton');
+        if (count == 0) {
+            property.style.backgroundColor = "#242f34";
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#ff0000";
+            count = 0;
+        }
+    }
+</script>
 
 </body>
 </html>

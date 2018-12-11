@@ -29,9 +29,24 @@
 		
 		<br/><br/><br/><hr/>
 		<p>Forgot password? <a href="PasswordRecovery.html">Recover Password</a>.</p>
-		<button type="submit" class="logInButton">Login</button>
+		<button type="submit" class="logInButton" id="logInButton" onclick="setColor();">Login</button>
 		
 	</div>
 </form>
+<script type="text/javascript">
+    var count = 1;
+    function setColor() {
+        var property = document.getElementById('logInButton');
+        if (count == 0) {
+            property.style.backgroundColor = "#242f34";
+            property.style
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#ff0000";
+            count = 0;
+        }
+    }
+</script>
 </body>
 </html>

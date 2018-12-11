@@ -64,6 +64,9 @@ li a:hover:not(.active) {
 .active {
   background-color: #ff0000;
 }
+.active:hover{
+  background-color: #111;
+}
 #SignUpList{
     float: right;
 }
