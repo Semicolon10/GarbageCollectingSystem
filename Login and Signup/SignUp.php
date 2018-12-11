@@ -10,7 +10,7 @@ $connection = new mysqli($serverName, $lhUserName, $lhPassword, $database);
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 } 
-echo "Connected successfully";
+//echo "Connected successfully";
 
 if( isset( $_POST['userName'] ) && !empty( $_POST['userName'] ) )
     {
@@ -33,6 +33,12 @@ if(isset($_POST['password'])&&!empty($_POST['password']))
 else {
         echo "No data";
         exit();
+    }
+$selectQuery="SELECT* from UserDetails where email='$email'";
+if ($connection->query($selectQuery)->num_rows>0) {
+    echo "This email is already in use. Please use a different email";
+    
+    exit();
     }
 
 $insertQuery="INSERT INTO UserDetails VALUES('$userName','$email','$password')";
