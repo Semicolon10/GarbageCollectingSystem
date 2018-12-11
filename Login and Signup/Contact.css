@@ -6,12 +6,12 @@ body {
     box-sizing: border-box;
     border-radius: 25px;
 }
-.containerWelcome {
+.containerContact {
     padding: 16px;
     background-color: white;
     top: 1%;
-    bottom: 1%;
     right: 1%;
+    bottom: 1%;
     left: 1%;
   	margin: auto;
     overflow: auto;
@@ -29,7 +29,7 @@ hr {
     margin-bottom: 25px;
 }
 
-#welcomePageHeading{
+#contactPageHeading{
     text-align: center;
     color: #242f34;
 }
