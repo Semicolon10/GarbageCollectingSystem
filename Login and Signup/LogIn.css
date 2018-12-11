@@ -4,12 +4,12 @@ body {
 }
 * {
     box-sizing: border-box;
-    border-radius: 30px;
+    border-radius: 25px;
 }
 .containerLogIn {
     padding: 16px;
     background-color: white;
-    width: 60%;
+    width: 100%;
   	margin: auto;
     overflow: auto;
     
@@ -43,6 +43,7 @@ hr {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    float: bottom;
 }
 
 .logInButton:hover {
@@ -57,4 +58,40 @@ label{
 }
 p{
     color: #242f34;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #242f34;
+  position: relative;
+  float: right;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+#SignUpList{
+    float: right;
+}
+#LogInList{
+    float: right;
 }
