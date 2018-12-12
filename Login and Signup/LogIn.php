@@ -1,7 +1,7 @@
 <?php
 $serverName = "localhost";
-$lhUserName = "root";
-$lhPassword = "Asiri#Iroshan#1996";
+$lhUserName = "<localhostUserName>";
+$lhPassword = "<localhostPassord>";
 $database = "GarbageCollectionSystem";
 
 // Create connection
