@@ -1,7 +1,7 @@
 <?php
 $serverName = "localhost";
-$lhUserName = "<localhostUserName>";
-$lhPassword = "<localhostPassword>";
+$lhUserName = "root";
+$lhPassword = "Asiri#Iroshan#1996";
 $database = "GarbageCollectionSystem";
 // Create connection
 $connection = new mysqli($serverName, $lhUserName, $lhPassword, $database);
@@ -39,8 +39,30 @@ else
     echo "No data has been entered for password";
     exit();
 }
+if(!empty($_POST['passwordConfirm']))
+{
+    $passwordConfirm=$_POST['passwordConfirm'];
+}
+
+$username=stripslashes($username);
+$password=stripslashes($password);
+$passwordConfirm=stripslashes($passwordConfirm);
+$username=mysqli_real_escape_string($connection,$username);
+$password=mysqli_real_escape_string($connection,$password);
+$passwordConfirm=mysqli_escape_string($connection,$passwordConfirm);
+$email=stripslashes($email);
+$email=mysqli_real_escape_string($connection,$email);
+
+if($password!=$passwordConfirm)
+{
+    echo "Passwords don't match";
+    exit();
+}
 
 
+
+//Encrypting Password
+$passwordHash=password_hash($password,PASSWORD_DEFAULT);
 
 
 // Remove all illegal characters from email
@@ -51,7 +73,7 @@ $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
 if(filter_var($email, FILTER_VALIDATE_EMAIL))
 {
-    $insertQuery="INSERT INTO UserDetails values('$username','$email','$password')";
+    $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
     if($connection->query($insertQuery) === TRUE)
     {
         echo "New Record created";
