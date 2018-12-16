@@ -2,8 +2,6 @@
 ini_set('display_errors', 1);
 $email=$_POST['email'];
 
-
-
 require '/home/airoshan/Documents/PHPMailer/srs/Exception.php';
 require '/home/airoshan/Documents/PHPMailer/srs/PHPMailer.php';
 require '/home/airoshan/Documents/PHPMailer/srs/SMTP.php';

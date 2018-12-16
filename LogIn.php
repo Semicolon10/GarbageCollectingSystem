@@ -39,9 +39,12 @@ $selectQuery="SELECT password from UserDetails where UserName='$userName'";
 $result=mysqli_query($connection,$selectQuery);
 $encryptedPassword=mysqli_fetch_assoc($result);
 if(password_verify($password, $encryptedPassword['password']))
-    echo "Success";
+    { 
+        echo "Login Successful";
+        header("Location: /home/airoshan/Docum…tory/WebFinalProject/Welcome.html");
+    }
 else
-    echo "Fucked";
+    echo "Your username or password is incorrect. Please try again";
 
 
 /*$selectQuery="SELECT password from UserDetails where UserName='$userName'";
