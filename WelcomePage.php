@@ -13,7 +13,7 @@ include('session.php');
 
 <div class="containerWelcome">
 		<h2 id="welcomePageHeading">Welcome To Colombo Garbage Collection Service</h2>
-
+      <img src="Images/CMC_Logo.jpg" alt="logo" class="logo">
 		
 		
 <!--	
