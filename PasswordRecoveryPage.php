@@ -9,7 +9,7 @@
 <body>
 <form action="PasswordRecovery.php" method="post">
 	<div class="containerRecover">
-		<h1 id="recoverPageHeading">Password Recovery</h1>
+		<h2 id="recoverPageHeading">Password Recovery</h2>
 <!--
 		<ul>
   <li><a href="Welcome.html">Welcome</a></li>
@@ -24,7 +24,7 @@
 
   <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
-  <a href="#posts">Posts</a>
+  <a href="PostsPage.php">Posts</a>
   <a href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">

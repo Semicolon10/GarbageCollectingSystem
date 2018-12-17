@@ -34,7 +34,7 @@ else
 	<title></title>
 </head>
 <body>
-<p>You will be redirected in <span id="counter">3</span> second(s).</p>
+<p>Redirecting..................<span id="counter">3</span> second(s).</p>
 	<script type="text/javascript">
 	function countdown() 
 	{

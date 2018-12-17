@@ -13,10 +13,10 @@ include('session.php');
 </head>
 <body>
 <div class="containerProfile">
-  <h1 id="profilePageHeading">Hi There</h1>
+  <h2 id="profilePageHeading">Hi There</h2>
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
-  <a href="#posts">Posts</a>
+  <a href="PostsPage.php">Posts</a>
   <a href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">

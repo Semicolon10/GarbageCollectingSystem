@@ -35,7 +35,10 @@ if(password_verify($password, $encryptedPassword['password']))
 
     }
 else
-    echo "Your username or password is incorrect. Please try again";
+    {
+        echo "Your username or password is incorrect. Please try again";
+        header("refresh:3;url=LogInPage.php");
+    }
 
 
 /*$selectQuery="SELECT password from UserDetails where UserName='$userName'";
@@ -59,5 +62,24 @@ echo $decryptedPassword;*/
 */
 $connection->close();
 ?>
-
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<p>Redirecting.................. <span id="counter">3</span> second(s).</p>
+    <script type="text/javascript">
+    function countdown() 
+    {
+        var i = document.getElementById('counter');
+        if (parseInt(i.innerHTML)<=0) 
+        {
+            //location.href = 'LogInPage.php';
+        }
+            i.innerHTML = parseInt(i.innerHTML)-1;
+    }
+        setInterval(function(){ countdown(); },1000);
+    </script>
+</body>
+</html>

@@ -51,38 +51,34 @@ if($password!=$passwordConfirm)
 else
 {
     //Encrypting Password
-$passwordHash=password_hash($password,PASSWORD_DEFAULT);
+    $passwordHash=password_hash($password,PASSWORD_DEFAULT);
 
 
-// Remove all illegal characters from email
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    // Remove all illegal characters from email
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
-// Validating the email address
+    // Validating the email address
 
 
-if(filter_var($email, FILTER_VALIDATE_EMAIL))
-{
-    $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
-    if($connection->query($insertQuery) === TRUE)
+    if(filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        echo "Successfully Registered";
-        header("refresh:3;url=LogInPage.php");
+        $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
+        if($connection->query($insertQuery) === TRUE)
+        {
+            echo "Successfully Registered";
+            header("refresh:3;url=LogInPage.php");
+        }
+        else
+        {
+            echo "Record Creating Failed";
+        }
     }
     else
     {
-        echo "Record Creating Failed";
+        echo "Invalid Email address";
+        header("refresh:3;url=SignUpPage.php");
     }
 }
-else
-{
-    echo "Invalid Email address";
-    header("refresh:3;url=SignUpPage.php");
-}
-}
-
-
-
-
 $connection->close();
 ?> 
 <!DOCTYPE html>
@@ -91,7 +87,7 @@ $connection->close();
     <title></title>
 </head>
 <body>
-<p>You will be redirected in <span id="counter">3</span> second(s).</p>
+<p>Redirecting..................<span id="counter">3</span> second(s).</p>
     <script type="text/javascript">
     function countdown() 
     {

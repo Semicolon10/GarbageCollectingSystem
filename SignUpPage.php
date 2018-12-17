@@ -10,7 +10,7 @@
 
 <form action="SignUp.php" method="post">
   <div class="containerSignUp">
-    <h1 id="signUpPageHeading">Sign Up For Colombo Garbage Collection Service</h1>
+    <h2 id="signUpPageHeading">Sign Up For Colombo Garbage Collection Service</h2>
 <!--
 <ul>
   <li><a class="#welcome" href="Welcome.html">Welcome</a></li>
@@ -24,7 +24,7 @@
 -->
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
-  <a href="#posts">Posts</a>
+  <a href="PostsPage.php">Posts</a>
   <a href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">

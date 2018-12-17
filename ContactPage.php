@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="containerContact">
-		<h1 id="contactPageHeading">Contact Us</h1>
+		<h2 id="contactPageHeading">Contact Us</h2>
 		
 	<!--	
 		<ul>
@@ -22,14 +22,14 @@
 -->
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
-  <a href="#posts">Posts</a>
+  <a href="PostsPage.php">Posts</a>
   <a class="active" href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div class="profileMenu">
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
-      <a href="LogIn.html">Log In</a>
+      <a href="LogInPage.php">Log In</a>
       <a href="#">Log Out</a>
       <a href="SignUp.html">Sign Up</a>
     </div>

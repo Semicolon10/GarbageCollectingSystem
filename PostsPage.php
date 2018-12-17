@@ -4,12 +4,12 @@
 	<title>Welcome</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="Welcome.css">
+	<link rel="stylesheet" type="text/css" href="PostsPage.css">
 </head>
 <body>
 
-<div class="containerWelcome">
-		<h2 id="welcomePageHeading">Welcome To Colombo Garbage Collection Service</h2>
+<div class="containerPosts">
+		<h2 id="PostsPageHeading">Posts</h2>
 
 		
 		
@@ -37,8 +37,8 @@
 -->
   
 <div class="navigationbar">
-  <a class="active" href="WelcomePage.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
+  <a href="WelcomePage.php">Welcome</a>
+  <a class="active" href="PostsPage.php">Posts</a>
   <a href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div class="profileMenu">
