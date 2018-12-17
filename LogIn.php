@@ -31,7 +31,7 @@ if(password_verify($password, $encryptedPassword['password']))
     { 
         echo "Login Successful";
         $_SESSION['username']=$userName;
-        header("location:Welcome.html");
+        header("location:WelcomePage.php");
 
     }
 else

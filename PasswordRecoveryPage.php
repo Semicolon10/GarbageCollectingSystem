@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="PasswordRecovery.css">
 </head>
 <body>
-<form action="http://localhost/PasswordRecovery.php" method="post">
+<form action="PasswordRecovery.php" method="post">
 	<div class="containerRecover">
 		<h1 id="recoverPageHeading">Password Recovery</h1>
 <!--
