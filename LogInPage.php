@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="LogIn.css">
 </head>
 <body>
-<form action="http://localhost/LogIn.php" method="post">	
+<form action="LogIn.php" method="post">	
 	<div class="containerLogIn">
 		<h1 id="logInPageHeading">Login To Colombo Garbage Collection Service</h1>
 	<!--
@@ -21,17 +21,17 @@
 </ul>
 -->
 <div class="navigationbar">
-  <a href="Welcome.html">Welcome</a>
+  <a href="WelcomePage.php">Welcome</a>
   <a href="#posts">Posts</a>
-  <a href="Contact.html">Contact Us</a>
+  <a href="ContactPage.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
-      <a href="#">Account</a>
-      <a href="LogIn.html">Log In</a>
+      <a href="profile.php">Account</a>
+      <a href="LogInPage.php">Log In</a>
       <a href="#">Log Out</a>
-      <a href="SignUp.html">Sign Up</a>
+      <a href="SignUpPage.php">Sign Up</a>
     </div>
   </div> 
 </div>
@@ -46,7 +46,7 @@
 		<input type="password" placeholder="Enter Password" name="password" required>
 		
 		<br/><br/><br/><hr/>
-		<p>Forgot password? <a href="PasswordRecovery.html">Recover Password</a>.</p>
+		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
 		<button type="submit" class="logInButton" id="logInButton" onclick="setColor();">Login</button>
 		
 	</div>

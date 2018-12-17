@@ -1,17 +1,6 @@
 <?php
-$serverName = "localhost";
-$lhUserName = "<username>";
-$lhPassword = "<password>";
-$database = "GarbageCollectionSystem";
-
-// Create connection
-$connection = new mysqli($serverName, $lhUserName, $lhPassword, $database);
-
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-} 
-//echo "Connected successfully";
+session_start();
+include('connection.php');
 
 if( /*isset( $_POST['userName'] ) && */!empty( $_POST['userName'] ) )
     {
@@ -41,7 +30,9 @@ $encryptedPassword=mysqli_fetch_assoc($result);
 if(password_verify($password, $encryptedPassword['password']))
     { 
         echo "Login Successful";
-        header("Location: /home/airoshan/Docum…tory/WebFinalProject/Welcome.html");
+        $_SESSION['username']=$userName;
+        header("location:Welcome.html");
+
     }
 else
     echo "Your username or password is incorrect. Please try again";
@@ -68,4 +59,5 @@ echo $decryptedPassword;*/
 */
 $connection->close();
 ?>
+
 
