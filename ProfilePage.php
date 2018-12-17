@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1); 
-error_reporting(E_ALL);
-
 include('session.php');
 ?>
 <!DOCTYPE html>
@@ -24,7 +20,7 @@ include('session.php');
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
       <a href="index.php">Log In</a>
-      <a href="#">Log Out</a>
+      <a href="LogOut.php">Log Out</a>
       <a href="SignUpPage.php">Sign Up</a>
     </div>
   </div> 

@@ -28,9 +28,9 @@
   <div id="active" class="profileMenu">
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
-      <a href="profile.php">Account</a>
+      <a href="ProfilePage.php">Account</a>
       <a href="index.php">Log In</a>
-      <a href="#">Log Out</a>
+      <a href="LogOut.php">Log Out</a>
       <a href="SignUpPage.php">Sign Up</a>
     </div>
   </div> 

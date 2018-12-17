@@ -6,12 +6,14 @@ error_reporting(E_ALL);
 include('connection.php');
 session_start();
 $user=$_SESSION['username'];
-$selectQuery="SELECT UserName from UserDetails where UserName='$user'";
+$selectQuery="SELECT * from UserDetails where UserName='$user'";
 $result=mysqli_query($connection,$selectQuery);
-$userName=mysqli_fetch_assoc($result);
-
-if(!isset($userName['UserName'])){
-$connection->close(); // Closing Connection
-header("location:LogInPage.php"); 
+if (!(mysqli_num_rows($result) > 0))
+{
+    echo "Please Log In. Redirecting.....";
+    header("refresh:1;url=index.php");
+    mysqli_close($connection);
+    exit();
 }
+mysqli_close($connection);
 ?>
