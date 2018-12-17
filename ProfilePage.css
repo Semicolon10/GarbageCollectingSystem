@@ -1,9 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #242f34;
-    overflow: auto;
 }
-
 * {
     box-sizing: border-box;
     border-radius: 25px;
@@ -19,8 +17,105 @@ body {
     overflow: auto;
     position: absolute;
     
+  	
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
     
 }
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+.changePasswordButton {
+    background-color: #242f34;
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: left;
+}
+
+.changePasswordButton:hover {
+    background-color: #111;
+}
+
+.deleteAccountButton{
+    background-color: #ff0000;
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: right;
+
+}
+.deleteAccountButton:hover{
+  background-color: #ba0000;
+
+}
+
+label{
+    color: #242f34;
+}
+p{
+    color: #242f34;
+}
+/*
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #242f34;
+  position: relative;
+  float: right;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #ff0000;
+}
+#SignUpList{
+    float: right;
+}
+#LogInList{
+    float: right;
+}
+*/
 .navigationbar {
   overflow: hidden;
   background-color: #242f34;
@@ -53,7 +148,7 @@ body {
   margin: 0;
 }
 
-.navigationbar a:hover, .profileMenu:hover .profileButton {
+.navigationbar a:hover{
   background-color: #111;
 }
 
@@ -93,6 +188,7 @@ body {
 }
 
 #profilePageHeading{
+    
     text-align: center;
     color: #242f34;
 }

@@ -53,10 +53,7 @@ hr {
 .logInButton:hover {
     background-color: #111;
 }
-#logInPageHeading{
-    text-align: center;
-    color: #242f34;
-}
+
 label{
     color: #242f34;
 }
