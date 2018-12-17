@@ -29,7 +29,7 @@
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
       <a href="profile.php">Account</a>
-      <a href="LogInPage.php">Log In</a>
+      <a href="index.php">Log In</a>
       <a href="#">Log Out</a>
       <a href="SignUpPage.php">Sign Up</a>
     </div>
@@ -47,6 +47,7 @@
 		
 		<br/><br/><br/><hr/>
 		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
+    <p>Don't have an account? <a href="SignUpPage.php">Register</a>.</p>
 		<button type="submit" class="logInButton" id="logInButton" onclick="setColor();">Login</button>
 		
 	</div>

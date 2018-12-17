@@ -8,7 +8,8 @@ if(!empty( $_POST['userName']))
 }
 else
 {
-    echo "No data has been entered for username";
+    echo "No data has been entered for username. Redirecting.....";
+    header("refresh:3;url=SignUpPage.php");
     exit();
 }
 if(!empty($_POST['email']))
@@ -17,7 +18,8 @@ if(!empty($_POST['email']))
 }
 else
 {
-    echo "No data has been entered for email";
+    echo "No data has been entered for email. Redirecting.......";
+    header("refresh:3;url=SignUpPage.php");
     exit();
 }
 if(!empty($_POST['password']))
@@ -26,12 +28,19 @@ if(!empty($_POST['password']))
 }
 else
 {
-    echo "No data has been entered for password";
+    echo "No data has been entered for password. Redirecting........";
+    header("refresh:3;url=SignUpPage.php");
     exit();
 }
 if(!empty($_POST['passwordConfirm']))
 {
     $passwordConfirm=$_POST['passwordConfirm'];
+}
+else
+{
+    echo "No data has been entered for password confirmation. Redirecting........";
+    header("refresh:3;url=SignUpPage.php");
+    exit();
 }
 
 $username=stripslashes($username);
@@ -63,14 +72,15 @@ else
     if(filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
-        if($connection->query($insertQuery) === TRUE)
+        if(mysqli_query($connection,$insertQuery))
         {
             echo "Successfully Registered";
-            header("refresh:3;url=LogInPage.php");
+            header("refresh:3;url=index.php");
         }
         else
         {
-            echo "Record Creating Failed";
+            echo "Registration failed :(";
+            header("refresh:3;url=SignUpPage.php");
         }
     }
     else
@@ -79,7 +89,7 @@ else
         header("refresh:3;url=SignUpPage.php");
     }
 }
-$connection->close();
+mysqli_close($connection);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -92,11 +102,7 @@ $connection->close();
     function countdown() 
     {
         var i = document.getElementById('counter');
-        if (parseInt(i.innerHTML)<=0) 
-        {
-            //location.href = 'LogInPage.php';
-        }
-            i.innerHTML = parseInt(i.innerHTML)-1;
+        i.innerHTML = parseInt(i.innerHTML)-1;
     }
         setInterval(function(){ countdown(); },1000);
     </script>

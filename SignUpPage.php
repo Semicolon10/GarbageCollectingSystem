@@ -31,7 +31,7 @@
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
-      <a href="LogInPage.php">Log In</a>
+      <a href="index.php">Log In</a>
       <a href="#">Log Out</a>
       <a href="SignUpPage.php">Sign Up</a>
     </div>
@@ -40,19 +40,19 @@
     <p>Please fill the form below to create an account.</p>
     <hr/>
     <label for="userName"><b>User Name</b></label>
-    <input type="text" placeholder="Enter Username" name="userName" required />
+    <input type="text" placeholder="Enter Username" name="userName" required=""  />
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required />
+    <input type="text" placeholder="Enter Email" name="email" required="" />
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required />
+    <input type="password" placeholder="Enter Password" name="password" id="password"  required="" />
 
     <label for="passwordConfirm"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="passwordConfirm" id="passwordConfirm" onChange="checkPassword();" required />
+    <input type="password" placeholder="Repeat Password" name="passwordConfirm" id="passwordConfirm" onChange="checkPassword();"  required="" />
    
     <hr/>
-    <p>By creating an account you agree to our <a href="#">Terms & Conditions</a>.</p>
+    <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
     <button type="submit" class="signUpButton" id="signUpButton" onclick="setColor();">Sign Up</button>
   </div>

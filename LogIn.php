@@ -37,7 +37,7 @@ if(password_verify($password, $encryptedPassword['password']))
 else
     {
         echo "Your username or password is incorrect. Please try again";
-        header("refresh:3;url=LogInPage.php");
+        header("refresh:3;url=index.php");
     }
 
 
@@ -60,7 +60,7 @@ echo $decryptedPassword;*/
 
 }
 */
-$connection->close();
+mysqli_close($connection);
 ?>
 <!DOCTYPE html>
 <html>

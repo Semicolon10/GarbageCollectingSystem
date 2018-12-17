@@ -17,7 +17,7 @@ $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 if(filter_var($email, FILTER_VALIDATE_EMAIL))
 {
 	echo "An email has been sent to your submitted email.";
-	header("refresh:3;url=LogInPage.php");
+	header("refresh:3;url=index.php");
 
 }
 else
@@ -26,7 +26,7 @@ else
 
 	header("refresh:3;url=PasswordRecoveryPage.php");
 }
-
+mysqli_close($connection);
 ?>
 <!DOCTYPE html>
 <html>

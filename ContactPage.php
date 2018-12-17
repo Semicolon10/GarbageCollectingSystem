@@ -29,7 +29,7 @@
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
-      <a href="LogInPage.php">Log In</a>
+      <a href="index.php">Log In</a>
       <a href="#">Log Out</a>
       <a href="SignUp.html">Sign Up</a>
     </div>

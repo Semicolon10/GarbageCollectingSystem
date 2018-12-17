@@ -12,6 +12,6 @@ $userName=mysqli_fetch_assoc($result);
 
 if(!isset($userName['UserName'])){
 $connection->close(); // Closing Connection
-header("location:LogIn.html"); 
+header("location:LogInPage.php"); 
 }
 ?>
