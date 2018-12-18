@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
     border-radius: 25px;
 }
+
 .containerLogIn {
     padding: 16px;
     background-color: white;
@@ -16,6 +17,7 @@ body {
     margin: auto;
     overflow: auto;
     position: absolute;
+  
     
   	
 }
@@ -98,6 +100,7 @@ li a:hover:not(.active) {
     float: right;
 }
 */
+
 .navigationbar {
   overflow: hidden;
   background-color: #242f34;

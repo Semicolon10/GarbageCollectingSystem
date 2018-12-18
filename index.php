@@ -9,7 +9,7 @@
 <body>
 <form action="LogIn.php" method="post">	
 	<div class="containerLogIn">
-		<h2 id="logInPageHeading">Login To Colombo Garbage Collection Service</h2>
+		<h2 style="text-align: center; color: #242f34;">Login To Colombo Garbage Collection Service</h2>
 	<!--
 		<ul>
   <li><a href="Welcome.html">Welcome</a></li>
@@ -41,9 +41,9 @@
 		<hr/>
 		<br/><br/>
 		<label for="userName">User Name</label>
-		<input type="text" placeholder="Enter Username" name="userName" required>
+		<input type="text" placeholder="Enter Username" name="userName" required="">
 		<label for="password">Password</label>
-		<input type="password" placeholder="Enter Password" name="password" required>
+		<input type="password" placeholder="Enter Password" name="password" required="">
 		
 		<br/><br/><br/><hr/>
 		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>

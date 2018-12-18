@@ -18,6 +18,8 @@ body {
     right: 1%;
     left: 1%;
     margin: auto;
+    overflow: auto;
+    position: absolute;
     
     
 }

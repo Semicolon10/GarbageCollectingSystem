@@ -8,7 +8,7 @@ include('session.php');
 	<link rel="stylesheet" type="text/css" href="ProfilePage.css">
 </head>
 <body>
-<form method="post">
+<form id="inputForm" method="post" action="deleteAccount.php">
 <div class="containerProfile">
   <h2 id="profilePageHeading">Hi There <?php echo $_SESSION['username']; ?></h2>
 <div class="navigationbar">
@@ -31,7 +31,7 @@ include('session.php');
    
     <hr/>
     <br/>
-    <input type="text" placeholder="Enter Current Password" name="currentPassword" required="">
+    <input type="text" id="currentPassword" placeholder="Enter Current Password" name="currentPassword" required="" oninput="testInput()">
     <br/>
     <input type="password" placeholder="Enter a new password" name="password" required="">
     <br/>
@@ -40,8 +40,45 @@ include('session.php');
     <br/>
     <hr/>
     <br/>
-    <button type="submit" name="change" class="changePasswordButton" formaction="changePassword.php">Change Password</button>
-    <button type="submit" name="delete" class="deleteAccountButton">Delete Account</button>
+    
+    <input type="submit" name="change" value="Change Password" class="changePasswordButton" formaction="changePassword.php">
+    <input type="button" id="delete" name="delete" value="Delete Account" class="deleteAccountButton" onclick="redirect()">
+    
+
+    <script type="text/javascript">
+     
+     function redirect()
+      {
+        var password=document.getElementById('currentPassword').value;
+        var form = document.getElementById('inputForm');
+        if(form['currentPassword'].value)
+        {
+          form.submit();
+          //window.location.href = "deleteAccount.php?w1=" + encodeURIComponent(password);
+          //location.href = "deleteAccount.php";
+        }
+        else{
+        
+          //alert("Please enter the currentPassword");
+          form['currentPassword'].value="PLEASE ENTER THE CURRENT PASSWORD HERE!";
+          form['currentPassword'].style.backgroundColor="yellow";
+        }
+      }
+      
+      function testInput(){
+      var form = document.getElementById('inputForm');
+      if (form['currentPassword'].value)
+        {
+              form['delete'].style.backgroundColor="#ff0000";
+        }
+      else
+        {
+              form['delete'].style.backgroundColor="#ba0000";
+        }
+      }
+
+
+      </script>
 
 </div>
 </form>

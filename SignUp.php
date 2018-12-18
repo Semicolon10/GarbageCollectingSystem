@@ -69,25 +69,49 @@ else
     // Validating the email address
 
 
-    if(filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
+    
         $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
-        if(mysqli_query($connection,$insertQuery))
+        $selectQuery="SELECT * from UserDetails where userName='$username'";
+        $result=mysqli_query($connection,$selectQuery);
+        if(mysqli_num_rows($result)>0)
         {
-            echo "Successfully Registered";
-            header("refresh:3;url=index.php");
+            echo("This username is taken. Please use a different username.");
+             header("refresh:3;url=SignUpPage.php");
         }
         else
         {
-            echo "Registration failed :(";
-            header("refresh:3;url=SignUpPage.php");
+            $selectQuery="SELECT * from UserDetails where Email='$email'";
+            $result=mysqli_query($connection,$selectQuery);
+            if(mysqli_num_rows($result)>0)
+            {
+                echo("There is already an account associated with this E-mail address.
+                    Please use a different E-mail address.");
+                header("refresh:3;url=SignUpPage.php");
+            }
+            else
+            {
+                if(filter_var($email, FILTER_VALIDATE_EMAIL))
+                    {
+                        if(mysqli_query($connection,$insertQuery))
+                        {
+                            echo "Successfully Registered";
+                            header("refresh:3;url=index.php");
+                        }
+                        else
+                        {
+                            echo "Registration failed :(";
+                            header("refresh:3;url=SignUpPage.php");
+                        }
+                    }
+                else
+                    {
+                        echo "Invalid Email address";
+                        header("refresh:3;url=SignUpPage.php");
+                    }
+            }
+            
         }
-    }
-    else
-    {
-        echo "Invalid Email address";
-        header("refresh:3;url=SignUpPage.php");
-    }
+
 }
 mysqli_close($connection);
 ?> 
