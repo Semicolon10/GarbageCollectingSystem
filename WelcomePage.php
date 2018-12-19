@@ -4,12 +4,12 @@
 	<title>Welcome</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="Welcome.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<div class="containerWelcome">
-		<h2 id="welcomePageHeading">Welcome To Colombo Garbage Collection Service</h2>
+<div class="containerContent">
+		<h2 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h2>
 
 		
 		

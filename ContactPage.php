@@ -4,11 +4,11 @@
 	<title>Contact Us</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="Contact.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="containerContact">
-		<h2 id="contactPageHeading">Contact Us</h2>
+<div class="containerContent">
+		<h2 style="text-align: center;">Contact Us</h2>
 		
 	<!--	
 		<ul>

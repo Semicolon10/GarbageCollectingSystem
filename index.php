@@ -4,14 +4,14 @@
 	<title>Log In</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="LogIn.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="containerLogInCover"></div>
+
 <form action="LogIn.php" method="post">	
 
-	<div class="containerLogIn">
-		<h2 style="text-align: center; color: #242f34;">Login To Colombo Garbage Collection Service</h2>
+	<div class="containerContent">
+		<h2 style="text-align: center; color: white/*#242f34*/;">Login To Colombo Garbage Collection Service</h2>
 	<!--
 		<ul>
   <li><a href="Welcome.html">Welcome</a></li>
@@ -50,7 +50,7 @@
 		<br/><br/><br/><hr/>
 		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
     <p>Don't have an account? <a href="SignUpPage.php">Register</a>.</p>
-		<button type="submit" class="logInButton" id="logInButton" onclick="setColor();">Login</button>
+		<button type="submit" class="executeButton" id="logInButton" onclick="setColor();">Login</button>
 		
 	</div>
 </form>

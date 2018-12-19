@@ -5,12 +5,12 @@ include('session.php');
 <html>
 <head>
 	<title>Profile</title>
-	<link rel="stylesheet" type="text/css" href="ProfilePage.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <form id="inputForm" method="post" action="deleteAccount.php">
-<div class="containerProfile">
-  <h2 id="profilePageHeading">Hi There <?php echo $_SESSION['username']; ?></h2>
+<div class="containerContent">
+  <h2 style="text-align: center;">Hi There <?php echo $_SESSION['username']; ?></h2>
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
   <a href="PostsPage.php">Posts</a>
@@ -41,8 +41,8 @@ include('session.php');
     <hr/>
     <br/>
     
-    <input type="submit" name="change" value="Change Password" class="changePasswordButton" formaction="changePassword.php">
-    <input type="button" id="delete" name="delete" value="Delete Account" class="deleteAccountButton" onclick="redirect()">
+    <input type="submit" name="change" value="Change Password" class="executeButtonChange" formaction="changePassword.php">
+    <input type="button" id="delete" name="delete" value="Delete Account" class="executeButtonDelete" onclick="redirect()">
     
 
     <script type="text/javascript">

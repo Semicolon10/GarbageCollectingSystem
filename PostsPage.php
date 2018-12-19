@@ -7,12 +7,12 @@ include('session.php');
 	<title>Welcome</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="PostsPage.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="background-image: url(Images/colombo.jpg);">
+<body>
 
-<div class="containerPosts">
-		<h2 id="PostsPageHeading">Posts</h2>
+<div class="containerContent">
+		<h2 style="text-align: center;">Posts</h2>
 
 		
 		

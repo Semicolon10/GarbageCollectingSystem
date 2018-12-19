@@ -4,12 +4,12 @@
 	<title>Password Recovery</title>
   <link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="PasswordRecovery.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <form action="PasswordRecovery.php" method="post">
-	<div class="containerRecover">
-		<h2 id="recoverPageHeading">Password Recovery</h2>
+	<div class="containerContent">
+		<h2 style="text-align: center;">Password Recovery</h2>
 <!--
 		<ul>
   <li><a href="Welcome.html">Welcome</a></li>
@@ -44,7 +44,7 @@
 		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 		<hr/>
 		<p>An email with the username and password will be sent to your email if you have an account with the submitted email. Thank you.</p>
-		<button type="submit" class="RecoverButton" id="RecoverButton" onclick="setColor();">Recover</button>
+		<button type="submit" class="executeButton" id="RecoverButton" onclick="setColor();">Recover</button>
 		
 	</div>
 </form>

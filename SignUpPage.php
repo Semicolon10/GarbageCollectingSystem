@@ -4,13 +4,13 @@
 <title>Sign Up</title>
 <link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="SignUp.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <form action="SignUp.php" method="post">
-  <div class="containerSignUp">
-    <h2 id="signUpPageHeading">Sign Up For Colombo Garbage Collection Service</h2>
+  <div class="containerContent">
+    <h2 style="text-align: center;">Sign Up For Colombo Garbage Collection Service</h2>
 <!--
 <ul>
   <li><a class="#welcome" href="Welcome.html">Welcome</a></li>
@@ -54,7 +54,7 @@
     <hr/>
     <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
-    <button type="submit" class="signUpButton" id="signUpButton" onclick="setColor();">Sign Up</button>
+    <button type="submit" class="executeButton" id="signUpButton" onclick="setColor();">Sign Up</button>
   </div>
 </form>
 <script type="text/javascript">
