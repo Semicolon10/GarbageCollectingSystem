@@ -52,7 +52,7 @@
   </div> 
 </div>
 		
-
+<img src="Images/map.jpeg" alt="map" class="map">
 			
 	<!--<ul>
   		<li><a class="active" href="Welcome.html">Welcome</a></li>

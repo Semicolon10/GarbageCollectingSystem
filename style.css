@@ -220,3 +220,13 @@ li a:hover:not(.active) {
 a{
   color: red;
 }
+
+.map{
+  margin: auto;
+  margin-top: 20px;
+  width: auto;
+  height: 600px;
+  float: right;
+  border-radius: 0px;
+
+}
