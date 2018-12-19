@@ -2,6 +2,6 @@
 session_start();
 
 $_SESSION['username']=NULL;
-header("Location: index.php"); // Redirecting To Home Page
+header("Location: WelcomePage.php"); // Redirecting To Home Page
 
 ?>

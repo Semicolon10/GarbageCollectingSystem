@@ -10,7 +10,7 @@
 
 <div class="containerContent">
 		<h2 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h2>
-
+      <img src="Images/CMC_Logo.jpg" alt="logo" class="logo">
 		
 		
 <!--	
