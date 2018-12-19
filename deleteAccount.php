@@ -4,15 +4,17 @@ include('connection.php');
 
 if(!isset($_POST['currentPassword']))
 {
-	echo("Please enter the current password. Redirecting..........");
-	header("refresh:3; url=ProfilePage.php");
+	$errorMessage="Please enter the current password";
+	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+	header("refresh:0; url=ProfilePage.php");
 }
 else
 {
 	if(!isset($_SESSION['username']))
 	{
-		echo("Error obtaining user name. Try Relogging. Redirecting.......");
-		header("refresh:3;url=ProfilePage.php");
+		$errorMessage="Unable to obtain the username. Try re-logging";
+		echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+		header("refresh:0; url=ProfilePage.php");
 	}
 	else
 	{
@@ -28,19 +30,21 @@ else
 		{
 			if(mysqli_query($connection,$deleteQuery))
 			{
-				echo "Account Deleted Successfully.";
-				header("refresh:3; url=LogOut.php");
+				$message= "Account Deleted Successfully";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+				header("refresh:0; url=LogOut.php");
 			}
 		}
 		else
 		{
-			echo "You have entered the wrong password.";
-			header("refresh:3; url=ProfilePage.php");
+			$errorMessage="You have entered the wrong password";
+			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+			header("refresh:0; url=ProfilePage.php");
 		}
 	}
 }
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -56,4 +60,4 @@ else
         setInterval(function(){ countdown(); },1000);
     </script>
 </body>
-</html>
+</html>-->

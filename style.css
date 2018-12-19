@@ -19,22 +19,34 @@ body {
     bottom: 1%;
     left: 1%;
     margin: auto;
-    overflow: auto;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    max-width: 1300px;
+
+
+}
+
+.containerContentSpecial{
+  background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  /*background-color: white;*/
+    padding: 16px;
+    top: 1%;
+    right: 1%;
+    bottom: 1%;
+    left: 1%;
+    margin: auto;
+    overflow: hidden;
     position: absolute;
     color: white;
-
-
+    max-width: 1300px;
 }
 
-.logo{
-  border-radius: 100px;
-  width: 80px;
-  height: 80px;
-  margin-left: 50%;
-}
 
 
 input[type=text], input[type=password] {
+  color: white;
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -46,6 +58,7 @@ input[type=text], input[type=password] {
 }
 
 input[type=text]:focus, input[type=password]:focus {
+    color: black;
     background-color: #ddd;
     outline: none;
     
@@ -101,9 +114,23 @@ hr {
 .executeButtonChange:hover{
   background-color: #111;
 }
-.executeButtonDelete:hover{
-  background-color: #ba0000;
+
+.executeButtonDeleteLive{
+    background-color: rgba(255,0,0, 0.8);
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: right;
 }
+.executeButtonDeleteLive:hover{
+  background-color: #111;
+}
+
 
 /*
 ul {
@@ -225,14 +252,4 @@ li a:hover:not(.active) {
 }
 a{
   color: red;
-}
-
-.map{
-  margin: auto;
-  margin-top: 20px;
-  width: auto;
-  height: 600px;
-  float: right;
-  border-radius: 0px;
-
 }

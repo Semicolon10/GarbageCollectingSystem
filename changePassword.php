@@ -18,8 +18,10 @@ $newPasswordConfirm=mysqli_real_escape_string($connection,$newPasswordConfirm);
 
 if($newPassword!=$newPasswordConfirm)
 {
-	echo("Passwords don't match. Redirecting........");
-	header("refresh:3;url=ProfilePage.php");
+	//echo("Passwords don't match. Redirecting........");
+	$errorMessage="Passwords do not match";
+	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+	header("refresh:0;url=ProfilePage.php");
 }
 else
 {
@@ -32,20 +34,27 @@ else
 		$queryUpdate="UPDATE UserDetails SET password='$passwordHash' where UserName='$user'";
 		if(mysqli_query($connection,$queryUpdate))
 		{
-			echo "Password Updated Successfully. Redirecting...........";
-			header("refresh:3; url=LogOut.php");
+			/*echo "Password Updated Successfully. Redirecting...........";
+			header("refresh:3; url=LogOut.php");*/
+			$errorMessage="Password Updated Successfully";
+			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+			header("refresh:0;url=LogOut.php");
 		}
 		else
 		{
-			echo "Couldn't update the password. ".mysqli_error($connection);
-			echo "Redirecting............";
-			header("refresh:3; url=ProfilePage.php");
+			$errorMessage="Couldn't update the password ".mysqli_error($connection);
+			
+			header("refresh:0; url=ProfilePage.php");
 		}
 	}
 	else
 	{
-		echo("You entered the wrong password. Redirecting........");
-		header("refresh:3;url=ProfilePage.php");
+		/*echo("You entered the wrong password. Redirecting........");
+		header("refresh:3;url=ProfilePage.php");*/
+		
+		$errorMessage="You entered the wrong password";
+			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+			header("refresh:0;url=ProfilePage.php");
 	}
 
 	
@@ -53,7 +62,7 @@ else
 
 mysqli_close($connection);
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -73,4 +82,4 @@ mysqli_close($connection);
 		setInterval(function(){ countdown(); },1000);
 	</script>
 </body>
-</html>
+</html>-->

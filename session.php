@@ -10,8 +10,11 @@ $selectQuery="SELECT * from UserDetails where UserName='$user'";
 $result=mysqli_query($connection,$selectQuery);
 if (!(mysqli_num_rows($result) > 0))
 {
-    echo "Please Log In. Redirecting.....";
-    header("refresh:1;url=index.php");
+   /* echo "Please Log In. Redirecting.....";
+    header("refresh:1;url=index.php");*/
+    $message="Please Log In";
+	echo("<script>alert('$message');</script>");
+	header("refresh:0; url=index.php");
     mysqli_close($connection);
     exit();
 }

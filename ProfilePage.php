@@ -5,6 +5,7 @@ include('session.php');
 <html>
 <head>
 	<title>Profile</title>
+  <link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -61,7 +62,7 @@ include('session.php');
         
           //alert("Please enter the currentPassword");
           form['currentPassword'].value="PLEASE ENTER THE CURRENT PASSWORD HERE!";
-          form['currentPassword'].style.backgroundColor="yellow";
+          form['currentPassword'].style.backgroundColor="orange";
         }
       }
       
@@ -69,11 +70,13 @@ include('session.php');
       var form = document.getElementById('inputForm');
       if (form['currentPassword'].value)
         {
-              form['delete'].style.backgroundColor="#ff0000";
+             /* form['delete'].style.backgroundColor="#ff0000";*/
+             document.getElementById("delete").className = "executeButtonDeleteLive";
         }
       else
         {
-              form['delete'].style.backgroundColor="#ba0000";
+             /* form['delete'].style.backgroundColor="#ba0000";*/
+             document.getElementById("delete").className = "executeButtonDelete";
         }
       }
 

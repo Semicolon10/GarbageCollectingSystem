@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="containerContent">
+<div class="containerContentSpecial">
 		<h2 style="text-align: center;">Contact Us</h2>
 		
 	<!--	

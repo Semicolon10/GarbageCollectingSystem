@@ -8,8 +8,10 @@ if(!empty( $_POST['userName']))
 }
 else
 {
-    echo "No data has been entered for username. Redirecting.....";
-    header("refresh:3;url=SignUpPage.php");
+    $errorMessage= "Please enter the username";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
+    mysqli_close($connection);
     exit();
 }
 if(!empty($_POST['email']))
@@ -18,8 +20,10 @@ if(!empty($_POST['email']))
 }
 else
 {
-    echo "No data has been entered for email. Redirecting.......";
-    header("refresh:3;url=SignUpPage.php");
+    $errorMessage= "Please enter the E-mail address";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
+    mysqli_close($connection);
     exit();
 }
 if(!empty($_POST['password']))
@@ -28,8 +32,10 @@ if(!empty($_POST['password']))
 }
 else
 {
-    echo "No data has been entered for password. Redirecting........";
-    header("refresh:3;url=SignUpPage.php");
+    $errorMessage= "Please enter the password";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
+    mysqli_close($connection);
     exit();
 }
 if(!empty($_POST['passwordConfirm']))
@@ -38,8 +44,10 @@ if(!empty($_POST['passwordConfirm']))
 }
 else
 {
-    echo "No data has been entered for password confirmation. Redirecting........";
-    header("refresh:3;url=SignUpPage.php");
+    $errorMessage= "Please confirm the password";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
+    mysqli_close($connection);
     exit();
 }
 
@@ -54,8 +62,9 @@ $email=mysqli_real_escape_string($connection,$email);
 
 if($password!=$passwordConfirm)
 {
-    echo "Passwords don't match";
-    header("refresh:3;url=SignUpPage.php");
+    $errorMessage= "Passwords do not match";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
 }
 else
 {
@@ -75,8 +84,9 @@ else
         $result=mysqli_query($connection,$selectQuery);
         if(mysqli_num_rows($result)>0)
         {
-            echo("This username is taken. Please use a different username.");
-             header("refresh:3;url=SignUpPage.php");
+            $errorMessage="This username is taken. Please use a different username";
+            echo("<script>alert('$errorMessage');</script>");
+             header("refresh:0; url=SignUpPage.php");
         }
         else
         {
@@ -84,9 +94,9 @@ else
             $result=mysqli_query($connection,$selectQuery);
             if(mysqli_num_rows($result)>0)
             {
-                echo("There is already an account associated with this E-mail address.
-                    Please use a different E-mail address.");
-                header("refresh:3;url=SignUpPage.php");
+                $errorMessage="There is already an account associated with this E-mail address. Please use a different E-mail address";
+                    echo("<script>alert('$errorMessage');</script>");
+                header("refresh:0; url=SignUpPage.php");
             }
             else
             {
@@ -94,19 +104,22 @@ else
                     {
                         if(mysqli_query($connection,$insertQuery))
                         {
-                            echo "Successfully Registered";
-                            header("refresh:3;url=index.php");
+                            $message= "Successfully Registered";
+                            echo("<script>alert('$message');</script>");
+                            header("refresh:0; url=index.php");
                         }
                         else
                         {
-                            echo "Registration failed :(";
-                            header("refresh:3;url=SignUpPage.php");
+                            $errorMessage= "Registration failed";
+                            echo("<script>alert('$errorMessage');</script>");
+                            header("refresh:0; url=SignUpPage.php");
                         }
                     }
                 else
                     {
-                        echo "Invalid Email address";
-                        header("refresh:3;url=SignUpPage.php");
+                        $errorMessage= "Invalid Email address";
+                        echo("<script>alert('$errorMessage');</script>");
+                        header("refresh:0; url=SignUpPage.php");
                     }
             }
             
@@ -115,7 +128,7 @@ else
 }
 mysqli_close($connection);
 ?> 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -131,6 +144,6 @@ mysqli_close($connection);
         setInterval(function(){ countdown(); },1000);
     </script>
 </body>
-</html>
+</html>-->
 
 

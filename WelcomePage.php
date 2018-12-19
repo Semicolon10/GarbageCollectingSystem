@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<div class="containerContent">
+<div class="containerContentSpecial">
 		<h2 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h2>
-      <img src="Images/CMC_Logo.jpg" alt="logo" class="logo">
+
 		
 		
 <!--	
@@ -52,7 +52,7 @@
   </div> 
 </div>
 		
-<img src="Images/map.jpeg" alt="map" class="map">
+
 			
 	<!--<ul>
   		<li><a class="active" href="Welcome.html">Welcome</a></li>

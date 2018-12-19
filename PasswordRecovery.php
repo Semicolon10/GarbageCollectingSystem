@@ -12,21 +12,32 @@ if(!empty($_POST['email']))
 	if(filter_var($email, FILTER_VALIDATE_EMAIL))
 	{
 		$newTempPassword=rand();
-		echo($newTempPassword);
 		$newTempPasswordHash=password_hash($newTempPassword,PASSWORD_DEFAULT);
 		$queryUpdate="UPDATE UserDetails SET password='$newTempPasswordHash' where Email='$email'";
-		if(mysqli_query($connection,$queryUpdate))
+		$querySelect="SELECT * from UserDetails where Email='$email'";
+		$result=mysqli_query($connection,$querySelect);
+		if(mysqli_num_rows($result)>0)
 		{
-			
-			echo "Password Updated Successfully. Redirecting...........";
-			header("refresh:3; url=ProfilePage.php");
+			if(mysqli_query($connection,$queryUpdate))
+			{
+				$message="Password Resetted Successfully";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+				header("refresh:0; url=LogOut.php");
+			}
+			else
+			{
+				$errorMessage= "Couldn't update the password ".mysqli_error($connection);
+				echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+				header("refresh:0; url=PasswordRecoveryPage.php");
+			}
 		}
 		else
 		{
-			echo "Couldn't update the password. ".mysqli_error($connection);
-			echo "Redirecting............";
-			header("refresh:3; url=ProfilePage.php");
+			$errorMessage="There is no account associated with this email. Please enter the correct email";
+				echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+				header("refresh:0; url=PasswordRecoveryPage.php");
 		}
+		
 		
 		//echo An email has been sent to your submitted email.";
 		//header("refresh:3;url=index.php");
@@ -34,20 +45,22 @@ if(!empty($_POST['email']))
 	}
 	else
 	{
-		echo "Invalid e-mail address. Please enter a valid email address.";
-		header("refresh:3;url=PasswordRecoveryPage.php");
+		$errorMessage= "Invalid e-mail address. Please enter a valid email address";
+		echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+		header("refresh:0; url=PasswordRecoveryPage.php");
 	}
 }
 else
 {
-    echo "No data has been entered for email. Redirecting.............";
-    header("refresh:3;url=PasswordRecoveryPage.php");
+    $errorMessage= "No data has been entered for email";
+    echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+    header("refresh:0; url=PasswordRecoveryPage.php");
     
 }
 
 mysqli_close($connection);
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -67,4 +80,4 @@ mysqli_close($connection);
 		setInterval(function(){ countdown(); },1000);
 	</script>
 </body>
-</html>
+</html>-->

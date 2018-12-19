@@ -6,8 +6,9 @@ if( /*isset( $_POST['userName'] ) && */!empty( $_POST['userName'] ) )
     {
         $userName = $_POST['userName'];
     } else {
-        echo "No data. Redirecting......";
-        header("refresh:3;url=index.php");
+        $errorMessage="Please enter the username";
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+        header("refresh:0; url=index.php");
         mysqli_close($connection);
         exit();
     }
@@ -16,8 +17,9 @@ if(/*isset($_POST['password'])&&*/!empty($_POST['password']))
 	$password=$_POST['password'];
 }
 else {
-        echo "No data. Redirecting......";
-        header("refresh:3;url=index.php");
+        $errorMessage="Please enter the password";
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+        header("refresh:0; url=index.php");
         mysqli_close($connection);
         exit();
     }
@@ -33,15 +35,17 @@ $result=mysqli_query($connection,$selectQuery);
 $encryptedPassword=mysqli_fetch_assoc($result);
 if(password_verify($password, $encryptedPassword['password']))
     { 
-        echo "Login Successful";
+        $message="Login Successful";
+        echo "<script type='text/javascript'>alert('$message');</script>";
         $_SESSION['username']=$userName;
-        header("location:WelcomePage.php");
+        header("refresh:0; url=WelcomePage.php");
 
     }
 else
     {
-        echo "Your username or password is incorrect. Please try again. Redirecting.....";
-        header("refresh:3;url=index.php");
+        $errorMessage="Your username or password is incorrect. Please try again";
+        echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+        header("refresh:0; url=index.php");
     }
 
 
@@ -66,7 +70,7 @@ echo $decryptedPassword;*/
 */
 mysqli_close($connection);
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -86,4 +90,4 @@ mysqli_close($connection);
         setInterval(function(){ countdown(); },1000);
     </script>
 </body>
-</html>
+</html>-->
