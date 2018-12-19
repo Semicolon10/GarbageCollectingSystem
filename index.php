@@ -7,7 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="LogIn.css">
 </head>
 <body>
+  <div class="containerLogInCover"></div>
 <form action="LogIn.php" method="post">	
+
 	<div class="containerLogIn">
 		<h2 style="text-align: center; color: #242f34;">Login To Colombo Garbage Collection Service</h2>
 	<!--
@@ -52,6 +54,7 @@
 		
 	</div>
 </form>
+
 <script type="text/javascript">
     var count = 1;
     function setColor() {

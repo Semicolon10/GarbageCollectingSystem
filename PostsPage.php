@@ -9,7 +9,7 @@ include('session.php');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="PostsPage.css">
 </head>
-<body>
+<body style="background-image: url(Images/colombo.jpg);">
 
 <div class="containerPosts">
 		<h2 id="PostsPageHeading">Posts</h2>

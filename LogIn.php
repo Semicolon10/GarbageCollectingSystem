@@ -6,7 +6,9 @@ if( /*isset( $_POST['userName'] ) && */!empty( $_POST['userName'] ) )
     {
         $userName = $_POST['userName'];
     } else {
-        echo "No data";
+        echo "No data. Redirecting......";
+        header("refresh:3;url=index.php");
+        mysqli_close($connection);
         exit();
     }
 if(/*isset($_POST['password'])&&*/!empty($_POST['password']))
@@ -14,7 +16,9 @@ if(/*isset($_POST['password'])&&*/!empty($_POST['password']))
 	$password=$_POST['password'];
 }
 else {
-        echo "No data";
+        echo "No data. Redirecting......";
+        header("refresh:3;url=index.php");
+        mysqli_close($connection);
         exit();
     }
 //Anti SQL injection
@@ -36,7 +40,7 @@ if(password_verify($password, $encryptedPassword['password']))
     }
 else
     {
-        echo "Your username or password is incorrect. Please try again";
+        echo "Your username or password is incorrect. Please try again. Redirecting.....";
         header("refresh:3;url=index.php");
     }
 
