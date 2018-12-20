@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="SignUp.php" method="post">
+<form action="SignUp.php" method="post" id="inputForm">
   <div class="containerContent">
     <h2 style="text-align: center;">Sign Up For Colombo Garbage Collection Service</h2>
 <!--
@@ -45,6 +45,9 @@
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required="" />
 
+    <label for="contactNumber"><b>Contact Number</b></label>
+    <input type="text" placeholder="Enter contact number" name="contactNumber" id="contactNumber" required=""/>
+
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password"  required="" />
 
@@ -54,22 +57,38 @@
     <hr/>
     <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
-    <button type="submit" class="executeButton" id="signUpButton" onclick="setColor();">Sign Up</button>
+    <button type="button" class="executeButton" id="signUpButton" onclick="setColor(); contactNumberValidation();">Sign Up</button>
   </div>
 </form>
 <script type="text/javascript">
     var count = 1;
     function setColor() {
-        var property = document.getElementById('signUpButton');
-        if (count == 0) {
-            property.style.backgroundColor = "#242f34";
-            count = 1;        
+        
+        if (count == 1) {
+            document.getElementById("signUpButton").className="executeButtonClicked";
+            count = 0;        
         }
         else {
-            property.style.backgroundColor = "#ff0000";
-            count = 0;
+            document.getElementById("signUpButton").className="executeButton";
+            count = 1;
         }
     }
+    function contactNumberValidation()
+    {
+      var contactNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      var number=document.getElementById("contactNumber").value;
+      if(number.match(contactNumber))
+        {
+          var form = document.getElementById('inputForm');
+          form.submit();
+          
+        }
+        else
+        {
+          alert("Invalid Contact Number");
+        }
+    }
+
 </script>
 
 </body>

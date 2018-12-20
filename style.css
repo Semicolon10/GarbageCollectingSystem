@@ -18,11 +18,12 @@ body {
     right: 1%;
     bottom: 1%;
     left: 1%;
-    margin: auto;
+    
     overflow: hidden;
     position: relative;
     color: white;
-    max-width: 1300px;
+    max-width: 98%;
+    min-width: 100px;
 
 
 }
@@ -36,12 +37,16 @@ body {
     right: 1%;
     bottom: 1%;
     left: 1%;
-    margin: auto;
+    
     overflow: hidden;
     position: absolute;
     color: white;
-    max-width: 1300px;
+    max-width: 98%;
+    min-width: 100px;
+    
 }
+
+
 
 input[type=text], input[type=password] {
   color: white;
@@ -127,6 +132,23 @@ hr {
 }
 .executeButtonDeleteLive:hover{
   background-color: #111;
+}
+.executeButtonClicked{
+    background-color: #242f34;
+    background-color: rgba(255,0,0, 0.8); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    float: bottom;
+}
+
+.executeButtonClicked:hover{
+    background-color: rgba(170,0,0, 0.8);
 }
 
 

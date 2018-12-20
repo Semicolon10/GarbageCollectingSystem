@@ -58,15 +58,14 @@
 <script type="text/javascript">
     var count = 1;
     function setColor() {
-        var property = document.getElementById('logInButton');
-        if (count == 0) {
-            property.style.backgroundColor = "#242f34";
-            property.style
-            count = 1;        
+        
+        if (count == 1) {
+            document.getElementById("logInButton").className="executeButtonClicked";
+            count = 0;        
         }
         else {
-            property.style.backgroundColor = "#ff0000";
-            count = 0;
+            document.getElementById("logInButton").className="executeButton";
+            count = 1;
         }
     }
 </script>

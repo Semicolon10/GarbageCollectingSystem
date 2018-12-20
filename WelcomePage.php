@@ -63,8 +63,7 @@
   		<li id="SignUpList"><a href="SignUp.html">SignUp</a></li>
 	</ul>
 -->
-
-<!--**********************SLIDE SHOW*******************-->
+<!-- Slideshow................................-->
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
@@ -99,6 +98,9 @@
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
+
+<!--End Of Slideshow..................................-->
+
 
 		
 </div>
@@ -155,6 +157,7 @@ function showSlides() {
     setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
 </script>
+
 
 
 </body>

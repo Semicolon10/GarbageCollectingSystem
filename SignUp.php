@@ -26,6 +26,19 @@ else
     mysqli_close($connection);
     exit();
 }
+if(!empty($_POST['contactNumber']))
+{
+    $contactNumber=$_POST['contactNumber'];   
+    
+}
+else
+{
+    $errorMessage= "Please enter the contact number";
+    echo("<script>alert('$errorMessage');</script>");
+    header("refresh:0; url=SignUpPage.php");
+    mysqli_close($connection);
+    exit();
+}
 if(!empty($_POST['password']))
 {
     $password=$_POST['password'];
@@ -59,6 +72,8 @@ $password=mysqli_real_escape_string($connection,$password);
 $passwordConfirm=mysqli_escape_string($connection,$passwordConfirm);
 $email=stripslashes($email);
 $email=mysqli_real_escape_string($connection,$email);
+$contactNumber=stripslashes($contactNumber);
+$contactNumber=mysqli_real_escape_string($connection,$contactNumber);
 
 if($password!=$passwordConfirm)
 {
@@ -79,7 +94,7 @@ else
 
 
     
-        $insertQuery="INSERT INTO UserDetails values('$username','$email','$passwordHash')";
+        $insertQuery="INSERT INTO UserDetails values('$username','$email','$contactNumber','$passwordHash')";
         $selectQuery="SELECT * from UserDetails where userName='$username'";
         $result=mysqli_query($connection,$selectQuery);
         if(mysqli_num_rows($result)>0)
@@ -102,18 +117,31 @@ else
             {
                 if(filter_var($email, FILTER_VALIDATE_EMAIL))
                     {
-                        if(mysqli_query($connection,$insertQuery))
+                        $selectQuery="SELECT * from UserDetails where ContactNumber='$contactNumber'";
+                        $result=mysqli_query($connection,$selectQuery);
+                        if(mysqli_num_rows($result)>0)
                         {
-                            $message= "Successfully Registered";
-                            echo("<script>alert('$message');</script>");
-                            header("refresh:0; url=index.php");
-                        }
-                        else
-                        {
-                            $errorMessage= "Registration failed";
+                            $errorMessage="There is already an account associated with this contact number";
                             echo("<script>alert('$errorMessage');</script>");
                             header("refresh:0; url=SignUpPage.php");
                         }
+                        else
+                        {
+
+                            if(mysqli_query($connection,$insertQuery))
+                            {
+                                $message= "Successfully Registered";
+                                echo("<script>alert('$message');</script>");
+                                header("refresh:0; url=index.php");
+                            }
+                            else
+                            {
+                                $errorMessage= "Registration failed";
+                                echo("<script>alert('$errorMessage');</script>");
+                                header("refresh:0; url=SignUpPage.php");
+                            }   
+                        }
+                        
                     }
                 else
                     {
