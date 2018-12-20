@@ -70,7 +70,7 @@
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="Images/CMC_Logo.jpg" style="width:400px">
+    <img src="Images/CMC_Logo.jpg" style="width:400px height:100%">
     <div class="text">Caption Text</div>
   </div>
 
@@ -154,7 +154,7 @@ function showSlides() {
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active_slides";
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
+    setTimeout(showSlides, 10000); // Change image every 5 seconds
 }
 </script>
 
