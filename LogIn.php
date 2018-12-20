@@ -35,8 +35,8 @@ $result=mysqli_query($connection,$selectQuery);
 $encryptedPassword=mysqli_fetch_assoc($result);
 if(password_verify($password, $encryptedPassword['password']))
     { 
-        $message="Login Successful";
-        echo "<script type='text/javascript'>alert('$message');</script>";
+       /* $message="Login Successful";
+        echo "<script type='text/javascript'>alert('$message');</script>";*/
         $_SESSION['username']=$userName;
         header("refresh:0; url=WelcomePage.php");
 

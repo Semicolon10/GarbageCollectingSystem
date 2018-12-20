@@ -40,10 +40,10 @@
     <p>Please fill the form below to create an account.</p>
     <hr/>
     <label for="userName"><b>User Name</b></label>
-    <input type="text" placeholder="Enter Username" name="userName" required=""  />
+    <input type="text" placeholder="Enter Username" name="userName" id="userName" required=""  />
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required="" />
+    <input type="text" placeholder="Enter Email" name="email" id="email" required="" />
 
     <label for="contactNumber"><b>Contact Number</b></label>
     <input type="text" placeholder="Enter contact number" name="contactNumber" id="contactNumber" required=""/>
@@ -57,7 +57,7 @@
     <hr/>
     <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
-    <button type="button" class="executeButton" id="signUpButton" onclick="setColor(); contactNumberValidation();">Sign Up</button>
+    <button type="button" class="executeButton" id="signUpButton" onclick="setColor(); formValidation();">Sign Up</button>
   </div>
 </form>
 <script type="text/javascript">
@@ -73,21 +73,96 @@
             count = 1;
         }
     }
-    function contactNumberValidation()
+    function formValidation()
     {
-      var contactNumber = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-      var number=document.getElementById("contactNumber").value;
-      if(number.match(contactNumber))
+      
+      if(document.getElementById("userName").value)
+      {
+        deHighlight("userName");
+        if(document.getElementById("email").value)
         {
-          var form = document.getElementById('inputForm');
-          form.submit();
-          
+          deHighlight("email");
+          if(document.getElementById("contactNumber").value)
+          {
+            deHighlight("contactNumber");
+            if(document.getElementById("password").value)
+            {
+              deHighlight("password");
+              if(document.getElementById("passwordConfirm").value)
+              {
+                
+                deHighlight("passwordConfirm");
+                emailValidation();
+                
+              }
+              else
+              {
+                highlight("passwordConfirm","THE PASSWORD AGAIN!");
+              }
+            }
+            else
+            {
+              highlight("password","A PASSWORD!");
+            }
+          }
+          else
+          {
+            highlight("contactNumber","A CONTACT NUMBER!");
+          }
         }
         else
         {
-          alert("Invalid Contact Number");
+          highlight("email","AN EMAIL ADDRESS!");
         }
+      }
+      else
+      {
+        highlight("userName","A USERNAME!");
+      }
+
+ 
     }
+    function highlight(id,word)
+    {
+        alert("Please enter "+word);
+        document.getElementById(id).style.backgroundColor="Yellow";
+        document.getElementById(id).style.color="black";
+    }
+    function deHighlight(id)
+    {
+      document.getElementById(id).style.backgroundColor="#222d32";
+      document.getElementById(id).style.color="white";
+    }
+    function contactNumberValidation()
+    {
+      var format = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      var contactNumber=document.getElementById("contactNumber").value;
+     
+                if(contactNumber.match(format))
+                {
+                  deHighlight("contactNumber");
+                  var form = document.getElementById('inputForm');
+                  form.submit();
+                }
+                else
+                {
+                  highlight("contactNumber","a valid contact number");
+                }
+   }
+   function emailValidation()
+   {
+    var format=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var email=document.getElementById("email").value;
+    if(email.match(format))
+    {
+      contactNumberValidation();
+    }
+    else
+    {
+      highlight("email","a valid email address");
+    }
+   }
+
 
 </script>
 

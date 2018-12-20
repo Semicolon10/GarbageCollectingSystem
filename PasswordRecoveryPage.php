@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<form action="PasswordRecovery.php" method="post">
+<form action="PasswordRecovery.php" method="post" id="inputForm">
 	<div class="containerContent">
 		<h2 style="text-align: center;">Password Recovery</h2>
 <!--
@@ -40,27 +40,68 @@
  <br/><br/>
 
 		<label for="email">Email</label>
-		<input type="text" placeholder="Enter Email" name="email" required>
+		<input type="text" placeholder="Enter Email" name="email" id="email" required>
 		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 		<hr/>
 		<p>An email with the username and password will be sent to your email if you have an account with the submitted email. Thank you.</p>
-		<button type="submit" class="executeButton" id="RecoverButton" onclick="setColor();">Recover</button>
+		<button type="button" class="executeButton" id="RecoverButton" onclick="setColor(); formValidation();">Recover</button>
 		
 	</div>
 </form>
 <script type="text/javascript">
 	var count = 1;
     function setColor() {
-        var property = document.getElementById('RecoverButton');
-        if (count == 0) {
-            property.style.backgroundColor = "#242f34";
-            count = 1;        
+        
+        if (count == 1) {
+            document.getElementById("RecoverButton").className="executeButtonClicked";
+            count = 0;        
         }
         else {
-            property.style.backgroundColor = "#ff0000";
-            count = 0;
+            document.getElementById("RecoverButton").className="executeButton";
+            count = 1;
         }
     }
+    function formValidation()
+    {
+      var form=document.getElementById("inputForm");
+      if(form['email'].value)
+      {
+        deHighlight("email");
+        emailValidation();
+        
+      }
+      else
+      {
+        highlight("email","your email");
+      }
+    }
+    function highlight(id,word)
+    {
+        alert("Please enter "+word);
+        document.getElementById(id).style.backgroundColor="Yellow";
+        document.getElementById(id).style.color="black";
+    }
+    function deHighlight(id)
+    {
+      document.getElementById(id).style.backgroundColor="#222d32";
+      document.getElementById(id).style.color="white";
+    }
+
+    function emailValidation()
+    {
+      var format=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var email=document.getElementById("email").value;
+      var form=document.getElementById("inputForm");
+      if(email.match(format))
+        {
+          deHighlight("email");
+          form.submit();
+        }
+      else
+        {
+          highlight("email","a valid email address");
+        }
+   }
 </script>
 </body>
 </html>

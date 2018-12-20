@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="LogIn.php" method="post">	
+<form action="LogIn.php" method="post" id="inputForm">	
 
 	<div class="containerContent">
 		<h2 style="text-align: center; color: white/*#242f34*/;">Login To Colombo Garbage Collection Service</h2>
@@ -43,19 +43,56 @@
 		<hr/>
 		<br/><br/>
 		<label for="userName">User Name</label>
-		<input type="text" placeholder="Enter Username" name="userName" required="">
+		<input type="text" placeholder="Enter Username" name="userName" required="" id="userName">
 		<label for="password">Password</label>
-		<input type="password" placeholder="Enter Password" name="password" required="">
+		<input type="password" placeholder="Enter Password" name="password" required="" id="password">
 		
 		<br/><br/><br/><hr/>
 		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
     <p>Don't have an account? <a href="SignUpPage.php">Register</a>.</p>
-		<button type="submit" class="executeButton" id="logInButton" onclick="setColor();">Login</button>
+
+     <button type="button" class="executeButton" id="logInButton" onclick="setColor(); formValidation();">Login</button>
 		
 	</div>
 </form>
 
 <script type="text/javascript">
+function formValidation()
+    {
+      
+      if(document.getElementById("userName").value)
+      {
+        deHighlight("userName");
+        if(document.getElementById("password").value)
+        {
+          deHighlight("password");
+          var form = document.getElementById('inputForm');
+          form.submit();
+        }
+        else
+        {
+          highlight("password","the password");
+        }
+      }
+      else
+      {
+        highlight("userName","the username!");
+      }
+
+ 
+    }
+    function highlight(id,word)
+    {
+        alert("Please enter "+word);
+        document.getElementById(id).style.backgroundColor="Yellow";
+        document.getElementById(id).style.color="black";
+    }
+    function deHighlight(id)
+    {
+      document.getElementById(id).style.backgroundColor="#222d32";
+      document.getElementById(id).style.color="white";
+    }
+
     var count = 1;
     function setColor() {
         
@@ -69,5 +106,6 @@
         }
     }
 </script>
+
 </body>
 </html>

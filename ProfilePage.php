@@ -34,35 +34,65 @@ include('session.php');
     <br/>
     <input type="text" id="currentPassword" placeholder="Enter Current Password" name="currentPassword" required="" oninput="testInput()">
     <br/>
-    <input type="password" placeholder="Enter a new password" name="password" required="">
+    <input type="password" id="password" placeholder="Enter a new password" name="password" required="">
     <br/>
-    <input type="password" placeholder="Confirm password" name="confirmPassword" required="">
+    <input type="password" id="confirmPassword" placeholder="Confirm password" name="confirmPassword" required="">
     <br/>
     <br/>
     <hr/>
     <br/>
     
-    <input type="submit" name="change" value="Change Password" class="executeButtonChange" formaction="changePassword.php">
-    <input type="button" id="delete" name="delete" value="Delete Account" class="executeButtonDelete" onclick="redirect()">
+    <input type="submit" name="change" value="Change Password" class="executeButtonChange" formaction="changePassword.php" onclick="redirectChange()">
+    <input type="button" id="delete" name="delete" value="Delete Account" class="executeButtonDelete" onclick="redirectDelete()">
     
 
     <script type="text/javascript">
      
-     function redirect()
+     function redirectDelete()
       {
-        var password=document.getElementById('currentPassword').value;
+        
         var form = document.getElementById('inputForm');
         if(form['currentPassword'].value)
         {
-          form.submit();
-          //window.location.href = "deleteAccount.php?w1=" + encodeURIComponent(password);
-          //location.href = "deleteAccount.php";
+          deHighlight("currentPassword");
+          form.submit(); 
+         
         }
         else{
         
-          //alert("Please enter the currentPassword");
-          form['currentPassword'].value="PLEASE ENTER THE CURRENT PASSWORD HERE!";
-          form['currentPassword'].style.backgroundColor="orange";
+          highlight("currentPassword","the current password");
+
+         
+        }
+      }
+
+      function redirectChange()
+      {
+        var form = document.getElementById('inputForm');
+        if(form['currentPassword'].value)
+        {
+          deHighlight("currentPassword");
+          if(form['password'].value)
+          {
+            deHighlight("password");
+            if(form['confirmPassword'].value)
+            {
+              deHighlight("confirmPassword");
+              
+            }
+            else
+            {
+              highlight("confirmPassword","the password again to confirm");
+            }
+          }
+          else
+          {
+            highlight("password","a new password");
+          }
+        }
+        else
+        {
+          highlight("currentPassword","the current password");
         }
       }
       
@@ -79,7 +109,17 @@ include('session.php');
              document.getElementById("delete").className = "executeButtonDelete";
         }
       }
-
+      function highlight(id,word)
+      {
+        alert("Please enter "+word);
+        document.getElementById(id).style.backgroundColor="Yellow";
+        document.getElementById(id).style.color="black";
+      }
+    function deHighlight(id)
+      {
+        document.getElementById(id).style.backgroundColor="#222d32";
+        document.getElementById(id).style.color="white";
+      }
 
       </script>
 
