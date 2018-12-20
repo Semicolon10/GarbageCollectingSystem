@@ -69,21 +69,50 @@
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="Images/CMC_Logo.jpg" style="width:400px height:100%">
-    <div class="text">Caption Text</div>
+    <div class="numbertext">1 / 6</div>
+    <img src="Images/gray-background.jpg" style="width:100%">
+    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="Images/Map.GIF" style="width:300px">
-    <div class="text" style="left: 70%">Caption Two cbftcbfebcerf<br>hhc hjbjbc vjbvjhrehbcbivb gcgrurcybrgu<br></div>
+    <div class="numbertext">2 / 6</div>
+    <img src="Images/Map.GIF" style="width:100%">
+    <div class="text" style="left: 20%; top:80%; font-weight: bold; color: black;">Administrative Areas</div>
+    <div class="text" style="left: 80%; font-weight: bold; color: red;">What's your Area?..</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="Images/CMC.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
+    <div class="numbertext">3 / 6</div>
+    <img src="Images/Webp.jpg" style="width:100%">
+    <div class="text" style="top: 70%; color: #FFD700; font-weight: bolder; font-size: 30px;">Join with us<br>&<br>Be a<br>Better Recycler</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 6</div>
+    <img src="Images/waste.jpg" style="width:100%">
+    <div class="text" style="top: 85%; font-weight: bolder; color: red; font-size: 30px;">Properly Dispose of Waste</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 6</div>
+    <img src="Images/cleaning.jpg" style="width:100%">
+    <div class="text" style="left: 20%; font-weight: bolder; color: green;">We'll Come & Clean It..</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 /6</div>
+    <img src="Images/Colombo_Municipal_Council.jpg" style="width:100%">
+    <div class="text" style="top: 80%; color: white;">Another Proud Project Of The Colombo Municipal Council</div>
   </div>
 
   <!-- Next and previous buttons -->
@@ -96,7 +125,10 @@
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span> 
 </div>
 
 <!--End Of Slideshow..................................-->

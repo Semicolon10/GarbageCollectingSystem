@@ -6,7 +6,7 @@ body {
 }
 * {
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
 .containerContent {
@@ -22,10 +22,8 @@ body {
     overflow: hidden;
     position: relative;
     color: white;
-    
     max-width: 98%;
     min-width: 100px;
-    max-height: 100%;
 
 
 }
@@ -45,7 +43,6 @@ body {
     color: white;
     max-width: 98%;
     min-width: 100px;
-    max-height: 100%;
     
 }
 
@@ -61,7 +58,6 @@ input[type=text], input[type=password] {
     /*background: #f1f1f1;*/
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-    border-radius: 25px;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -87,7 +83,6 @@ hr {
     width: 100%;
     opacity: 1;
     float: bottom;
-    border-radius: 25px;
 }
 
 .executeButton:hover {
@@ -106,7 +101,6 @@ hr {
     width: 49.5%;
     opacity: 1;
     float: left;
-    border-radius: 25px;
 }
 .executeButtonDelete{
     background-color: rgba(184,0,0, 0.8);
@@ -119,7 +113,6 @@ hr {
     width: 49.5%;
     opacity: 1;
     float: right;
-    border-radius: 25px;
 }
 .executeButtonChange:hover{
   background-color: #111;
@@ -136,7 +129,6 @@ hr {
     width: 49.5%;
     opacity: 1;
     float: right;
-    border-radius: 25px;
 }
 .executeButtonDeleteLive:hover{
   background-color: #111;
@@ -153,7 +145,6 @@ hr {
     width: 100%;
     opacity: 1;
     float: bottom;
-    border-radius: 25px;
 }
 
 .executeButtonClicked:hover{
@@ -205,7 +196,6 @@ li a:hover:not(.active) {
   background-color: #242f34;
 
   font-family: Arial, Helvetica, sans-serif;
-  border-radius: 25px;
 }
 
 .navigationbar a {
@@ -215,13 +205,11 @@ li a:hover:not(.active) {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border-radius: 25px;
 }
 
 .profileMenu {
   float: right;
   overflow: hidden;
-  border-radius: 25px;
 
 }
 
@@ -234,7 +222,6 @@ li a:hover:not(.active) {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-  border-radius: 25px;
 }
 
 .navigationbar a:hover, .profileMenu:hover .profileButton {
@@ -250,7 +237,6 @@ li a:hover:not(.active) {
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  border-radius: 25px;
 
 }
 
@@ -261,7 +247,6 @@ li a:hover:not(.active) {
   text-decoration: none;
   display: block;
   text-align:center;
-  border-radius: 25px;
 }
 
 .profileMenu-content a:hover {
@@ -293,13 +278,12 @@ a{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 800px;
-  min-height: 70%;
+  max-width: 850px;
+  /*min-height: 70%;*/
   /*max-height: 500px;*/
   position: relative;
-  /*margin: auto;*/
+  margin: auto;
   margin-top: 10px;
-
 }
 
 /* Hide the images by default */
@@ -336,8 +320,9 @@ a{
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: #FFFAFA/*#f2f2f2*/;
   font-size: 15px;
+  font-style: italic;
   /*padding: 8px 12px;*/
   position: absolute;
   /*bottom: 8px;*/
