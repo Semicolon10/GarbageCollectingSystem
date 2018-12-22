@@ -16,28 +16,7 @@ include('session.php');
 
 		
 		
-<!--	
-<ul>
-  <li><a class="active" href="Welcome.html">Welcome</a></li>
-  <li><a href="#news">Posts</a></li>
-  <li><a href="Contact.html">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li id="LogInList"><a href="LogIn.html">Log In</a></li>
-  <li id="SignUpList"><a href="SignUp.html">SignUp</a></li>
-  </ul>
--->
 
-<!--<div class="navigation">
- <div class="dropdown">
-  <button class="dropbtn">Profile</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-</div>
--->
   
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
@@ -57,16 +36,7 @@ include('session.php');
 		
 
 			
-	<!--<ul>
-  		<li><a class="active" href="Welcome.html">Welcome</a></li>
-  		<li><a href="#news">Posts</a></li>
-  		<li><a href="Contact.html">Contact</a></li>
-  		<li><a href="#about">About</a></li>
-  		<li id="LogInList"><a href="LogIn.html">Log In</a></li>
-  		<li id="SignUpList"><a href="SignUp.html">SignUp</a></li>
-	</ul>
--->
-
+	
 		
 </div>
 

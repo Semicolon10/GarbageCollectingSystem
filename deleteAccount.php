@@ -2,7 +2,7 @@
 include('session.php');
 include('connection.php');
 
-if(!isset($_POST['currentPassword']))
+if(!isset($_POST['currentPasswordDelete']))
 {
 	$errorMessage="Please enter the current password";
 	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
@@ -19,7 +19,7 @@ else
 	else
 	{
 		$user=$_SESSION['username'];
-		$password=$_POST['currentPassword'];
+		$password=$_POST['currentPasswordDelete'];
 		$password=stripslashes($password);
 		$password=mysqli_real_escape_string($connection,$password);
 		$selectQuery="SELECT password from UserDetails where UserName='$user'";
@@ -39,25 +39,9 @@ else
 		{
 			$errorMessage="You have entered the wrong password";
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+			
 			header("refresh:0; url=ProfilePage.php");
 		}
 	}
 }
 ?>
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<p>Redirecting..................<span id="counter">3</span> second(s).</p>
-    <script type="text/javascript">
-    function countdown() 
-    {
-        var i = document.getElementById('counter');
-        i.innerHTML = parseInt(i.innerHTML)-1;
-    }
-        setInterval(function(){ countdown(); },1000);
-    </script>
-</body>
-</html>-->

@@ -10,16 +10,7 @@
 <div class="containerContentSpecial">
 		<h2 style="text-align: center;">Contact Us</h2>
 		
-	<!--	
-		<ul>
-  <li><a href="Welcome.html">Welcome</a></li>
-  <li><a href="#news">Posts</a></li>
-  <li><a class="active" href="Contact.html">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li id="LogInList"><a href="LogIn.html">Log In</a></li>
-  <li id="SignUpList"><a href="SignUp.html">SignUp</a></li>
-</ul>
--->
+	
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
   <a href="PostsPage.php">Posts</a>
@@ -31,7 +22,7 @@
       <a href="ProfilePage.php">Account</a>
       <a href="index.php">Log In</a>
       <a href="LogOut.php">Log Out</a>
-      <a href="SignUpPage.php">Sign Up</a>
+      <a href="SignUp.html">Sign Up</a>
     </div>
   </div> 
 </div>

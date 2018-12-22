@@ -11,17 +11,7 @@
 <form action="SignUp.php" method="post" id="inputForm">
   <div class="containerContent">
     <h2 style="text-align: center;">Sign Up For Colombo Garbage Collection Service</h2>
-<!--
-<ul>
-  <li><a class="#welcome" href="Welcome.html">Welcome</a></li>
-  <li><a href="#news">Posts</a></li>
-  <li><a href="Contact.html">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li id="LogInList" ><a href="LogIn.html">Log In</a></li>
-  <li id="SignUpList" class="active"><a href="SignUp.html">SignUp</a></li>
-</ul>
-<hr/>
--->
+
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
   <a href="PostsPage.php">Posts</a>

@@ -10,17 +10,7 @@
 <form action="PasswordRecovery.php" method="post" id="inputForm">
 	<div class="containerContent">
 		<h2 style="text-align: center;">Password Recovery</h2>
-<!--
-		<ul>
-  <li><a href="Welcome.html">Welcome</a></li>
-  <li><a href="#news">Posts</a></li>
-  <li><a href="Contact.html">Contact</a></li>
-  <li><a href="#about">About</a></li>
-  <li id="LogInList"  class="active"><a href="LogIn.html" >Log In</a></li>
-  <li id="SignUpList"><a href="SignUp.html">SignUp</a></li>
-</ul>
-		
-  -->
+
 
   <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>

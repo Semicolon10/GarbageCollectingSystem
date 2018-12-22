@@ -3,6 +3,7 @@ body {
        
   background-image: url("Images/colombo.jpg");
   background-size: cover;
+  
 }
 * {
     box-sizing: border-box;
@@ -94,6 +95,24 @@ hr {
     background-color: #111;
 }
 
+.changePasswordWindow{
+  
+  background-color: #242f34;
+    
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    
+    opacity: 1;
+    float: bottom;
+    border-radius: 25px;
+  width:50%;
+}
+
 .executeButtonChange{
     background-color: #242f34;
     background-color: rgba(0,0,0, 0.8);
@@ -116,7 +135,7 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 49.5%;
+    width: 100%;
     opacity: 1;
     float: right;
     border-radius: 25px;
@@ -133,7 +152,7 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 49.5%;
+    width: 100%;
     opacity: 1;
     float: right;
     border-radius: 25px;
@@ -161,44 +180,6 @@ hr {
 }
 
 
-/*
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #242f34;
-  position: relative;
-  float: right;
-  width: 100%;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #ff0000;
-}
-#SignUpList{
-    float: right;
-}
-#LogInList{
-    float: right;
-}
-*/
 
 .navigationbar {
   overflow: hidden;

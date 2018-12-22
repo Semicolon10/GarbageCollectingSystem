@@ -39,8 +39,7 @@ if(!empty($_POST['email']))
 		}
 		
 		
-		//echo An email has been sent to your submitted email.";
-		//header("refresh:3;url=index.php");
+		
 
 	}
 	else
@@ -60,24 +59,3 @@ else
 
 mysqli_close($connection);
 ?>
-<!--<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<p>Redirecting..................<span id="counter">3</span> second(s).</p>
-	<script type="text/javascript">
-	function countdown() 
-	{
-    	var i = document.getElementById('counter');
-    	if (parseInt(i.innerHTML)<=0) 
-    	{
-        	//location.href = 'LogInPage.php';
-    	}
-    		i.innerHTML = parseInt(i.innerHTML)-1;
-	}
-		setInterval(function(){ countdown(); },1000);
-	</script>
-</body>
-</html>-->
