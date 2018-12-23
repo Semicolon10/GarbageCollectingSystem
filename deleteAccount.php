@@ -31,6 +31,7 @@ else
 			if(mysqli_query($connection,$deleteQuery))
 			{
 				$message= "Account Deleted Successfully";
+				
 				echo "<script type='text/javascript'>alert('$message');</script>";
 				header("refresh:0; url=LogOut.php");
 			}

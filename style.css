@@ -11,41 +11,34 @@ body {
 }
 
 .containerContent {
-   background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-  /*background-color: white;*/
     padding: 16px;
     top: 1%;
     right: 1%;
     bottom: 1%;
     left: 1%;
-    
     overflow: hidden;
     position: relative;
     color: white;
-    
     max-width: 98%;
-    min-width: 100px;
     max-height: 100%;
 
 
 }
 
 .containerContentSpecial{
-  background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-  /*background-color: white;*/
     padding: 16px;
     top: 1%;
     right: 1%;
     bottom: 1%;
     left: 1%;
-    
     overflow: hidden;
-    position: absolute;
-    color: white;
+    position: relative; 
+    
     max-width: 98%;
-    min-width: 100px;
     max-height: 100%;
     
 }
@@ -59,7 +52,6 @@ input[type=text], input[type=password] {
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
-    /*background: #f1f1f1;*/
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
     border-radius: 25px;
@@ -110,7 +102,7 @@ hr {
     opacity: 1;
     float: bottom;
     border-radius: 25px;
-  width:50%;
+    width:50%;
 }
 
 .executeButtonChange{
@@ -371,3 +363,99 @@ a{
   from {opacity: .4} 
   to {opacity: 1}
 }
+/*..............END OF SLIDE SHOW CSS.................*/
+
+
+
+/* css for uploading post*/
+.uploadforam{
+  display: inline-block;
+  margin-top: 5%;
+  box-align: center;
+  width: 50%;
+
+}
+
+.PostDescription{
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 100%;
+  border-radius:30px;
+  padding:2%;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;  
+  align-content: left;  
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  color: white;
+ 
+}
+.PostDescription:focus{
+ color: black;
+    background-color: #ddd;
+    outline: none;
+
+}
+.PostTopic{
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  
+  border-radius:30px;
+  padding:2%;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;  
+  align-content: left;  
+}
+.fileToUpload,.post{
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  background-color: #242f34;
+  color: white;
+  font-size: 16pt; 
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  /*float: left;*/
+  border-radius: 30px;
+  text-decoration: none
+
+}
+.fileToUpload{
+  width: 100%;
+
+}
+.post{
+  width: 100%;
+
+}
+
+.fileToUpload:hover, .post:hover{
+  background-color: #111;
+}
+
+#latitude{
+background-color: #242f34;
+width: 49%; 
+float: left; 
+font-size: 16pt; 
+color: white; 
+text-align: center;
+}
+#longitude{
+background-color: #242f34; 
+width: 49%; 
+float: right; 
+font-size: 16pt; 
+color: white; 
+text-align: center;
+}
+
+/* css for uploading post*/

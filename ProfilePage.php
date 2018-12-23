@@ -29,7 +29,37 @@ include('session.php');
   </div> 
 </div>
 <br/> <br/>
+<div class="changeEmailBox">
+  <hr/>
+<form id="inputFormChangeEmail" method="post" action="changeEmail.php">
+    <p>Change Email</p>
+    <br/>
+    <input type="text" id="Email" name="Email" placeholder="Enter a new email address">
+    <br/>
+    <input type="password" id="passwordForEmail" placeholder="Enter the password" name="passwordForEmail">
+    <br/>
+    <br/>
+    <input type="button" name="changeEmail" value="Change Email" class="executeButton" onclick="redirectEmail()">
+</form>
 
+</div>
+
+<div class="changeContactBox">
+  <hr/>
+<form id="inputFormChangeContact" method="post" action="changeContact.php">
+    <p>Change Contact Number</p>
+    <br/>
+    <input type="text" id="Contact" name="Contact" placeholder="Enter a new contact number">
+    <br/>
+    <input type="password" id="passwordForContact" placeholder="Enter the password" name="passwordForContact">
+    <br/>
+    <br/>
+    <input type="button" name="changeContact" value="Change Contact Number" class="executeButton" onclick="redirectContact()">
+</form>
+
+</div>
+
+<div class="changePasswordBox">
 <hr/>
 <form id="inputFormChange" method="post" action="changePassword.php">
 <p>Change Password</p>
@@ -43,33 +73,13 @@ include('session.php');
     <br/>
     <input type="button" name="change" value="Change Password" class="executeButton" onclick="redirectChange()">
 </form>
-<hr/>
+
+</div>
 
 
-<form id="inputFormChangeEmail" method="post" action="changeEmail.php">
-    <p>Change Email</p>
-    <br/>
-    <input type="text" id="Email" name="Email" placeholder="Enter a new email address">
-    <br/>
-    <input type="password" id="passwordForEmail" placeholder="Enter the password" name="passwordForEmail">
-    <br/>
-    <br/>
-    <input type="button" name="changeEmail" value="Change Email" class="executeButton" onclick="redirectEmail()">
-</form>
-<hr/>
 
-<form id="inputFormChangeContact" method="post" action="changeContact.php">
-    <p>Change Contact Number</p>
-    <br/>
-    <input type="text" id="Contact" name="Contact" placeholder="Enter a new contact number">
-    <br/>
-    <input type="password" id="passwordForContact" placeholder="Enter the password" name="passwordForContact">
-    <br/>
-    <br/>
-    <input type="button" name="changeContact" value="Change Contact Number" class="executeButton" onclick="redirectContact()">
-</form>
-<hr/>
-
+<div class="deleteAccountBox">
+  <hr/>
 <form id="inputFormDelete" method="post" action="deleteAccount.php">
     <p>Delete Account</p>
     <br/>
@@ -79,6 +89,8 @@ include('session.php');
     <input type="button" id="delete" name="delete" value="Delete Account" class="executeButtonDelete" onclick="redirectDelete()">
 </form>
 <hr/>
+</div>
+
 
 </div>
 </body>

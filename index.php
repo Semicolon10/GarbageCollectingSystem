@@ -62,19 +62,19 @@ function formValidation()
         }
         else
         {
-          highlight("password","the password");
+          highlight("password");
         }
       }
       else
       {
-        highlight("userName","the username!");
+        highlight("userName");
       }
 
  
     }
-    function highlight(id,word)
+    function highlight(id)
     {
-        alert("Please enter "+word);
+        
         document.getElementById(id).style.backgroundColor="Yellow";
         document.getElementById(id).style.color="black";
     }

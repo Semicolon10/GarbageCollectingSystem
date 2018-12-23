@@ -22,7 +22,7 @@
       <a href="ProfilePage.php">Account</a>
       <a href="index.php">Log In</a>
       <a href="LogOut.php">Log Out</a>
-      <a href="SignUp.html">Sign Up</a>
+      <a href="SignUpPage.php">Sign Up</a>
     </div>
   </div> 
 </div>

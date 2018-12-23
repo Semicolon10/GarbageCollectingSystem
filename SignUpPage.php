@@ -66,55 +66,83 @@
     function formValidation()
     {
       
-      if(document.getElementById("userName").value)
+      var form=document.getElementById('inputForm');
+      if(form['userName'].value)
       {
         deHighlight("userName");
-        if(document.getElementById("email").value)
+        if(form['email'].value)
         {
-          deHighlight("email");
-          if(document.getElementById("contactNumber").value)
+          if(emailValidation())
           {
-            deHighlight("contactNumber");
-            if(document.getElementById("password").value)
+            deHighlight("email");
+            if(form['contactNumber'].value)
             {
-              deHighlight("password");
-              if(document.getElementById("passwordConfirm").value)
+              deHighlight("contactNumber");
+              if(contactNumberValidation())
               {
-                
-                deHighlight("passwordConfirm");
-                emailValidation();
-                
+                deHighlight("contactNumber");
+                if(form['password'].value)
+                {
+                  deHighlight("password");
+                  if(form['passwordConfirm'].value)
+                  {
+                    deHighlight("passwordConfirm");
+                    if(form['password'].value==form['passwordConfirm'].value)
+                    {
+                      deHighlight("password");
+                      deHighlight("passwordConfirm");
+                      form.submit();
+                    }
+                    else
+                    {
+                      highlight("password");
+                      highlight("passwordConfirm");
+                      alert("Passwords do not match");
+                    }
+                  }
+                  else
+                  {
+                    highlight("passwordConfirm");
+                  }
+                }
+                else
+                {
+                  highlight("password");
+                }
               }
               else
               {
-                highlight("passwordConfirm","THE PASSWORD AGAIN!");
+                highlight("contactNumber");
+                document.getElementById("contactNumber").value="Please enter a valid contact number";
               }
             }
             else
             {
-              highlight("password","A PASSWORD!");
+              highlight("contactNumber");
+              
             }
           }
           else
           {
-            highlight("contactNumber","A CONTACT NUMBER!");
+            highlight("email");
+            document.getElementById("email").value="Please enter a valid E-mail address";
           }
         }
         else
         {
-          highlight("email","AN EMAIL ADDRESS!");
+          highlight("email");
         }
       }
       else
       {
-        highlight("userName","A USERNAME!");
+        highlight("userName");
       }
 
  
     }
-    function highlight(id,word)
+    function highlight(id)
     {
-        alert("Please enter "+word);
+        
         document.getElementById(id).style.backgroundColor="Yellow";
         document.getElementById(id).style.color="black";
     }
@@ -130,13 +158,13 @@
      
                 if(contactNumber.match(format))
                 {
-                  deHighlight("contactNumber");
-                  var form = document.getElementById('inputForm');
-                  form.submit();
+                 
+                  return true;
                 }
                 else
                 {
-                  highlight("contactNumber","a valid contact number");
+                  
+                  return false;
                 }
    }
    function emailValidation()
@@ -145,11 +173,11 @@
     var email=document.getElementById("email").value;
     if(email.match(format))
     {
-      contactNumberValidation();
+      return true;
     }
     else
     {
-      highlight("email","a valid email address");
+      return false;
     }
    }
 
