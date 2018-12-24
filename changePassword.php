@@ -22,6 +22,7 @@ if($newPassword!=$newPasswordConfirm)
 	$errorMessage="Passwords do not match";
 	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 	header("refresh:0;url=ProfilePage.php");
+	unset($errorMessage);
 }
 else
 {
@@ -35,16 +36,20 @@ else
 		if(mysqli_query($connection,$queryUpdate))
 		{
 			
-			$errorMessage="Password Updated Successfully";
-			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
+			$message="Password Updated Successfully";
+			echo "<script type='text/javascript'>alert('$message');</script>";
 			header("refresh:0;url=LogOut.php");
+			unset($message);
 		}
 		else
 		{
 			$errorMessage="Couldn't update the password ".mysqli_error($connection);
-			
+			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 			header("refresh:0; url=ProfilePage.php");
+			unset($errorMessage);
 		}
+		unset($passwordHash);
+		unset($queryUpdate);
 	}
 	else
 	{
@@ -53,10 +58,20 @@ else
 		$errorMessage="You entered the wrong password";
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 			header("refresh:0;url=ProfilePage.php");
+		unset($errorMessage);
 	}
-
+	unset($querySelect);
+	unset($result);
+	unset($existingPassword);
 	
 }
 
 mysqli_close($connection);
+
+unset($user);
+unset($currentPassword);
+unset($newPassword);
+unset($newPasswordConfirm);
+unset($connection);
+
 ?>

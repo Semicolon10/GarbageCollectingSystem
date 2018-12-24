@@ -7,6 +7,7 @@ if(!isset($_POST['currentPasswordDelete']))
 	$errorMessage="Please enter the current password";
 	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 	header("refresh:0; url=ProfilePage.php");
+	unset($errorMessage);
 }
 else
 {
@@ -15,6 +16,7 @@ else
 		$errorMessage="Unable to obtain the username. Try re-logging";
 		echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 		header("refresh:0; url=ProfilePage.php");
+		unset($errorMessage);
 	}
 	else
 	{
@@ -34,6 +36,7 @@ else
 				
 				echo "<script type='text/javascript'>alert('$message');</script>";
 				header("refresh:0; url=LogOut.php");
+				unset($message);
 			}
 		}
 		else
@@ -42,7 +45,17 @@ else
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 			
 			header("refresh:0; url=ProfilePage.php");
+			unset($errorMessage);
 		}
+		unset($user);
+		unset($password);
+		unset($selectQuery);
+		unset($deleteQuery);
+		unset($result);
+		unset($encryptedPassword);
 	}
 }
+mysqli_close($connection);
+unset($connection);
+
 ?>

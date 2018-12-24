@@ -8,8 +8,7 @@ if(empty($_POST['Contact']))
 	$errorMessage="Please enter the Contact number";
 	echo("<script>alert('$errorMessage');</script>");
 	header("refresh:0;url=ProfilePage.php");
-	mysqli_close($connection);
-	exit();
+	unset($errorMessage);
 
 }
 else if(empty($_POST['passwordForContact']))
@@ -18,8 +17,8 @@ else if(empty($_POST['passwordForContact']))
 		$errorMessage="Please enter the password";
 		echo("<script>alert('$errorMessage');</script>");
 		header("refresh:0;url=ProfilePage.php");
-		mysqli_close($connection);
-		exit();
+		unset($errorMessage);
+		
 	
 }
 else
@@ -47,8 +46,7 @@ else
 				$errorMessage="There is another account associated with this contact number";
 				echo "<script>alert('$errorMessage');</script>";
 				header("refresh:0;url=ProfilePage.php");
-				mysqli_close($connection);
-				exit();
+				unset($errorMessage);
 			}
 			else
 			{
@@ -58,45 +56,46 @@ else
 					$message="Contact number successfully updated";
 					echo "<script>alert('$message');</script>";
 					header("refresh:0;url=ProfilePage.php");
-					mysqli_close($connection);
-					exit();
+					unset($message);
 				}
 				else
 				{
 					$errorMessage="Sorry. Unable to update the contact number";
 					echo "<script>alert('$errorMessage');</script>";
 					header("refresh:0;url=ProfilePage.php");
-					mysqli_close($connection);
-					exit();
+					unset($errorMessage);
 
 				}
+				unset($updateQuery);
 			}
+			unset($selectQuery);
+			unset($result);
 		}
 		else
 		{
 			$errorMessage="Please insert a valid contact number";
 			echo "<script>alert('$errorMessage');</script>";
 			header("refresh:0;url=ProfilePage.php");
-			mysqli_close($connection);
-			exit();
+			unset($errorMessage);
 		}
+		unset($format);
 	}
 	else
 	{
 			$errorMessage="Incorrect Password";
 			echo("<script>alert('$errorMessage');</script>");
 			header("refresh:0;url=ProfilePage.php");
-			mysqli_close($connection);
-			exit();
+			unset($errorMessage);
 	}
-
+	unset($password);
+	unset($contact);
+	unset($selectQueryPassword);
+	unset($result);
+	unset($hashedPassword);
 	
 }
 
-
-
-
-
-
-
+unset($user);
+mysqli_close($connection);
+unset($connection);
 ?>

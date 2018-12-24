@@ -6,41 +6,38 @@ error_reporting(E_ALL);
 include('session.php');
 include('connection.php');
 
-
 $UserName=$_SESSION['username'];
-
-
-
 if(empty($_POST["PostTopic"]))
 {
+
 		$errorMessage= "Please enter the topic";
     	echo("<script>alert('$errorMessage');</script>");
     	header("refresh:0;url=createPostPage.php");
-    	mysqli_close($connection);
-    	exit();
+    	unset($errorMessage);
+    	
 }
 else
 {
 	$PostTopic=$_POST["PostTopic"]; 
-	if(empty($_POST["PostDescription"]))
+	if(empty($_POST["Description"]))
 	{
 			$errorMessage= "Please enter the description";
     		echo("<script>alert('$errorMessage');</script>");
     		header("refresh:0;url=createPostPage.php");
-    		mysqli_close($connection);
-    		exit();
+    		unset($errorMessage);
+    		
 	}
 	else
 	{
-			$PostDescription=$_POST["PostDescription"];
+			$PostDescription=$_POST["Description"];
 		
 			if(empty($_FILES["myimage"]["name"]))
 			{
 				$errorMessage= "Please enter an image";
     			echo("<script>alert('$errorMessage');</script>");
     			header("refresh:0;url=createPostPage.php");
-    			mysqli_close($connection);
-    			exit();
+    			unset($errorMessage);
+    			
 			}
 			else
 			{
@@ -50,36 +47,43 @@ else
 					$errorMessage= "Please select the location on the map";
     				echo("<script>alert('$errorMessage');</script>");
     				header("refresh:0;url=createPostPage.php");
-    				mysqli_close($connection);
-    				exit();
+    				unset($errorMessage);
+    				
 				}
 				else
 				{
 					$latitude=$_POST["latitude"];
 					$longitude=$_POST["longitude"];
+					
+					//Get the content of the image and then add slashes to it 
+					$ImageContent=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
+
+					//Insert the image name and image content in image_table
+					$insertQuery="INSERT INTO Posts(UserName,PostTopic,PostDescription,ImageContent,ImageName,Latitude,Longitude) VALUES('$UserName','$PostTopic','$PostDescription','$ImageContent','$imagename','$latitude','$longitude')";
+
+					if(mysqli_query($connection,$insertQuery))
+					{
+						echo "<script>alert('Successfully Published');</script>";
+						header("refresh:0;url=PostsPage.php");
+					}
+					else
+					{	
+						echo "<script>alert('Failed');</script>";
+						header("refresh:50;url=PostsPage.php");
+					}
+					unset($latitude);
+					unset($longitude);
+					unset($ImageContent);
+					unset($insertQuery);
 				}
+				unset($imagename);
 			}
+			unset($PostDescription);
 	}
-}
-
-
-
-//Get the content of the image and then add slashes to it 
-$ImageContent=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
-
-//Insert the image name and image content in image_table
-$insertQuery="INSERT INTO Posts(UserName,PostTopic,PostDescription,ImageContent,ImageName,Latitude,Longitude) VALUES('$UserName','$PostTopic','$PostDescription','$ImageContent','$imagename','$latitude','$longitude')";
-
-if(mysqli_query($connection,$insertQuery))
-{
-	echo "<script>alert('Successfully Published');</script>";
-	header("refresh:0;url=PostsPage.php");
-}
-else
-{	
-	
-	echo "<script>alert('Failed');</script>";
-	header("refresh:0;url=PostsPage.php");
+	unset($PostTopic);
 }
 mysqli_close($connection);
+unset($connection);
+unset($UserName);
+
 ?>

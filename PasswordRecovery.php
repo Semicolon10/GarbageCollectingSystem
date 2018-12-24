@@ -23,12 +23,14 @@ if(!empty($_POST['email']))
 				$message="Password Resetted Successfully";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 				header("refresh:0; url=LogOut.php");
+				unset($message);
 			}
 			else
 			{
 				$errorMessage= "Couldn't update the password ".mysqli_error($connection);
 				echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 				header("refresh:0; url=PasswordRecoveryPage.php");
+				unset($errorMessage);
 			}
 		}
 		else
@@ -36,9 +38,14 @@ if(!empty($_POST['email']))
 			$errorMessage="There is no account associated with this email. Please enter the correct email";
 				echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 				header("refresh:0; url=PasswordRecoveryPage.php");
+				unset($errorMessage);
 		}
 		
-		
+		unset($newTempPassword);
+		unset($newTempPasswordHash);
+		unset($queryUpdate);
+		unset($querySelect);
+		unset($result);
 		
 
 	}
@@ -47,15 +54,19 @@ if(!empty($_POST['email']))
 		$errorMessage= "Invalid e-mail address. Please enter a valid email address";
 		echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 		header("refresh:0; url=PasswordRecoveryPage.php");
+		unset($errorMessage);
 	}
+	unset($email);
 }
 else
 {
     $errorMessage= "No data has been entered for email";
     echo "<script type='text/javascript'>alert('$errorMessage');</script>";
     header("refresh:0; url=PasswordRecoveryPage.php");
+    unset($errorMessage);
     
 }
 
 mysqli_close($connection);
+unset($connection);
 ?>

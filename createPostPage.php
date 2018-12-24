@@ -31,24 +31,23 @@
 </div>
     
 
-    <form class="uploadforam" action="insertPost.php" method="post" enctype="multipart/form-data">
+  <form id="inputFormPost" class="uploadforam" action="insertPost.php" method="post" enctype="multipart/form-data">
   
-  <input type="text" class="PostTopic" name="PostTopic" placeholder="Enter a subject"/>
+  <input type="text" id="PostTopic" class="PostTopic" name="PostTopic" placeholder="Enter a subject"/>
     </input>
     <p id="PostDescriptionParagraph">Please enter a brief description</p>
-    <textarea class="PostDescription" name="PostDescription" placeholder="Enter the description">
-    
-    </textarea>
+   <textarea id="Description" class="Description" name="Description" placeholder="Please enter your description">
+</textarea>
 
   <br/>
   <p id="PostImageParagraph">Please Make sure that the format is JPG/JPEG</p>
-      <input type="file"  value="Browse" name="myimage" class="fileToUpload"/>
+      <input id="Image" type="file"  value="Browse" name="myimage" class="fileToUpload"/>
     <br/>
      
       <p id="PostLocationParagraph">Please click on the location on the map to obtain the coordinates</p>
       <input id="latitude" type="text" name="latitude"  placeholder="latitude" />
       <input id="longitude" type="text" name="longitude"  placeholder="longitude" />
-       <input type="submit" value="Post" name="submit_image" class="post"/>
+       <input type="button" value="Post" name="submit_image" class="post" onclick="formValidation()" />
       <br/>
 
   
@@ -56,9 +55,6 @@
 </form>
 
 <div id="map" ></div>
-  
-  
-    
 </div>
 
 
@@ -66,7 +62,7 @@
 
 <script>
 
-
+      /*.................Map Integration................*/
       var mapProperty={
           center: {lat: 6.923542, lng: 79.854588},  
           zoom: 10
@@ -151,7 +147,50 @@
       }
 
 
-   //References www.w3schools.com
+   /*...............End Of Map Integration..........................*/
+
+   /*................Form Validation.........................*/
+   function formValidation()
+   {
+      var form=document.getElementById('inputFormPost');
+      if(form['PostTopic'].value)
+      {
+        deHighlight('PostTopic');
+        if(form['Description'].value)
+        {
+          deHighlight('Description');
+          if(form['Image'].value)
+          {
+            deHighlight('Image');
+            form.submit();
+          }
+          else
+          {
+            highlight('Image');
+          }
+        }
+        else
+        {
+          highlight('Description');
+        }
+      }
+      else
+      {
+        highlight('PostTopic');
+      }
+   }
+
+   function highlight(id)
+    {
+        
+        document.getElementById(id).style.backgroundColor="Yellow";
+        document.getElementById(id).style.color="black";
+    }
+    function deHighlight(id)
+    {
+      document.getElementById(id).style.backgroundColor="#222d32";
+      document.getElementById(id).style.color="white";
+    }
 
     </script>
 

@@ -36,7 +36,7 @@
     <input type="text" placeholder="Enter Email" name="email" id="email" required="" />
 
     <label for="contactNumber"><b>Contact Number</b></label>
-    <input type="text" placeholder="Enter contact number" name="contactNumber" id="contactNumber" required=""/>
+    <input type="text" placeholder="Enter contact number" name="contactNumber" id="contactNumber" required="" placeholder="Enter Contact Number"/>
 
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password"  required="" />

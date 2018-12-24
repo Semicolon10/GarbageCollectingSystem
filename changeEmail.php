@@ -8,8 +8,7 @@ if(empty($_POST['Email']))
 	$errorMessage="Please enter a new email address";
 	echo("<script>alert('$errorMessage');</script>");
 	header("refresh:0;url=ProfilePage.php");
-	mysqli_close($connection);
-	exit();
+	unset($errorMessage);
 
 }
 else if(empty($_POST['passwordForEmail']))
@@ -17,8 +16,7 @@ else if(empty($_POST['passwordForEmail']))
 	$errorMessage="Please enter the password";
 	echo("<script>alert('$errorMessage');</script>");
 	header("refresh:0;url=ProfilePage.php");
-	mysqli_close($connection);
-	exit();
+	unset($errorMessage);
 }
 else
 {
@@ -27,7 +25,7 @@ else
 	$password=stripslashes($password);
 	$email=stripslashes($email);
 	$password=mysqli_real_escape_string($connection,$password);
-	$email=mysqli_real_escape_string($connection,$password);
+	$email=mysqli_real_escape_string($connection,$email);
 	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
 	$selectQueryPassword="SELECT password from UserDetails where UserName='$user'";
@@ -40,13 +38,14 @@ else
 		{
 			$selectQuery="SELECT * FROM UserDetails where NOT UserName='$user' AND Email='$email'";
 			$result=mysqli_query($connection,$selectQuery);
+			unset($selectQuery);
 			if(mysqli_num_rows($result)>0)
 			{
 				$errorMessage="There is another account associated with this E-mail address";
 				echo "<script>alert('$errorMessage');</script>";
 				header("refresh:0;url=ProfilePage.php");
-				mysqli_close($connection);
-				exit();
+				unset($errorMessage);
+				
 			}
 			else
 			{
@@ -56,27 +55,30 @@ else
 					$message="E-mail successfully updated";
 					echo "<script>alert('$message');</script>";
 					header("refresh:0;url=ProfilePage.php");
-					mysqli_close($connection);
-					exit();
+					unset($message);
+					
 				}
 				else
 				{
 					$errorMessage="Sorry. Unable to update the E-mail";
 					echo "<script>alert('$errorMessage');</script>";
 					header("refresh:0;url=ProfilePage.php");
-					mysqli_close($connection);
-					exit();
+					unset($errorMessage);
+					
 
 				}
+				unset($updateQuery);
 			}
+			unset($result);
+			
 		}
 		else
 		{
 			$errorMessage="Please enter a valid E-mail address";
 			echo("<script>alert('$errorMessage');</script>");
 			header("refresh:0;url=ProfilePage.php");
-			mysqli_close($connection);
-			exit();
+			unset($errorMessage);
+			
 		}
 
 	}
@@ -85,10 +87,18 @@ else
 			$errorMessage="Incorrect Password";
 			echo("<script>alert('$errorMessage');</script>");
 			header("refresh:0;url=ProfilePage.php");
-			mysqli_close($connection);
-			exit();
+			unset($errorMessage);
+			
 	}
 
-	
+	unset($password);
+	unset($result);
+	unset($email);
+	unset($selectQueryPassword);
+	unset($hashedPassword);
 }
+mysqli_close($connection);
+unset($connection);
+unset($user);
+
 ?>

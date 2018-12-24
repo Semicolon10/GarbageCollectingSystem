@@ -11,6 +11,8 @@ else
     $errorMessage= "Please enter the username";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($username);
+    unset($errorMessage);
     mysqli_close($connection);
     exit();
 }
@@ -23,6 +25,8 @@ else
     $errorMessage= "Please enter the E-mail address";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($email);
+    unset($errorMessage);
     mysqli_close($connection);
     exit();
 }
@@ -36,6 +40,8 @@ else
     $errorMessage= "Please enter the contact number";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($contactNumber);
+    unset($errorMessage);
     mysqli_close($connection);
     exit();
 }
@@ -48,6 +54,8 @@ else
     $errorMessage= "Please enter the password";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($password);
+    unset($errorMessage);
     mysqli_close($connection);
     exit();
 }
@@ -60,6 +68,8 @@ else
     $errorMessage= "Please confirm the password";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($passwordConfirm);
+    unset($errorMessage);
     mysqli_close($connection);
     exit();
 }
@@ -80,6 +90,7 @@ if($password!=$passwordConfirm)
     $errorMessage= "Passwords do not match";
     echo("<script>alert('$errorMessage');</script>");
     header("refresh:0; url=SignUpPage.php");
+    unset($errorMessage);
 }
 else
 {
@@ -102,6 +113,7 @@ else
             $errorMessage="This username is taken. Please use a different username";
             echo("<script>alert('$errorMessage');</script>");
              header("refresh:0; url=SignUpPage.php");
+             unset($errorMessage);
         }
         else
         {
@@ -112,6 +124,7 @@ else
                 $errorMessage="There is already an account associated with this E-mail address. Please use a different E-mail address";
                     echo("<script>alert('$errorMessage');</script>");
                 header("refresh:0; url=SignUpPage.php");
+                unset($errorMessage);
             }
             else
             {
@@ -124,6 +137,7 @@ else
                             $errorMessage="There is already an account associated with this contact number";
                             echo("<script>alert('$errorMessage');</script>");
                             header("refresh:0; url=SignUpPage.php");
+                            unset($errorMessage);
                         }
                         else
                         {
@@ -133,14 +147,18 @@ else
                                 $message= "Successfully Registered";
                                 echo("<script>alert('$message');</script>");
                                 header("refresh:0; url=index.php");
+                                unset($message);
                             }
                             else
                             {
                                 $errorMessage= "Registration failed";
                                 echo("<script>alert('$errorMessage');</script>");
                                 header("refresh:0; url=SignUpPage.php");
+                                unset($errorMessage);
                             }   
                         }
+                        unset($selectQuery);
+                        unset($result);
                         
                     }
                 else
@@ -148,13 +166,28 @@ else
                         $errorMessage= "Invalid Email address";
                         echo("<script>alert('$errorMessage');</script>");
                         header("refresh:0; url=SignUpPage.php");
+                        unset($errorMessage);
                     }
             }
+            unset($selectQuery);
+            unset($result);
             
         }
+        unset($passwordHash);
+        unset($email);
+        unset($insertQuery);
+        unset($selectQuery);
+        unset($result);
 
 }
+
 mysqli_close($connection);
+unset($connection);
+unset($username);
+unset($password);
+unset($passwordConfirm);
+unset($email);
+unset($contactNumber);
 ?> 
 
 
