@@ -372,7 +372,8 @@ a{
   display: inline-block;
   margin-top: 5%;
   box-align: center;
-  width: 50%;
+  width: 40%;
+  float: right;
 
 }
 
@@ -383,19 +384,20 @@ a{
   margin-right: auto;
   height: 150px;
   width: 100%;
+  border: none;
   border-radius:30px;
   padding:2%;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;  
   align-content: left;  
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-  color: white;
+  background-color: rgba(255,255,255, 0.8); /* Black w/opacity/see-through */
+  color: black;
  
 }
 .PostDescription:focus{
- color: black;
-    background-color: #ddd;
+    color: black;
+    background-color: #fffda6;
     outline: none;
 
 }
@@ -457,5 +459,36 @@ font-size: 16pt;
 color: white; 
 text-align: center;
 }
+#map{
+  width:59%;
+  height:580px; 
+  float: left;
+  margin-top: 5%; 
+  margin-bottom: 5%;
+}
 
+#PostDescriptionParagraph{
+color: red; 
+font-weight: bold; 
+font-size: 12pt; 
+text-align: center; 
+margin-top: 0%; 
+margin-bottom: 1%;
+}
+#PostImageParagraph
+{
+color: red; 
+font-weight: bold; 
+font-size: 12pt; 
+text-align: center;
+margin-bottom: 0%;
+}
+#PostLocationParagraph
+{
+color: red; 
+font-weight: bold; 
+font-size: 12pt; 
+text-align: center; 
+margin-bottom: 0%;
+}
 /* css for uploading post*/

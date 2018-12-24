@@ -11,7 +11,7 @@ include('session.php');
 </head>
 <body>
 
-<div class="containerContent">
+<div class="containerContent" style="position: absolute;">
 		<h2 style="text-align: center;">Posts</h2>
 
 		

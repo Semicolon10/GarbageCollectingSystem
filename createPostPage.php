@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>New Post</title>
+	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="containerContentSpecial">
@@ -33,17 +35,17 @@
   
   <input type="text" class="PostTopic" name="PostTopic" placeholder="Enter a subject"/>
     </input>
-    <br/>
+    <p id="PostDescriptionParagraph">Please enter a brief description</p>
     <textarea class="PostDescription" name="PostDescription" placeholder="Enter the description">
     
     </textarea>
 
   <br/>
-  <p style="color: red; font-weight: bold; font-size: 14pt; text-align: center;">Please Make sure that the format is JPG/JPEG</p>
+  <p id="PostImageParagraph">Please Make sure that the format is JPG/JPEG</p>
       <input type="file"  value="Browse" name="myimage" class="fileToUpload"/>
     <br/>
      
-      <p style="color: red; font-weight: bold; font-size: 14pt; text-align: center;">Please click on the location on the map to obtain the coordinates</p>
+      <p id="PostLocationParagraph">Please click on the location on the map to obtain the coordinates</p>
       <input id="latitude" type="text" name="latitude"  placeholder="latitude" />
       <input id="longitude" type="text" name="longitude"  placeholder="longitude" />
        <input type="submit" value="Post" name="submit_image" class="post"/>
@@ -53,8 +55,7 @@
   
 </form>
 
-<div id="map" style="width:49%;height:580px; float: right;
-margin-top: 5%; margin-bottom: 5%;"></div>
+<div id="map" ></div>
   
   
     
