@@ -6,12 +6,61 @@ error_reporting(E_ALL);
 include('session.php');
 include('connection.php');
 
-$imagename=$_FILES["myimage"]["name"]; 
+
 $UserName=$_SESSION['username'];
-$PostTopic=$_POST["PostTopic"];
-$PostDescription=$_POST["PostDescription"];
-$latitude=$_POST["latitude"];
-$longitude=$_POST["longitude"];
+
+
+
+if(empty($_POST["PostTopic"]))
+{
+		$errorMessage= "Please enter the topic";
+    	echo("<script>alert('$errorMessage');</script>");
+    	header("refresh:0;url=createPostPage.php");
+    	mysqli_close($connection);
+    	exit();
+}
+else
+{
+	$PostTopic=$_POST["PostTopic"]; 
+	if(empty($_POST["PostDescription"]))
+	{
+			$errorMessage= "Please enter the description";
+    		echo("<script>alert('$errorMessage');</script>");
+    		header("refresh:0;url=createPostPage.php");
+    		mysqli_close($connection);
+    		exit();
+	}
+	else
+	{
+			$PostDescription=$_POST["PostDescription"];
+		
+			if(empty($_FILES["myimage"]["name"]))
+			{
+				$errorMessage= "Please enter an image";
+    			echo("<script>alert('$errorMessage');</script>");
+    			header("refresh:0;url=createPostPage.php");
+    			mysqli_close($connection);
+    			exit();
+			}
+			else
+			{
+				$imagename=$_FILES["myimage"]["name"]; 
+				if(empty($_POST["latitude"]||empty($_POST["longitude"])))
+				{
+					$errorMessage= "Please select the location on the map";
+    				echo("<script>alert('$errorMessage');</script>");
+    				header("refresh:0;url=createPostPage.php");
+    				mysqli_close($connection);
+    				exit();
+				}
+				else
+				{
+					$latitude=$_POST["latitude"];
+					$longitude=$_POST["longitude"];
+				}
+			}
+	}
+}
 
 
 
@@ -23,11 +72,12 @@ $insertQuery="INSERT INTO Posts(UserName,PostTopic,PostDescription,ImageContent,
 
 if(mysqli_query($connection,$insertQuery))
 {
-	echo "<script>alert('Success');</script>";
+	echo "<script>alert('Successfully Published');</script>";
 	header("refresh:0;url=PostsPage.php");
 }
 else
-{
+{	
+	
 	echo "<script>alert('Failed');</script>";
 	header("refresh:0;url=PostsPage.php");
 }
