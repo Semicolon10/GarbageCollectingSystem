@@ -1,5 +1,8 @@
 <?php
 //connect to database
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1); 
+error_reporting(E_ALL);
 include('connection.php');
 
 if(!empty( $_POST['userName']))
@@ -105,7 +108,7 @@ else
 
 
     
-        $insertQuery="INSERT INTO UserDetails values('$username','$email','$contactNumber','$passwordHash')";
+        $insertQuery="INSERT INTO UserDetails(UserName,Email,ContactNumber,password) values('$username','$email','$contactNumber','$passwordHash')";
         $selectQuery="SELECT * from UserDetails where userName='$username'";
         $result=mysqli_query($connection,$selectQuery);
         if(mysqli_num_rows($result)>0)

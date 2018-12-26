@@ -8,7 +8,7 @@ session_start();
 if($_SESSION['username']==NULL)
 {
 	echo "<script>alert('Please log in');</script>";
-	header("refresh:0;url=index.php");
+	header("refresh:0;url=/GarbageCollectionSystem/index.php");
 }
 else if($_SESSION['timeout']+60*60<time())
 {

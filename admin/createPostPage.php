@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +26,7 @@
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
-      
+      <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
       
     </div>

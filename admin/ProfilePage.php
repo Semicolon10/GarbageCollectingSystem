@@ -5,9 +5,9 @@ include('session.php');
 <html>
 <head>
 	<title>Profile</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@ include('session.php');
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
-      
+      <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
       
     </div>

@@ -12,21 +12,14 @@
   <div class="containerContent">
     <h2 style="text-align: center;">Sign Up For Colombo Garbage Collection Service</h2>
 
-<div class="navigationbar">
-  <a href="WelcomePage.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
-  <a href="ContactPage.php">Contact Us</a>
+<div class="navigationbar" id="navigationbar">
+  <a href="WelcomePageGuest.php">Welcome</a>
+  
+  <a href="ContactPageGuest.php">Contact Us</a>
   <a href="#about">About Us</a>
-  <div id="active" class="profileMenu">
-    <button class="profileButton">Profile</button>
-    <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
-      <a href="index.php">Log In</a>
-      <a href="LogOut.php">Log Out</a>
-      <a href="SignUpPage.php">Sign Up</a>
-    </div>
-  </div> 
+  <a href="index.php" style="float: right;">Log In</a>
 </div>
+
     <p>Please fill the form below to create an account.</p>
     <hr/>
     <label for="userName"><b>User Name</b></label>
@@ -48,6 +41,7 @@
     <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
     <button type="button" class="executeButton" id="signUpButton" onclick="setColor(); formValidation();">Sign Up</button>
+  
   </div>
 </form>
 <script type="text/javascript">
@@ -182,7 +176,27 @@
    }
 
 
+
+  window.onscroll = function() {myFunction()};
+
+  var navigationbar = document.getElementById("navigationbar");
+  var sticky = navigationbar.offsetTop;
+
+  function myFunction() 
+  {
+    if (window.pageYOffset >= sticky) {
+      navigationbar.classList.add("sticky")
+    } 
+    else 
+    {
+      navigationbar.classList.remove("sticky");
+    }
+  }
+
+
 </script>
 
 </body>
 </html>
+
+
