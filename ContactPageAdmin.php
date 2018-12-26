@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +12,14 @@
     <h2 style="text-align: center;">Contact Us</h2>
     
 <div class="navigationbar">
-  <a href="WelcomePage.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
-  <a class="active" href="ContactPage.php">Contact Us</a>
+  <a href="WelcomePageAdmin.php">Welcome</a>
+  <a href="PostsPageAdmin.php">Posts</a>
+  <a class="active" href="ContactPageAdmin.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
+      <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
     </div>

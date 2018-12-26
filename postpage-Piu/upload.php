@@ -1,5 +1,9 @@
 <?php
-$target_dir="uploads/";//where the file is going to be placed
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1); 
+error_reporting(E_ALL);
+
+$target_dir="/home/airoshan/Documents/uploads";//where the file is going to be placed
 $target_file=$target_dir.basename($_FILES["fileToUpload"]["name"]);//path of the file to be upload
 $uploadOk=1;
 $imageFileType=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));//hold extension

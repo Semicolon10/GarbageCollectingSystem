@@ -34,7 +34,7 @@
 		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
     <p>Don't have an account? <a href="SignUpPage.php">Register</a>.</p>
 
-     <button type="button" class="executeButton" id="logInButton" onclick="setColor(); formValidation();">Login</button>
+     <button type="button" class="executeButton" id="logInButton" onclick=" formValidation();">Login</button>
 		
 	</div>
 </form>
@@ -76,18 +76,7 @@ function formValidation()
       document.getElementById(id).style.color="white";
     }
 
-    var count = 1;
-    function setColor() {
-        
-        if (count == 1) {
-            document.getElementById("logInButton").className="executeButtonClicked";
-            count = 0;        
-        }
-        else {
-            document.getElementById("logInButton").className="executeButton";
-            count = 1;
-        }
-    }
+    
 </script>
 
 </body>

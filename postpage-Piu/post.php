@@ -1,6 +1,3 @@
-<?php
-include('session.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,14 +65,14 @@ include('session.php');
 -->
 
 		
-<form class="uploadforam" action="upload.php" method="post" enctype="multipart/form-data">
+<form class="uploadforam" action="insertImage.php" method="post" enctype="multipart/form-data">
   <div class="imageupload">
       <textarea class="status" name="status" placeholder="Write your post here!">
         
       </textarea>
       <br>
-      <input type="file"  value="Browse"name="fileToUpload" class="fileToUpload">
-      <input type="submit" value="Post" name="submit" class="post">
+      <input type="file"  value="Browse" name="myimage" class="fileToUpload">
+      <input type="submit" value="Post" name="submit_image" class="post">
   </div>
 </form>
 </body>

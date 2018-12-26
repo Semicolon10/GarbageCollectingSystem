@@ -15,8 +15,7 @@
 
   <div class="navigationbar">
   <a href="WelcomePageGuest.php">Welcome</a>
- 
-  <a href="ContactPageGuest.php">Contact Us</a>
+ `<a href="ContactPageGuest.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>

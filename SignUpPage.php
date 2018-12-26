@@ -40,23 +40,12 @@
     <hr/>
     <p>By creating an account you agree to our <a href="TermsAndConditions.php">Terms & Conditions</a>.</p>
 
-    <button type="button" class="executeButton" id="signUpButton" onclick="setColor(); formValidation();">Sign Up</button>
+    <button type="button" class="executeButton" id="signUpButton" onclick="formValidation();">Sign Up</button>
   
   </div>
 </form>
 <script type="text/javascript">
-    var count = 1;
-    function setColor() {
-        
-        if (count == 1) {
-            document.getElementById("signUpButton").className="executeButtonClicked";
-            count = 0;        
-        }
-        else {
-            document.getElementById("signUpButton").className="executeButton";
-            count = 1;
-        }
-    }
+   
     function formValidation()
     {
       
