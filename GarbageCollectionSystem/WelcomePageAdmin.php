@@ -23,7 +23,6 @@ include('session.php');
 <div class="navigationbar">
   <a class="active" href="WelcomePageAdmin.php">Welcome</a>
   <a href="PostsPageAdmin.php">Posts</a>
-  
   <a href="#about">About Us</a>
   
   <div class="profileMenu">
@@ -47,7 +46,7 @@ include('session.php');
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 6</div>
-    <img src="/GarbageCollectionSystem/Images/gray-background.jpg" style="width:100%">
+    <img src="Images/gray-background.jpg" style="width:100%">
     <div class="text">
       <p>
         Hey there!.
@@ -58,32 +57,32 @@ include('session.php');
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 6</div>
-    <img src="/GarbageCollectionSystem/Images/Map.GIF" style="width:100%">
+    <img src="Images/Map.GIF" style="width:100%">
     <div class="text" style="left: 20%; top:80%; font-weight: bold; color: black;">Administrative Areas</div>
     <div class="text" style="left: 80%; font-weight: bold; color: red;">What's your Area?..</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 6</div>
-    <img src="/GarbageCollectionSystem/Images/Webp.jpg" style="width:100%">
+    <img src="Images/Webp.jpg" style="width:100%">
     <div class="text" style="top: 70%; color: #FFD700; font-weight: bolder; font-size: 30px;">Join with us<br>&<br>Be a<br>Better Recycler</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">4 / 6</div>
-    <img src="/GarbageCollectionSystem/Images/waste.jpg" style="width:100%">
+    <img src="Images/waste.jpg" style="width:100%">
     <div class="text" style="top: 85%; font-weight: bolder; color: red; font-size: 30px;">Properly Dispose of Waste</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">4 / 6</div>
-    <img src="/GarbageCollectionSystem/Images/cleaning.jpg" style="width:100%">
+    <img src="Images/cleaning.jpg" style="width:100%">
     <div class="text" style="left: 20%; font-weight: bolder; color: green;">We'll Come & Clean It..</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">6 /6</div>
-    <img src="/GarbageCollectionSystem/Images/Colombo_Municipal_Council.jpg" style="width:100%">
+    <img src="Images/Colombo_Municipal_Council.jpg" style="width:100%">
     <div class="text" style="top: 80%; color: white;">Another Proud Project Of The Colombo Municipal Council</div>
   </div>
 
