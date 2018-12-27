@@ -171,7 +171,7 @@ hr {
     background-color: rgba(170,0,0, 0.8);
 }
 
-.reportedPostsBtn,.guestsMessagesBtn,.usersBtn,.adminsBtn,.createPostBtn,.yourPostsBtn{
+.reportedPostsBtn,.guestsMessagesBtn,.usersBtn,.adminsBtn,.createPostBtn,.yourPostsBtn,.userMessagesBtn,.leaveAdminBtn{
     
   background-color: #242f34;
     color: white;
@@ -185,17 +185,23 @@ hr {
     float: left;
     border-radius: 25px;
 }
-.guestsMessagesBtn,.adminsBtn,.createPostBtn{
+.guestsMessagesBtn,.adminsBtn,.createPostBtn,.leaveAdminBtn{
   float: right;
 }
-.reportedPostsBtn:hover,.guestsMessagesBtn:hover,.usersBtn:hover,.adminsBtn:hover,.createPostBtn:hover,.yourPostsBtn:hover{
+.leaveAdminBtn{
+  background-color: red;
+}
+.leaveAdminBtn:hover{
+  background-color: #ff5500;
+}
+.reportedPostsBtn:hover,.guestsMessagesBtn:hover,.usersBtn:hover,.adminsBtn:hover,.createPostBtn:hover,.yourPostsBtn:hover,.userMessagesBtn:hover{
   background-color: #111;
 }
 #adminControlButtonsContainer{
   padding-left: 20%;
   padding-right: 20%;
-  padding-top: 12%;
-  padding-bottom: 28%;
+  padding-top: 11%;
+  padding-bottom: 29%;
 }
 #postPageBtnContainer{
   padding-top: 1%;

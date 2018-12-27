@@ -17,7 +17,7 @@ include('session.php');
 <div class="navigationbar">
   <a href="WelcomePageAdmin.php">Welcome</a>
   <a href="PostsPageAdmin.php">Posts</a>
-  <a href="ContactPageAdmin.php">Contact Us</a>
+  
   <a href="#about">About Us</a>
   <div id="active" class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
@@ -25,7 +25,7 @@ include('session.php');
       <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
-      
+
       
     </div>
   </div> 

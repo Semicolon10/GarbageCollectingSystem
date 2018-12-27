@@ -21,7 +21,10 @@ if($newPassword!=$newPasswordConfirm)
 	
 	$errorMessage="Passwords do not match";
 	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-	header("refresh:0;url=ProfilePage.php");
+	if($_SESSION['userType']=='admin')
+		header("refresh:0;url=ProfilePageAdmin.php");
+	else
+		header("refresh:0;url=ProfilePage.php");
 	unset($errorMessage);
 }
 else
@@ -45,7 +48,10 @@ else
 		{
 			$errorMessage="Couldn't update the password ".mysqli_error($connection);
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-			header("refresh:0; url=ProfilePage.php");
+			if($_SESSION['userType']=='admin')
+				header("refresh:0;url=ProfilePageAdmin.php");
+			else
+				header("refresh:0;url=ProfilePage.php");
 			unset($errorMessage);
 		}
 		unset($passwordHash);
@@ -57,7 +63,10 @@ else
 		
 		$errorMessage="You entered the wrong password";
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-			header("refresh:0;url=ProfilePage.php");
+			if($_SESSION['userType']=='admin')
+				header("refresh:0;url=ProfilePageAdmin.php");
+			else
+				header("refresh:0;url=ProfilePage.php");
 		unset($errorMessage);
 	}
 	unset($querySelect);

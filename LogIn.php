@@ -30,12 +30,14 @@ if(!empty( $_POST['userName'] ) )
                     {
                         $_SESSION['username']=$userName;
                         $_SESSION['timeout'] = time();
+                        $_SESSION['userType']="admin";
                         header("refresh:0;url=WelcomePageAdmin.php");
                     }
                     else
                     {
                         $_SESSION['username']=$userName;
                         $_SESSION['timeout'] = time();
+                        $_SESSION['userType']="normal";
                         header("refresh:0; url=WelcomePage.php");
                     }
                     

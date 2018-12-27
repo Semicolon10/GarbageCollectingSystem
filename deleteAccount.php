@@ -9,7 +9,10 @@ if(!isset($_POST['currentPasswordDelete']))
 {
 	$errorMessage="Please enter the current password";
 	echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-	header("refresh:0; url=ProfilePage.php");
+	if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
 	unset($errorMessage);
 }
 else
@@ -18,7 +21,10 @@ else
 	{
 		$errorMessage="Unable to obtain the username. Try re-logging";
 		echo "<script type='text/javascript'>alert('$errorMessage');</script>";
-		header("refresh:0; url=ProfilePage.php");
+		if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
 		unset($errorMessage);
 	}
 	else
@@ -28,26 +34,44 @@ else
 		$password=stripslashes($password);
 		$password=mysqli_real_escape_string($connection,$password);
 		$selectQuery="SELECT password from UserDetails where UserName='$user'";
+		$deleteQueryComplaints="DELETE FROM PostComplaints WHERE UserName='$user'";
 		$deleteQueryPosts="DELETE from Posts where UserName='$user'";
 		$deleteQuery="DELETE from UserDetails where UserName='$user'";
 		$result=mysqli_query($connection,$selectQuery);
 		$encryptedPassword=mysqli_fetch_assoc($result);
 		if(password_verify($password,$encryptedPassword['password']))
 		{
-			if(mysqli_query($connection,$deleteQueryPosts))
+			if(mysqli_query($connection,$deleteQueryComplaints))
 			{
-				if(mysqli_query($connection,$deleteQuery))
+				if(mysqli_query($connection,$deleteQueryPosts))
 				{
-					$message= "Account Deleted Successfully";
-					echo "<script type='text/javascript'>alert('$message');</script>";
-					header("refresh:0; url=LogOut.php");
-					unset($message);
+					if(mysqli_query($connection,$deleteQuery))
+					{
+						$message= "Account Deleted Successfully";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+						header("refresh:0; url=LogOut.php");
+						unset($message);
+					}
+					else
+					{
+						$message= "Unable to delete the account.";
+						echo "<script type='text/javascript'>alert('$message');</script>";
+						if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
+						unset($message);
+					}
+
 				}
 				else
 				{
 					$message= "Unable to delete the account.";
 					echo "<script type='text/javascript'>alert('$message');</script>";
-					header("refresh:0; url=LogOut.php");
+					if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
 					unset($message);
 				}
 			}
@@ -55,9 +79,13 @@ else
 			{
 					$message= "Unable to delete the account.";
 					echo "<script type='text/javascript'>alert('$message');</script>";
-					header("refresh:0; url=LogOut.php");
+					if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
 					unset($message);
 			}
+			
 			
 		}
 		else
@@ -65,7 +93,10 @@ else
 			$errorMessage="You have entered the wrong password";
 			echo "<script type='text/javascript'>alert('$errorMessage');</script>";
 			
-			header("refresh:0; url=ProfilePage.php");
+			if($_SESSION['userType']=='admin')
+							header("refresh:0;url=ProfilePageAdmin.php");
+						else
+							header("refresh:0;url=ProfilePage.php");
 			unset($errorMessage);
 		}
 		unset($user);
@@ -74,6 +105,8 @@ else
 		unset($deleteQuery);
 		unset($result);
 		unset($encryptedPassword);
+		unset($deleteQueryComplaints);
+		unset($deleteQueryPosts);
 	}
 }
 mysqli_close($connection);

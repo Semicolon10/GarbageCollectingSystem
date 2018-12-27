@@ -7,7 +7,10 @@ if(empty($_POST['Email']))
 {
 	$errorMessage="Please enter a new email address";
 	echo("<script>alert('$errorMessage');</script>");
-	header("refresh:0;url=ProfilePage.php");
+	if($_SESSION['userType']=='admin')
+		header("refresh:0;url=ProfilePageAdmin.php");
+	else
+		header("refresh:0;url=ProfilePage.php");
 	unset($errorMessage);
 
 }
@@ -15,7 +18,10 @@ else if(empty($_POST['passwordForEmail']))
 {
 	$errorMessage="Please enter the password";
 	echo("<script>alert('$errorMessage');</script>");
-	header("refresh:0;url=ProfilePage.php");
+	if($_SESSION['userType']=='admin')
+		header("refresh:0;url=ProfilePageAdmin.php");
+	else
+		header("refresh:0;url=ProfilePage.php");
 	unset($errorMessage);
 }
 else
@@ -43,7 +49,10 @@ else
 			{
 				$errorMessage="There is another account associated with this E-mail address";
 				echo "<script>alert('$errorMessage');</script>";
-				header("refresh:0;url=ProfilePage.php");
+				if($_SESSION['userType']=='admin')
+					header("refresh:0;url=ProfilePageAdmin.php");
+				else
+					header("refresh:0;url=ProfilePage.php");
 				unset($errorMessage);
 				
 			}
@@ -54,7 +63,10 @@ else
 				{
 					$message="E-mail successfully updated";
 					echo "<script>alert('$message');</script>";
-					header("refresh:0;url=ProfilePage.php");
+					if($_SESSION['userType']=='admin')
+						header("refresh:0;url=ProfilePageAdmin.php");
+					else
+						header("refresh:0;url=ProfilePage.php");
 					unset($message);
 					
 				}
@@ -62,7 +74,10 @@ else
 				{
 					$errorMessage="Sorry. Unable to update the E-mail";
 					echo "<script>alert('$errorMessage');</script>";
-					header("refresh:0;url=ProfilePage.php");
+					if($_SESSION['userType']=='admin')
+						header("refresh:0;url=ProfilePageAdmin.php");
+					else
+						header("refresh:0;url=ProfilePage.php");
 					unset($errorMessage);
 					
 
@@ -76,7 +91,10 @@ else
 		{
 			$errorMessage="Please enter a valid E-mail address";
 			echo("<script>alert('$errorMessage');</script>");
-			header("refresh:0;url=ProfilePage.php");
+			if($_SESSION['userType']=='admin')
+				header("refresh:0;url=ProfilePageAdmin.php");
+			else
+				header("refresh:0;url=ProfilePage.php");
 			unset($errorMessage);
 			
 		}
@@ -86,7 +104,10 @@ else
 	{
 			$errorMessage="Incorrect Password";
 			echo("<script>alert('$errorMessage');</script>");
-			header("refresh:0;url=ProfilePage.php");
+			if($_SESSION['userType']=='admin')
+				header("refresh:0;url=ProfilePageAdmin.php");
+			else
+				header("refresh:0;url=ProfilePage.php");
 			unset($errorMessage);
 			
 	}

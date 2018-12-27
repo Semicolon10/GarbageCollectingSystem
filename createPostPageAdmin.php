@@ -20,7 +20,7 @@ include('session.php');
 <div class="navigationbar">
   <a href="WelcomePageAdmin.php">Welcome</a>
   <a class="active" href="PostsPageAdmin.php">Posts</a>
-  <a href="ContactPageAdmin.php">Contact Us</a>
+ 
   <a href="#about">About Us</a>
   <div class="profileMenu">
     <button class="profileButton">Profile</button>

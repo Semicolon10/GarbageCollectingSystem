@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,11 +30,10 @@
   </div> 
 </div>
 <form action="Contact.php" method="post" id="inputFormContactUs">
-<label for="yourName"><b>Your Name</b></label>
-<input type="text" name="yourName" id="yourName" placeholder="Please enter your name"/>
-<label for="yourEmail"><b>Your Email</b></label>
-<input type="text" name="yourEmail" id="yourEmail" placeholder="Please enter your E-mail"/>
-<label for="yourEmail"><b>Your Message</b></label>
+
+<label for="subject"><b>Subject</b></label>
+<input type="text" name="subject" id="subject" placeholder="Please enter a subject"/>
+<label for="yourMessage"><b>Your Message</b></label>
 <textarea class="Description" id="yourMessage" name="Description" placeholder="Please enter your message">
 </textarea>
 <input type="button" name="executeButton" class="executeButton" value="Send" onclick="formValidation()" />
@@ -43,39 +45,23 @@
   function formValidation()
   {
     var form=document.getElementById('inputFormContactUs');
-    if(form['yourName'].value)
+    if(form['subject'].value)
     {
-      deHighlight('yourName');
-      if(form['yourEmail'].value)
+      deHighlight('subject');
+      if(form['yourMessage'].value)
       {
-        deHighlight('yourEmail');
-        if(emailValidation())
-        {
-          deHighlight('yourEmail');
-          if(form['yourMessage'].value)
-          {
-            deHighlight('yourMessage');
-            form.submit();
-          }
-          else
-          {
-            highlight('yourMessage');
-          }
-        }
-        else
-        {
-          highlight('yourEmail');
-          form['yourEmail'].value="Please enter a valid E-Mail address";
-        }
+        deHighlight('yourMessage');
+        form.submit();
+
       }
       else
       {
-        highlight('yourEmail');
+        highlight('yourMessage');
       }
     }
     else
     {
-      highlight('yourName');
+      highlight('subject');
     }
   }
 
@@ -91,18 +77,6 @@
       document.getElementById(id).style.color="white";
     }
   
-  function emailValidation()
-   {
-      var format=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      var email=document.getElementById("yourEmail").value;
-      if(email.match(format))
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-   }
+ 
 </script>
 </html>

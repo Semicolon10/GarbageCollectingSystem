@@ -1,9 +1,12 @@
 <?php
+include('session.php');
+?>
+<?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1); 
 error_reporting(E_ALL);
 
-include('session.php');
+
 include('connection.php');
 
 $UserName=$_SESSION['username'];
@@ -12,7 +15,10 @@ if(empty($_POST["PostTopic"]))
 
 		$errorMessage= "Please enter the topic";
     	echo("<script>alert('$errorMessage');</script>");
-    	header("refresh:0;url=createPostPage.php");
+    	if($_SESSION['userType']=='admin')
+			header("refresh:0;url=createPostPageAdmin.php");
+		else
+			header("refresh:0;url=createPostPage.php");
     	unset($errorMessage);
     	
 }
@@ -23,7 +29,10 @@ else
 	{
 			$errorMessage= "Please enter the description";
     		echo("<script>alert('$errorMessage');</script>");
-    		header("refresh:0;url=createPostPage.php");
+    		if($_SESSION['userType']=='admin')
+				header("refresh:0;url=createPostPageAdmin.php");
+			else
+				header("refresh:0;url=createPostPage.php");
     		unset($errorMessage);
     		
 	}
@@ -35,7 +44,10 @@ else
 			{
 				$errorMessage= "Please enter an image";
     			echo("<script>alert('$errorMessage');</script>");
-    			header("refresh:0;url=createPostPage.php");
+    			if($_SESSION['userType']=='admin')
+					header("refresh:0;url=createPostPageAdmin.php");
+				else
+					header("refresh:0;url=createPostPage.php");
     			unset($errorMessage);
     			
 			}
@@ -46,7 +58,10 @@ else
 				{
 					$errorMessage= "Please select the location on the map";
     				echo("<script>alert('$errorMessage');</script>");
-    				header("refresh:0;url=createPostPage.php");
+    				if($_SESSION['userType']=='admin')
+						header("refresh:0;url=createPostPageAdmin.php");
+					else
+						header("refresh:0;url=createPostPage.php");
     				unset($errorMessage);
     				
 				}
@@ -64,12 +79,18 @@ else
 					if(mysqli_query($connection,$insertQuery))
 					{
 						echo "<script>alert('Successfully Published');</script>";
-						header("refresh:0;url=PostsPage.php");
+						if($_SESSION['userType']=='admin')
+							header("refresh:0;url=PostsPageAdmin.php");
+						else
+							header("refresh:0;url=PostsPage.php");
 					}
 					else
 					{	
 						echo "<script>alert('Failed');</script>";
-						header("refresh:50;url=PostsPage.php");
+						if($_SESSION['userType']=='admin')
+							header("refresh:0;url=PostsPageAdmin.php");
+						else
+							header("refresh:0;url=PostsPage.php");
 					}
 					unset($latitude);
 					unset($longitude);

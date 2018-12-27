@@ -9,6 +9,8 @@ if($_SESSION['username']==NULL)
 {
 	echo "<script>alert('Please log in');</script>";
 	header("refresh:0;url=index.php");
+	mysqli_close($connection);
+	exit();
 }
 else if($_SESSION['timeout']+60*60<time())
 {
@@ -16,7 +18,8 @@ else if($_SESSION['timeout']+60*60<time())
 	echo("<script>alert('$message');</script>");
 	header("refresh:0;url=LogOut.php");
 	unset($message);
+	mysqli_close($connection);
+	exit();
 }
-mysqli_close($connection);
 unset($connection);
 ?>

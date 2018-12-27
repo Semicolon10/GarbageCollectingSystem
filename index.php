@@ -1,3 +1,11 @@
+<?php
+session_start();
+if($_SESSION['username']!=NULL)
+{
+  if($_SESSION['timeout']+60*60>time())
+  header("location:WelcomePage.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

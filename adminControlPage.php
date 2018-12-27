@@ -21,8 +21,8 @@ include('session.php');
   
 <div class="navigationbar">
   <a href="WelcomePageAdmin.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
-  <a href="ContactPageAdmin.php">Contact Us</a>
+  <a href="PostsPageAdmin.php">Posts</a>
+  
   <a href="#about">About Us</a>
   <div class="profileMenu">
     <button id="active" class="profileButton"><i class="fa fa-bars"></i></button>
@@ -48,6 +48,12 @@ include('session.php');
 <form>
   <button class="adminsBtn">Admins</button>
 </form>
+<form>
+  <button class="userMessagesBtn">User messages</button>
+</form>
+<form action="leaveAdminship.php" id="leaveAdminForm">
+  <button class="leaveAdminBtn" onclick="leaveAdmin()">Leave adminship</button>
+</form>
 </div>
 			
 	
@@ -55,4 +61,14 @@ include('session.php');
 </div>
 
 </body>
+<script type="text/javascript">
+function leaveAdmin()
+{
+  var form=document.getElementById("leaveAdminForm");
+  if(confirm("Are you sure?"))
+  {
+    form.submit();
+  }
+}
+</script>
 </html>
