@@ -12,7 +12,7 @@ include('session.php');
 </head>
 <body>
 
-<div class="containerContent" style="position: absolute;">
+<div class="containerContent">
 		<h2 style="text-align: center;">Admin Controls</h2>
 
 		
@@ -35,7 +35,20 @@ include('session.php');
     </div>
   </div> 
 </div>
-
+<div id="adminControlButtonsContainer">
+<form>
+  <button class="reportedPostsBtn">Reported Posts</button>
+</form>
+<form>
+  <button class="guestsMessagesBtn">Guests messages</button>
+</form>
+<form>
+  <button class="usersBtn">Users</button>
+</form>
+<form>
+  <button class="adminsBtn">Admins</button>
+</form>
+</div>
 			
 	
 		

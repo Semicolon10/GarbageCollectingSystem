@@ -70,7 +70,7 @@ hr {
 .executeButton {
     background-color: #242f34;
     
-    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+    
     color: white;
     font-size: 16pt; 
     padding: 16px 20px;
@@ -171,8 +171,36 @@ hr {
     background-color: rgba(170,0,0, 0.8);
 }
 
-
-
+.reportedPostsBtn,.guestsMessagesBtn,.usersBtn,.adminsBtn,.createPostBtn,.yourPostsBtn{
+    
+  background-color: #242f34;
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: left;
+    border-radius: 25px;
+}
+.guestsMessagesBtn,.adminsBtn,.createPostBtn{
+  float: right;
+}
+.reportedPostsBtn:hover,.guestsMessagesBtn:hover,.usersBtn:hover,.adminsBtn:hover,.createPostBtn:hover,.yourPostsBtn:hover{
+  background-color: #111;
+}
+#adminControlButtonsContainer{
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 12%;
+  padding-bottom: 28%;
+}
+#postPageBtnContainer{
+  padding-top: 1%;
+  padding-bottom: 80%;
+}
 .navigationbar {
   overflow: hidden;
   background-color: #242f34;

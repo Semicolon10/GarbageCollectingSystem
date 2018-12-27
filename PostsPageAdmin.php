@@ -12,7 +12,7 @@ include('session.php');
 </head>
 <body>
 
-<div class="containerContent" style="position: absolute;">
+<div class="containerContent">
 		<h2 style="text-align: center;">Posts</h2>
 
 		
@@ -35,12 +35,15 @@ include('session.php');
     </div>
   </div> 
 </div>
-<form method="post" action="createPostPageAdmin.php">
-<input type="submit" name="createPost" value="Create a post" class="executeButton" style="width: 49%; float: right;"/>
-</form>
+<div id="postPageBtnContainer">
 <form>
-<input type="button" name="YourPosts" value="Your Posts" class="executeButton" style="width: 49%; float: left;" />	
+<input type="button" name="YourPosts" value="Your Posts" class="yourPostsBtn"/>	
+</form>
+<form method="post" action="createPostPageAdmin.php">
+<input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
 </form>	
+</div>
+</div>
 
 			
 	
