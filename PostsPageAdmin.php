@@ -28,13 +28,14 @@ include('session.php');
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
       <a href="ProfilePageAdmin.php">Account</a>
-      
+      <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
+      <a href="reportPostPageAdmin.php">Report</a>
       
     </div>
   </div> 
 </div>
-<form method="post" action="createPostPage.php">
+<form method="post" action="createPostPageAdmin.php">
 <input type="submit" name="createPost" value="Create a post" class="executeButton" style="width: 49%; float: right;"/>
 </form>
 <form>

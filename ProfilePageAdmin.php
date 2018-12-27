@@ -26,6 +26,7 @@ include('session.php');
       <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
       
+      
     </div>
   </div> 
 </div>
