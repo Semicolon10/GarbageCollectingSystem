@@ -13,10 +13,6 @@ include('session.php');
   <div class="containerContentSpecial">
     <h2 style="text-align: center; color: white;">Create a new post</h2>
 
-    
-    
-
-  
 <div class="navigationbar">
   <a href="WelcomePageAdmin.php">Welcome</a>
   <a class="active" href="PostsPageAdmin.php">Posts</a>
