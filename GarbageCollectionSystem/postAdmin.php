@@ -54,6 +54,9 @@ if (isset($_GET['id']))
 				echo "<div id='postcontainer'>";
 				echo "<h1>".$row['PostTopic']."</h1>";
 				echo "<hr>";
+				$ImageContent=$row['ImageContent'];
+				$ImageContent=base64_encode($ImageContent);
+				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>';
 				echo "<h2>".$row['PostDescription']."</h2>";
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";

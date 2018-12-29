@@ -31,15 +31,15 @@ include('connection.php');
   </div> 
 </div>
 <div id="postPageBtnContainer">
-<form>
-<input type="button" name="YourPosts" value="Your Posts" class="yourPostsBtn"/> 
+<form method="post" action="yourPostsPage.php">
+<input type="submit" name="YourPosts" value="Your Posts" class="yourPostsBtn"/> 
 </form>
 <form method="post" action="createPostPageAdmin.php">
 <input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
 </form> 
 <br/><br/><br/><br/>
 <?php
-
+$user=$_SESSION['username'];
 $result = mysqli_query($connection,"SELECT * FROM Posts ORDER BY PostNumber DESC");
 echo "<br>";
 echo "<div id='tablecontainer'>";
@@ -58,7 +58,9 @@ echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 echo "<td><a href='post.php?id=$id'>" . $row['PostTopic'] . "</td>";
 
-
+$ImageContent=$row['ImageContent'];
+$ImageContent=base64_encode($ImageContent);
+echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
