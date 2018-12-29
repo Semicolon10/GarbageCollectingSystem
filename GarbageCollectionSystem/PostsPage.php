@@ -37,24 +37,10 @@ include('connection.php');
 <form method="post" action="createPostPageAdmin.php">
 <input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
 </form> 
-</div>
-<br>
-<br>
-<br>
-
-</body>
-
-<script type="text/javascript">
-  function redirect()
-  {
-    window.open("reportPostPage.php");
-  }
-</script>
-</html>
-
+<br/><br/><br/><br/>
 <?php
 
-$result = mysqli_query($connection,"SELECT * FROM posts ORDER BY PostNumber DESC");
+$result = mysqli_query($connection,"SELECT * FROM Posts ORDER BY PostNumber DESC");
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
@@ -81,3 +67,19 @@ echo "</table>";
 echo "</div>";
 
 ?>
+
+</div>
+<br>
+<br>
+<br>
+
+</body>
+
+<script type="text/javascript">
+  function redirect()
+  {
+    window.open("reportPostPage.php");
+  }
+</script>
+</html>
+

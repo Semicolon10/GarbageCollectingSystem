@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+include('connection.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,7 +43,38 @@ include('session.php');
 <form method="post" action="createPostPageAdmin.php">
 <input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
 </form>	
+<br/><br/><br/><br/>
+<?php
+
+$result = mysqli_query($connection,"SELECT * FROM Posts ORDER BY PostNumber DESC");
+echo "<br>";
+echo "<div id='tablecontainer'>";
+echo "<table id='table'>
+<tr>
+<th>User</th>
+<th>Post Topic</th>
+</tr>";
+
+while($row = mysqli_fetch_array($result))
+{
+  @$id = $row['PostNumber'];
+echo "<tr>";
+echo "<td id='pn'>" . $row['UserName'] . "</td>";
+
+
+echo "<td><a href='postAdmin.php?id=$id'>" . $row['PostTopic'] . "</td>";
+
+
+
+//echo "<td><img src='images/".$row['ImageContent']."'></td>";
+echo "</tr>";
+}
+echo "</table>";
+echo "</div>";
+
+?>
 </div>
+
 </div>
 
 			

@@ -4,16 +4,16 @@ include('session.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact Us</title>
+  <title>Contact Us</title>
+  <link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="containerContent">
-		<h2 style="text-align: center;">Contact Us</h2>
-		
+    <h2 style="text-align: center;">Contact Us</h2>
+    
 <div class="navigationbar">
   <a href="WelcomePage.php">Welcome</a>
   <a href="PostsPage.php">Posts</a>
@@ -25,15 +25,13 @@ include('session.php');
       <a href="ProfilePage.php">Account</a>
       
       <a href="LogOut.php">Log Out</a>
-      
     </div>
   </div> 
 </div>
 <form action="Contact.php" method="post" id="inputFormContactUs">
-
-<label for="subject"><b>Subject</b></label>
-<input type="text" name="subject" id="subject" placeholder="Please enter a subject"/>
-<label for="yourMessage"><b>Your Message</b></label>
+<label for="yourName"><b>Subject</b></label>
+<input type="text" name="subject" id="subject" placeholder="Please enter your subject"/>
+<label for="yourEmail"><b>Your Message</b></label>
 <textarea class="Description" id="yourMessage" name="Description" placeholder="Please enter your message">
 </textarea>
 <input type="button" name="executeButton" class="executeButton" value="Send" onclick="formValidation()" />
@@ -52,7 +50,6 @@ include('session.php');
       {
         deHighlight('yourMessage');
         form.submit();
-
       }
       else
       {
@@ -77,6 +74,20 @@ include('session.php');
       document.getElementById(id).style.color="white";
     }
   
- 
+  function emailValidation()
+   {
+      var format=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var email=document.getElementById("yourEmail").value;
+      if(email.match(format))
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+   }
 </script>
 </html>
+
+

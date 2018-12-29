@@ -49,7 +49,7 @@ if (isset($_GET['id']))
 	
 	if ($_GET["id"]) 
 	{
-		$result = mysqli_query($connection,"SELECT * FROM posts WHERE PostNumber='".$_GET['id']."'");
+		$result = mysqli_query($connection,"SELECT * FROM Posts WHERE PostNumber='".$_GET['id']."'");
 
 		if (mysqli_num_rows($result)) 
 		{

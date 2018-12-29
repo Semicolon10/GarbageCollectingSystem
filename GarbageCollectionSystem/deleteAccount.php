@@ -37,32 +37,48 @@ else
 		$deleteQueryComplaints="DELETE FROM PostComplaints WHERE UserName='$user'";
 		$deleteQueryPosts="DELETE from Posts where UserName='$user'";
 		$deleteQuery="DELETE from UserDetails where UserName='$user'";
+		$deleteQueryMessages="DELETE from UserMessages where UserName='$user'";
 		$result=mysqli_query($connection,$selectQuery);
 		$encryptedPassword=mysqli_fetch_assoc($result);
 		if(password_verify($password,$encryptedPassword['password']))
 		{
-			if(mysqli_query($connection,$deleteQueryComplaints))
+			if(mysqli_query($connection,$deleteQueryMessages))
 			{
-				if(mysqli_query($connection,$deleteQueryPosts))
+				if(mysqli_query($connection,$deleteQueryComplaints))
 				{
-					if(mysqli_query($connection,$deleteQuery))
+					if(mysqli_query($connection,$deleteQueryPosts))
 					{
-						$message= "Account Deleted Successfully";
-						echo "<script type='text/javascript'>alert('$message');</script>";
-						header("refresh:0; url=LogOut.php");
-						unset($message);
+						if(mysqli_query($connection,$deleteQuery))
+						{
+							$message= "Account Deleted Successfully";
+							echo "<script type='text/javascript'>alert('$message');</script>";
+							header("refresh:0; url=LogOut.php");
+							unset($message);
+						}
+						else
+						{
+							$message= "Unable to delete the account.";
+							echo "<script type='text/javascript'>alert('$message');</script>";
+
+							if($_SESSION['userType']=='admin')
+								header("refresh:0;url=ProfilePageAdmin.php");
+							else
+								header("refresh:0;url=ProfilePage.php");
+							unset($message);
+						}
+
 					}
 					else
 					{
 						$message= "Unable to delete the account.";
 						echo "<script type='text/javascript'>alert('$message');</script>";
+
 						if($_SESSION['userType']=='admin')
-							header("refresh:0;url=ProfilePageAdmin.php");
-						else
-							header("refresh:0;url=ProfilePage.php");
+								header("refresh:0;url=ProfilePageAdmin.php");
+							else
+								header("refresh:0;url=ProfilePage.php");
 						unset($message);
 					}
-
 				}
 				else
 				{
@@ -77,7 +93,7 @@ else
 			}
 			else
 			{
-					$message= "Unable to delete the account.";
+				$message= "Unable to delete the account.";
 					echo "<script type='text/javascript'>alert('$message');</script>";
 					if($_SESSION['userType']=='admin')
 							header("refresh:0;url=ProfilePageAdmin.php");
