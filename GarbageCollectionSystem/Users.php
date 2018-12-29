@@ -36,40 +36,29 @@ include('connection.php');
     </div>
   </div> 
 </div>
-<div id="postPageBtnContainer">
-<form method="post" action="yourPostsPageAdmin.php">
-<input type="submit" name="YourPosts" value="Your Posts" class="yourPostsBtn"/>	
-</form>
-<form method="post" action="createPostPageAdmin.php">
-<input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
-</form>	
-<br/><br/><br/><br/>
+
 <?php
 
-$result = mysqli_query($connection,"SELECT * FROM Posts ORDER BY PostNumber DESC");
+$result = mysqli_query($connection,"SELECT * FROM UserDetails ORDER BY UserName ASC");
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
 <tr>
-<th>Post no</th>
-<th>User</th>
-<th>Post Topic</th>
-<th>Image</th>
+<th>User Name</th>
+<th>Email</th>
+<th>Contact Number</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
 echo "<tr>";
-echo "<td>".$row['PostNumber']."</td>";
-echo "<td id='pn'>" . $row['UserName'] . "</td>";
+echo "<td>".$row['UserName']."</td>";
+echo "<td id='pn'>" . $row['Email'] . "</td>";
 
 
-echo "<td><a href='postAdmin.php?id=$id'>" . $row['PostTopic'] . "</td>";
+echo "<td>" . $row['ContactNumber'] . "</td>";
 
-$ImageContent=$row['ImageContent'];
-$ImageContent=base64_encode($ImageContent);
-echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
@@ -78,7 +67,7 @@ echo "</table>";
 echo "</div>";
 
 ?>
-</div>
+
 
 </div>
 

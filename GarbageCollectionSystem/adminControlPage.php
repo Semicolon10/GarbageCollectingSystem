@@ -36,20 +36,19 @@ include('session.php');
   </div> 
 </div>
 <div id="adminControlButtonsContainer">
-<form>
-  <button class="reportedPostsBtn">Reported Posts</button>
+<form method="post" action="ReportedPosts.php">
+  <button class="reportedPostsBtn" onclick="submit()">Reported Posts</button>
+<form method="post" action="GuestMessages.php">
+  <button class="guestsMessagesBtn" onclick="submit()">Guests messages</button>
 </form>
-<form>
-  <button class="guestsMessagesBtn">Guests messages</button>
+<form method="post" action="Users.php">
+  <button class="usersBtn" onclick="submit()">Users</button>
 </form>
-<form>
-  <button class="usersBtn">Users</button>
+<form method="post" action="Admins.php">
+  <button class="adminsBtn" onclick="submit()">Admins</button>
 </form>
-<form>
-  <button class="adminsBtn">Admins</button>
-</form>
-<form>
-  <button class="userMessagesBtn">User messages</button>
+<form method="post" action="UserMessages.php">
+  <button class="userMessagesBtn" onclick="submit()">User messages</button>
 </form>
 <form action="leaveAdminship.php" id="leaveAdminForm">
   <button class="leaveAdminBtn" onclick="leaveAdmin()">Leave adminship</button>

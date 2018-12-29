@@ -52,7 +52,8 @@ if (isset($_GET['id']))
 			while ($row = mysqli_fetch_assoc($result)) 
 			{
 				echo "<div id='postcontainer'>";
-				echo "<h1>".$row['PostTopic']."</h1>";
+				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
+
 				echo "<hr>";
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
