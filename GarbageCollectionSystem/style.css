@@ -205,7 +205,7 @@ hr {
 }
 #postPageBtnContainer{
   padding-top: 1%;
-  padding-bottom: 80%;
+  padding-bottom: 1%;
 }
 .navigationbar {
   overflow: hidden;
@@ -543,3 +543,42 @@ text-align: center;
 margin-bottom: 0%;
 }
 /* css for uploading post*/
+
+#tablecontainer{
+  margin-left:10%; 
+  margin-right:10%;
+
+  padding: 2%;
+
+  background-color: white;
+  color: black;
+  table-layout: fixed;
+}
+
+#table{
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+}
+td{
+  padding: 1%;
+  border-radius: 0;
+  border: 1px solid #ddd;
+}
+th{
+  padding: 1%;
+  background-color: red;
+  border-radius: 0;
+}
+
+#postcontainer{
+  margin-left:10%; 
+  margin-right:10%;
+  background-color: white;
+  color: black;
+  table-layout: fixed;
+  padding: 1%;
+  padding-left: 5%;
+}

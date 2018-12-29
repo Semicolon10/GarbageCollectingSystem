@@ -30,14 +30,6 @@ include('connection.php');
     </div>
   </div> 
 </div>
-<div id="postPageBtnContainer">
-<form>
-<input type="button" name="YourPosts" value="Your Posts" class="yourPostsBtn"/> 
-</form>
-<form method="post" action="createPostPageAdmin.php">
-<input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
-</form> 
-</div>
 <br>
 <br>
 <br>
@@ -51,33 +43,38 @@ include('connection.php');
   }
 </script>
 </html>
-
 <?php
-
-$result = mysqli_query($connection,"SELECT * FROM posts ORDER BY PostNumber DESC");
-echo "<br>";
-echo "<div id='tablecontainer'>";
-echo "<table id='table'>
-<tr>
-<th>User</th>
-<th>Post Topic</th>
-</tr>";
-
-while($row = mysqli_fetch_array($result))
+if (isset($_GET['id'])) 
 {
-  @$id = $row['PostNumber'];
-echo "<tr>";
-echo "<td id='pn'>" . $row['UserName'] . "</td>";
+	
+	if ($_GET["id"]) 
+	{
+		$result = mysqli_query($connection,"SELECT * FROM posts WHERE PostNumber='".$_GET['id']."'");
 
+		if (mysqli_num_rows($result)) 
+		{
+			while ($row = mysqli_fetch_assoc($result)) 
+			{
+				echo "<div id='postcontainer'>";
+				echo "<h1>".$row['PostTopic']."</h1>";
+				echo "<hr>";
+				echo "<h2>".$row['PostDescription']."</h2>";
+				
+				echo "<right><h5>by ".$row['UserName']."</h5></right>";
 
-echo "<td><a href='post.php?id=$id'>" . $row['PostTopic'] . "</td>";
+				echo "<hr>";
 
+				//echo "<h3> on ".$row['date']."</h3>";
 
-
-//echo "<td><img src='images/".$row['ImageContent']."'></td>";
-echo "</tr>";
+				//".$row['username']."</a>
+				echo "</div>";
+			}
+		}
+			else
+			{
+				echo "topic not found";
+			}
+	}
+	
 }
-echo "</table>";
-echo "</div>";
-
 ?>
