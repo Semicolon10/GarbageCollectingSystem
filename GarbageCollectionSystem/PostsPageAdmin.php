@@ -51,14 +51,17 @@ echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
 <tr>
+<th>Post no</th>
 <th>User</th>
 <th>Post Topic</th>
+<th>Image</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
 echo "<tr>";
+echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 
