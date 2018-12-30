@@ -50,7 +50,7 @@ if (isset($_GET['id']))
 	if ($_GET["id"]) 
 	{
 		$result = mysqli_query($connection,"SELECT * FROM Posts WHERE PostNumber='".$_GET['id']."'");
-
+		$id=$_GET['id'];
 		if (mysqli_num_rows($result)) 
 		{
 			while ($row = mysqli_fetch_assoc($result)) 
@@ -64,7 +64,7 @@ if (isset($_GET['id']))
 				echo "<h2>".$row['PostDescription']."</h2>";
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
-
+				echo "<td><a href='reportPostPage.php?id=$id'>" . "Report" . "</td>";
 				echo "<hr>";
 
 				//echo "<h3> on ".$row['date']."</h3>";

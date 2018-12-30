@@ -25,6 +25,8 @@ if(empty($_POST["PostTopic"]))
 else
 {
 	$PostTopic=$_POST["PostTopic"]; 
+	$PostTopic=stripslashes($PostTopic);
+	$PostTopic=mysqli_real_escape_string($connection,$PostTopic);
 	if(empty($_POST["Description"]))
 	{
 			$errorMessage= "Please enter the description";
@@ -39,7 +41,8 @@ else
 	else
 	{
 			$PostDescription=$_POST["Description"];
-		
+			$PostDescription=stripslashes($PostDescription);
+			$PostDescription=mysqli_real_escape_string($connection,$PostDescription);
 			if(empty($_FILES["myimage"]["name"]))
 			{
 				$errorMessage= "Please enter an image";
@@ -87,10 +90,11 @@ else
 					else
 					{	
 						echo "<script>alert('Failed');</script>";
+						echo mysqli_error($connection);
 						if($_SESSION['userType']=='admin')
-							header("refresh:0;url=PostsPageAdmin.php");
+							header("refresh:50;url=PostsPageAdmin.php");
 						else
-							header("refresh:0;url=PostsPage.php");
+							header("refresh:50;url=PostsPage.php");
 					}
 					unset($latitude);
 					unset($longitude);

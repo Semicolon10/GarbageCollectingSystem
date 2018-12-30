@@ -34,7 +34,7 @@ include('connection.php');
 <form method="post" action="yourPostsPage.php">
 <input type="submit" name="YourPosts" value="Your Posts" class="yourPostsBtn"/> 
 </form>
-<form method="post" action="createPostPageAdmin.php">
+<form method="post" action="createPostPage.php">
 <input type="submit" name="createPost" value="Create a post" class="createPostBtn" />
 </form> 
 <br/><br/><br/><br/>
@@ -49,6 +49,7 @@ echo "<table id='table'>
 <th>User</th>
 <th>Post Topic</th>
 <th>Image</th>
+<th></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -64,6 +65,7 @@ echo "<td><a href='post.php?id=$id'>" . $row['PostTopic'] . "</td>";
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
+echo "<td><a href='reportPostPage.php?id=$id'>" . "Report" . "</td>";
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";

@@ -47,6 +47,7 @@ echo "<table id='table'>
 <th>User Name</th>
 <th>Email</th>
 <th>Contact Number</th>
+<th></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -56,11 +57,12 @@ echo "<tr>";
 echo "<td>".$row['UserName']."</td>";
 echo "<td id='pn'>" . $row['Email'] . "</td>";
 
-
+$UserName=$row['UserName'];
 echo "<td>" . $row['ContactNumber'] . "</td>";
+echo "<td><a href='deleteAccountAdmin.php?UserName=$UserName'>" . "Remove" . "</td>";
 
 
-//echo "<td><img src='images/".$row['ImageContent']."'></td>";
+
 echo "</tr>";
 }
 echo "</table>";

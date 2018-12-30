@@ -91,3 +91,11 @@ include('session.php');
 
 </script>
 </html>
+<?php
+if(isset($_GET['id']))
+{
+  $postNumber=$_GET['id'];
+  echo "<script>document.getElementById('postNumber').value=$postNumber</script>";
+}
+
+?>

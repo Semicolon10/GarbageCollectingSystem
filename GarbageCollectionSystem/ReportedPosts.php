@@ -55,7 +55,7 @@ while($row = mysqli_fetch_array($result))
   @$id = $row['PostNumber'];
 echo "<tr>";
 echo "<td>".$row['UserName']."</td>";
-echo "<td id='pn'>" . $row['PostNumber'] . "</td>";
+echo "<td id='pn'><a href='postAdmin.php?id=$id'>" . $row['PostNumber'] . "</td>";
 
 
 echo "<td>" . $row['ComplaintSubject'] . "</td>";

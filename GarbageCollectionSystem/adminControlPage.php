@@ -38,6 +38,7 @@ include('session.php');
 <div id="adminControlButtonsContainer">
 <form method="post" action="ReportedPosts.php">
   <button class="reportedPostsBtn" onclick="submit()">Reported Posts</button>
+</form>
 <form method="post" action="GuestMessages.php">
   <button class="guestsMessagesBtn" onclick="submit()">Guests messages</button>
 </form>
