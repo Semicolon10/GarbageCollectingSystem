@@ -44,7 +44,7 @@ if(!empty( $_POST['userName'] ) )
                 }
                 else
                 {
-                    $errorMessage="Your username or password is incorrect. Please try again";
+                    $errorMessage="Your username or password is incorrect. Please try again. Check whether the Caps-Lock is on.";
                     echo "<script type='text/javascript'>alert('$errorMessage');</script>";
                     header("refresh:0; url=index.php");
                     unset($errorMessage);

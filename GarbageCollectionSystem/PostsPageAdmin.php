@@ -2,6 +2,7 @@
 include('session.php');
 include('connection.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +62,7 @@ echo "<table id='table'>
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
+
 echo "<tr>";
 echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
