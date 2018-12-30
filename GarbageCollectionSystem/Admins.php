@@ -14,7 +14,7 @@ include('connection.php');
 <body>
 
 <div class="containerContent">
-		<h2 style="text-align: center;">Posts</h2>
+		<h2 style="text-align: center;">Admins</h2>
 
 		
 		

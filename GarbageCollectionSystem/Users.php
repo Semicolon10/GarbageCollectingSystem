@@ -14,7 +14,7 @@ include('connection.php');
 <body>
 
 <div class="containerContent">
-		<h2 style="text-align: center;">Posts</h2>
+		<h2 style="text-align: center;">Users</h2>
 
 		
 		
@@ -39,7 +39,7 @@ include('connection.php');
 
 <?php
 
-$result = mysqli_query($connection,"SELECT * FROM UserDetails ORDER BY UserName ASC");
+$result = mysqli_query($connection,"SELECT * FROM UserDetails WHERE UserType='normal' ORDER BY UserName ASC");
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
@@ -47,6 +47,7 @@ echo "<table id='table'>
 <th>User Name</th>
 <th>Email</th>
 <th>Contact Number</th>
+<th></th>
 <th></th>
 </tr>";
 
@@ -60,6 +61,7 @@ echo "<td id='pn'>" . $row['Email'] . "</td>";
 $UserName=$row['UserName'];
 echo "<td>" . $row['ContactNumber'] . "</td>";
 echo "<td><a href='deleteAccountAdmin.php?UserName=$UserName'>" . "Remove" . "</td>";
+echo "<td><a href='promoteToAdmin.php?UserName=$UserName'>" . "Promote to Admin" . "</td>";
 
 
 
