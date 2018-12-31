@@ -19,11 +19,11 @@ include('session.php');
     
 
   
-<div class="navigationbar">
-  <a class="active" href="WelcomePage.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
-  <a href="ContactPage.php">Contact Us</a>
-  <a href="#about">About Us</a>
+<div class="navigationbar" id="navbar">
+  <a class="active" href="WelcomePage.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPage.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a href="ContactPage.php"><i class="fa fa-phone-square"></i> Contact Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
@@ -159,8 +159,11 @@ function showSlides() {
 }
 </script>
 
-
-
 </body>
 </html>
 
+<?php 
+
+include('navscript.php');
+
+ ?>

@@ -12,13 +12,13 @@ include('session.php');
 </head>
 <body>
 <div class="containerContent">
-    <h2 style="text-align: center;">Contact Us</h2>
+    <h2 style="text-align: center;"><i class="fa fa-phone-square"></i> Contact Us</h2>
     
-<div class="navigationbar">
-  <a href="WelcomePage.php">Welcome</a>
-  <a href="PostsPage.php">Posts</a>
-  <a class="active" href="ContactPage.php">Contact Us</a>
-  <a href="#about">About Us</a>
+<div class="navigationbar" id="navbar">
+  <a href="WelcomePage.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPage.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a class="active" href="ContactPage.php"><i class="fa fa-phone-square"></i> Contact Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
@@ -90,4 +90,8 @@ include('session.php');
 </script>
 </html>
 
+<?php 
 
+include('navscript.php');
+
+ ?>

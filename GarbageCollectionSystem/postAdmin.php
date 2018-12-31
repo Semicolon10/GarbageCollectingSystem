@@ -19,7 +19,7 @@ include('connection.php');
 <div class="navigationbar">
   <a href="WelcomePageAdmin.php">Welcome</a>
   <a class="active" href="PostsPageAdmin.php">Posts</a>
-  
+  <a href="ContactPageAdmin.php">Contact Us</a>
   <a href="#about">About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
@@ -36,6 +36,7 @@ include('connection.php');
 <br>
 
 </body>
+
 
 </html>
 <?php
@@ -57,7 +58,6 @@ if (isset($_GET['id']))
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
 				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>';
-				
 				echo "<h2>".$row['PostDescription']."</h2>";
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";

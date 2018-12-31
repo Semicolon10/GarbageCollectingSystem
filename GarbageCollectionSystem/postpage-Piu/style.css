@@ -3,7 +3,6 @@ body {
        
   background-image: url("Images/colombo.jpg");
   background-size: cover;
-  
 }
 * {
     box-sizing: border-box;
@@ -11,34 +10,41 @@ body {
 }
 
 .containerContent {
-    background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  /*background-color: white;*/
     padding: 16px;
     top: 1%;
     right: 1%;
     bottom: 1%;
     left: 1%;
+    
     overflow: hidden;
     position: relative;
     color: white;
+    
     max-width: 98%;
+    min-width: 100px;
     max-height: 100%;
 
 
 }
 
 .containerContentSpecial{
-    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  /*background-color: white;*/
     padding: 16px;
     top: 1%;
     right: 1%;
     bottom: 1%;
     left: 1%;
-    overflow: hidden;
-    position: relative; 
     
+    overflow: hidden;
+    position: absolute;
+    color: white;
     max-width: 98%;
+    min-width: 100px;
     max-height: 100%;
     
 }
@@ -52,6 +58,7 @@ input[type=text], input[type=password] {
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
+    /*background: #f1f1f1;*/
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
     border-radius: 25px;
@@ -70,7 +77,7 @@ hr {
 .executeButton {
     background-color: #242f34;
     
-    
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
     color: white;
     font-size: 16pt; 
     padding: 16px 20px;
@@ -85,24 +92,6 @@ hr {
 
 .executeButton:hover {
     background-color: #111;
-}
-
-.changePasswordWindow{
-  
-  background-color: #242f34;
-    
-    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
-    color: white;
-    font-size: 16pt; 
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    
-    opacity: 1;
-    float: bottom;
-    border-radius: 25px;
-    width:50%;
 }
 
 .executeButtonChange{
@@ -127,7 +116,7 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 49.5%;
     opacity: 1;
     float: right;
     border-radius: 25px;
@@ -144,7 +133,7 @@ hr {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 49.5%;
     opacity: 1;
     float: right;
     border-radius: 25px;
@@ -171,42 +160,46 @@ hr {
     background-color: rgba(170,0,0, 0.8);
 }
 
-.reportedPostsBtn,.guestsMessagesBtn,.usersBtn,.adminsBtn,.createPostBtn,.yourPostsBtn,.userMessagesBtn,.leaveAdminBtn{
-    
+
+/*
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: #242f34;
-    color: white;
-    font-size: 16pt; 
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 49.5%;
-    opacity: 1;
-    float: left;
-    border-radius: 25px;
-}
-.guestsMessagesBtn,.adminsBtn,.createPostBtn,.leaveAdminBtn{
+  position: relative;
   float: right;
+  width: 100%;
 }
-.leaveAdminBtn{
-  background-color: red;
+
+li {
+  float: left;
 }
-.leaveAdminBtn:hover{
-  background-color: #ff5500;
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-.reportedPostsBtn:hover,.guestsMessagesBtn:hover,.usersBtn:hover,.adminsBtn:hover,.createPostBtn:hover,.yourPostsBtn:hover,.userMessagesBtn:hover{
+
+li a:hover:not(.active) {
   background-color: #111;
 }
-#adminControlButtonsContainer{
-  padding-left: 20%;
-  padding-right: 20%;
-  padding-top: 11%;
-  padding-bottom: 29%;
+
+.active {
+  background-color: #ff0000;
 }
-#postPageBtnContainer{
-  padding-top: 1%;
-  padding-bottom: 10%;
+#SignUpList{
+    float: right;
 }
+#LogInList{
+    float: right;
+}
+*/
+
 .navigationbar {
   overflow: hidden;
   background-color: #242f34;
@@ -276,18 +269,6 @@ hr {
   color: #242f34;
 
 }
-/*.......Making the navigation bar stick to the top..........*/
-
-
-/*.sticky {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  width: 94.5%;
-}*/
-
-
-/*.............................................................*/
 
 .profileMenu:hover .profileMenu-content {
   display: block;
@@ -307,38 +288,6 @@ hr {
 a{
   color: red;
 }
-#inputFormContactUs{
-  margin-top: 5%;
-}
-
-.Description{
-  overflow: hidden;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-  width: 100%;
-  height: 180px;
-  border: none;
-  border-radius:30px;
-  padding:2%;
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;  
-  align-content: left;  
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(255,255,255, 0.8); /* Black w/opacity/see-through */
-  color: black;
- 
-}
-.Description:focus{
-    color: black;
-    background-color: #fffda6;
-    outline: none;
-  }
-  #yourMessageUser{
-    height: 250px;
-  }
 
 /*----------------------------------------SLIDE SHOW--------------------------------*/
 
@@ -441,35 +390,33 @@ a{
   from {opacity: .4} 
   to {opacity: 1}
 }
-/*..............END OF SLIDE SHOW CSS.................*/
-
+/*.......................END of Slide Show CSS...............*/
 
 
 /* css for uploading post*/
 .uploadforam{
   display: inline-block;
-  margin-top: 5%;
+  margin: auto;
   box-align: center;
-  width: 40%;
-  float: right;
-
 }
 
-
-.PostTopic{
+.status{
   overflow: hidden;
   display: block;
+  resize:none;
+  margin-top:40px;
   margin-left: auto;
   margin-right: auto;
-
-  width: 100%;
-  
-  border-radius:30px;
+  height: 40%;
+  width: 60%;
+  border: 1px solid rgb(216, 25, 25);
+  border-radius:15px;
   padding:2%;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;  
-  align-content: left;  
+  align-content: center;  
 }
+
 .fileToUpload,.post{
   background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
   background-color: #242f34;
@@ -480,153 +427,12 @@ a{
   border: none;
   cursor: pointer;
   opacity: 1;
-  /*float: left;*/
-  border-radius: 30px;
+  float: left;
+  border-radius: 25px;
   text-decoration: none;
-
-}
-.fileToUpload{
-  width: 100%;
-
-}
-.post{
-  width: 100%;
-
 }
 
 .fileToUpload:hover, .post:hover{
   background-color: #111;
 }
 
-#latitude{
-background-color: #242f34;
-width: 49%; 
-float: left; 
-font-size: 16pt; 
-color: white; 
-text-align: center;
-}
-#longitude{
-background-color: #242f34; 
-width: 49%; 
-float: right; 
-font-size: 16pt; 
-color: white; 
-text-align: center;
-}
-#map{
-  width:59%;
-  height:580px; 
-  float: left;
-  margin-top: 5%; 
-  margin-bottom: 5%;
-}
-
-#PostDescriptionParagraph{
-color: red; 
-font-weight: bold; 
-font-size: 12pt; 
-text-align: center; 
-margin-top: 0%; 
-margin-bottom: 1%;
-}
-#PostImageParagraph
-{
-color: red; 
-font-weight: bold; 
-font-size: 12pt; 
-text-align: center;
-margin-bottom: 0%;
-}
-#PostLocationParagraph
-{
-color: red; 
-font-weight: bold; 
-font-size: 12pt; 
-text-align: center; 
-margin-bottom: 0%;
-}
-/* css for uploading post*/
-
-#tablecontainer{
-  margin-left:10%; 
-  margin-right:10%;
-
-  padding: 2%;
-
-  background-color: white;
-  color: black;
-  table-layout: fixed;
-}
-
-#table{
-  border-collapse: collapse;
-  table-layout: auto;
-  width: 100%;
-  text-align: center;
-  border-radius: 0;
-}
-td{
-  padding: 1%;
-  border-radius: 0;
-  border: 1px solid #ff8080;
-}
-th{
-  padding: 1%;
-  background-color: red;
-  border-radius: 10px 10px 0px 0px;
-}
-
-#postcontainer{
-  margin-left:10%; 
-  margin-right:10%;
-  background-color: white;
-  color: black;
-  table-layout: fixed;
-  padding: 1%;
-  padding-left: 5%;
-}
-
-#navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Navbar links */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-  z-index: 1;
-}
-
-/* Page content */
-.content {
-  padding: 16px;
-}
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 0;
-  padding: 0;
-  z-index: 1;
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
-}
-
-#postmap{
-  position: absolute;
-  top: 150px;
-  right: 0;
-}
