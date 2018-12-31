@@ -1,6 +1,16 @@
 <?php
 include('session.php');
 include('connection.php');
+$UserName=$_SESSION['username'];
+$selectQuery="SELECT UserType from UserDetails WHERE UserName='$UserName'";
+$result=mysqli_query($connection,$selectQuery);
+$array=mysqli_fetch_assoc($result);
+if($array['UserType']=='captain')
+{
+  header("location:PostsPageCaptain.php");
+  mysqli_close($connection);
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,8 +28,8 @@ include('connection.php');
 
 		
 <div class="navigationbar" id="navbar">
-  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
-  <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a  href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a class="active" href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
@@ -49,7 +59,8 @@ echo "<table id='table'>
 <th>User</th>
 <th>Post Topic</th>
 <th>Image</th>
-<th></th>
+<th>Priority Level</th>
+<th><i class='fa fa-question-circle'></i></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -65,7 +76,8 @@ echo "<td><a href='postAdmin.php?id=$id'>" . $row['PostTopic'] . "</td>";
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
 
-echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
+echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
+echo "<td>".$row['PriorityLevel']."</td>";
 echo "<td><a href='deletePost.php?id=$id'>" . "Delete" . "</td>";
 
 

@@ -113,6 +113,7 @@ if (isset($_GET['id']))
 				echo "<br>";
 				echo "<a href='PostsPage.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
 				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
+				echo "<h2 style='color:red;'>".$row['PriorityLevel']." priority"."</h2>";
 				echo "<hr>";
 
 				//echo "<div id='postmap' style='width:50%;height:400px;'></div>";

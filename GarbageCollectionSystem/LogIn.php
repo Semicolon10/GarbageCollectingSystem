@@ -23,7 +23,7 @@ if(!empty( $_POST['userName'] ) )
 
                 if(password_verify($password, $hashedPassword['password']))
                 { 
-                    $selectQuery="SELECT * from UserDetails where UserName='$userName' AND UserType='admin'";
+                    $selectQuery="SELECT * from UserDetails where UserName='$userName' AND UserType='admin' OR UserType='captain'";
                     $result=mysqli_query($connection,$selectQuery);
                     unset($selectQuery);
                     if(mysqli_num_rows($result)>0)

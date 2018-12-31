@@ -21,11 +21,11 @@ include('connection.php');
 
   
 <div class="navigationbar" id="navbar">
-  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
-    <button class="profileButton"><i class="fa fa-bars"></i></button>
+    <button class="profileButton" id="active"> <i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
         <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
@@ -46,6 +46,7 @@ echo "<table id='table'>
 <th>Contact Number</th>
 <th></th>
 <th></th>
+
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -59,6 +60,7 @@ $UserName=$row['UserName'];
 echo "<td>" . $row['ContactNumber'] . "</td>";
 echo "<td><a href='deleteAccountAdmin.php?UserName=$UserName'>" . "Remove" . "</td>";
 echo "<td><a href='promoteToAdmin.php?UserName=$UserName'>" . "Promote to Admin" . "</td>";
+
 
 
 
