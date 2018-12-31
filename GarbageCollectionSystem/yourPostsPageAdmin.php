@@ -17,23 +17,17 @@ include('connection.php');
 		<h2 style="text-align: center;">Posts</h2>
 
 		
-		
-
-  
-<div class="navigationbar">
-  <a href="WelcomePageAdmin.php">Welcome</a>
-  <a class="active" href="PostsPageAdmin.php">Posts</a>
-  
-  <a href="#about">About Us</a>
+<div class="navigationbar" id="navbar">
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePageAdmin.php">Account</a>
+        <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
-      
-      
-    </div>
+   </div>
   </div> 
 </div>
 

@@ -13,18 +13,17 @@
 		<h2 style="text-align: center;">Password Recovery</h2>
 
 
-  <div class="navigationbar">
-  <a href="WelcomePageGuest.php">Welcome</a>
- `<a href="ContactPageGuest.php">Contact Us</a>
-  <a href="#about">About Us</a>
-  <div id="active" class="profileMenu">
+ <div class="navigationbar" id="navbar">
+  <a class="active" href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
+  
+  <a href="ContactPageGuest.php"><i class="fa fa-phone-square"></i> Contact Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+  <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      
-      <a href="index.php">Log In</a>
-      
-      <a href="SignUpPage.php">Sign Up</a>
-    </div>
+        <a href="index.php">Log In</a>
+       <a href="SignUpPage.php">Sign Up</a>
+   </div>
   </div> 
 </div>
  <br/><br/>

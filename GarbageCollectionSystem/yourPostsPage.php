@@ -14,19 +14,22 @@ include('connection.php');
 <body>
 
 <div class="containerContent">
-		<h2 style="text-align: center;">Posts</h2>
+		<h2 style="text-align: center; color: white;"><i class="fa fa-pencil-square"></i> Your posts</h2>
 
-<div class="navigationbar">
-  <a href="WelcomePage.php">Welcome</a>
-  <a class="active" href="PostsPage.php">Posts</a>
-  <a href="ContactPage.php">Contact Us</a>
-  <a href="#about">About Us</a>
-  <div class="profileMenu">
+    
+    
+
+  
+<div class="navigationbar" id="navbar">
+  <a href="WelcomePage.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPage.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a href="ContactPage.php"><i class="fa fa-phone-square"></i> Contact Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+  <div class="profileMenu" id="active">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
       <a href="ProfilePage.php">Account</a>
       <a href="LogOut.php">Log Out</a>
-      
     </div>
   </div> 
 </div>

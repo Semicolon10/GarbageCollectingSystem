@@ -8,24 +8,23 @@ include('session.php');
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="containerContentSpecial">
-    <h2 style="text-align: center; color: white;">Create a new post</h2>
+   <h2 style="text-align: center; color: white;"><i class="fa fa-pencil-square"></i> Create a new post</h2>
 
-<div class="navigationbar">
-  <a href="WelcomePageAdmin.php">Welcome</a>
-  <a class="active" href="PostsPageAdmin.php">Posts</a>
- 
-  <a href="#about">About Us</a>
+<div class="navigationbar" id="navbar">
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
-    <button class="profileButton">Profile</button>
+    <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePageAdmin.php">Account</a>
+        <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
       <a href="LogOut.php">Log Out</a>
-      
-    </div>
+   </div>
   </div> 
 </div>
     

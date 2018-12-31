@@ -11,10 +11,11 @@
 <div class="containerContent">
 		<h2 style="text-align: center;">Contact Us</h2>
 		
-<div class="navigationbar">
-  <a href="WelcomePageGuest.php">Welcome</a>
-  <a class="active" href="ContactPageGuest.php">Contact Us</a>
-  <a href="#about">About Us</a>
+<div class="navigationbar" id="navbar">
+  <a href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
+  
+  <a class="active" href="ContactPageGuest.php"><i class="fa fa-phone-square"></i> Contact Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
