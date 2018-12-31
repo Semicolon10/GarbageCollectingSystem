@@ -87,6 +87,11 @@ echo "</table>";
 echo "</div>";
 
 ?>
+<?php 
+
+include('navscript.php');
+
+ ?>
 </div>
 
 </div>

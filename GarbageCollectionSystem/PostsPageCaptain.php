@@ -80,7 +80,11 @@ echo "</div>";
 
 ?>
 
+<?php 
 
+include('navscript.php');
+
+ ?>
 </div>
 
       

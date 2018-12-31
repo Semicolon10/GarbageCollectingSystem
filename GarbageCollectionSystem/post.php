@@ -34,6 +34,8 @@ include('connection.php');
 <br>
 <br>
 
+
+
 <div id="postmap" style="width:25%; height:300px; position: absolute; top: 42%; right: 20%;"></div>
 
 <?php
@@ -121,8 +123,9 @@ if (isset($_GET['id']))
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
 				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" height="250px"/>';
-				echo "<h2>".$row['PostDescription']."</h2>";
 				
+				
+				echo "<h2>".$row['PostDescription']."</h2>"; 
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
 				echo "<hr>";
 				echo "<h6 style='text-align:right;'>Is there a problem with this? <a href='reportPostPage.php?id=$id'>" . "Report" . "</h6>";
