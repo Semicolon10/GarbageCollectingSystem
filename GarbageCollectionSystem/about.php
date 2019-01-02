@@ -13,7 +13,7 @@ include('session.php');
 <body>
 
 <div class="containerContent">
-    <h1 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h1>
+    <h1 style="text-align: center;"><i class="fa fa-question-circle"></i> About Us</h1>
 
     
     
