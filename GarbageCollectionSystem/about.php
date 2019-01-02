@@ -82,7 +82,7 @@ include('session.php');
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">4 / 5</div>
+    <div class="numbertext">5 / 5</div>
     <a href="https://github.com/Semicolon10/GarbageCollectingSystem"target="_blank">
     <img src="Images/piu.jpg" style="width:100%">
   </a>
