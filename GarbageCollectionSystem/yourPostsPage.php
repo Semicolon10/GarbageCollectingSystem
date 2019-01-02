@@ -60,7 +60,7 @@ echo "<td><a href='postUser.php?id=$id'>" . $row['PostTopic'] . "</td>";
 
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
-echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
+echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
 echo "<td><a href='deletePost.php?id=$id'>" . "Delete" . "</td>";
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
