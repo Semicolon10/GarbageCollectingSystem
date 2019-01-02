@@ -23,12 +23,12 @@ include('connection.php');
 <div class="navigationbar" id="navbar">
   <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+ 
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-        <a href="ProfilePageAdmin.php">Account</a>
-      <a href="adminControlPage.php">Admin Controls</a>
+        <a href="ProfilePageAdmin.php">Account</a><br/>
+      <a href="adminControlPage.php">Admin Controls</a><br/>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -45,19 +45,21 @@ echo "<table id='table'>
 <th>Guest Name</th>
 <th>Email Address</th>
 <th>Message</th>
+<th><i class='fa fa-question-circle'></i></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
+  @$MessageNumber=$row['MessageNumber'];
 echo "<tr>";
 echo "<td>".$row['MessageNumber']."</td>";
 echo "<td id='pn'>" . $row['GuestName'] . "</td>";
 
 
 echo "<td>" . $row['Email'] . "</td>";
-echo "<td>".$row['Message']."<td/>";
-
+echo "<td>".$row['Message']."</td>";
+echo "<td><a href='deleteGuestMessage.php?MessageNumber=$MessageNumber' style='text-decoration: none;'>" . "Delete" . "</td>";
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
 }

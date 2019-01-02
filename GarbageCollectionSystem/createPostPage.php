@@ -26,8 +26,7 @@ include('session.php');
   <div class="profileMenu" id="active">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
-      <br>
+      <a href="ProfilePage.php">Account</a><br/>
       <a href="LogOut.php">Log Out</a>
     </div>
   </div> 
@@ -48,8 +47,8 @@ include('session.php');
     <br/>
      
       <p id="PostLocationParagraph">Please click on the location on the map to obtain the coordinates</p>
-      <input id="latitude" type="text" name="latitude"  placeholder="latitude" />
-      <input id="longitude" type="text" name="longitude"  placeholder="longitude" />
+      <input id="latitude" type="text" name="latitude"  placeholder="latitude" readonly="" />
+      <input id="longitude" type="text" name="longitude"  placeholder="longitude" readonly="" />
        <input type="button" value="Post" name="submit_image" class="post" onclick="formValidation()" />
       <br/>
 

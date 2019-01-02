@@ -26,7 +26,7 @@ if($_SESSION['username']!=NULL)
   <a class="active" href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
   
   <a href="ContactPageGuest.php"><i class="fa fa-phone-square"></i> Contact Us</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+  <a href="aboutGuest.php"><i class="fa fa-question-circle"></i> About Us</a>
   <a href="SignUpPage.php" style="float: right;">Sign Up</a>
 </div>
 
@@ -41,8 +41,8 @@ if($_SESSION['username']!=NULL)
 		<input type="password" placeholder="Enter Password" name="password" required="" id="password">
 		
 		<br/><br/><br/><hr/>
-		<p>Forgot password? <a href="PasswordRecoveryPage.php">Recover Password</a>.</p>
-    <p>Don't have an account? <a href="SignUpPage.php">Register</a>.</p>
+		<p>Forgot password? <a href="PasswordRecoveryPage.php" style="text-decoration: none;">Recover Password</a></p>
+    <p>Don't have an account? <a href="SignUpPage.php" style="text-decoration: none;">Register</a></p>
 
      <button type="button" class="executeButton" id="logInButton" onclick=" formValidation();">Login</button>
 		

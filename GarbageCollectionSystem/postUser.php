@@ -24,8 +24,8 @@ include('connection.php');
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
-      <a href="LogOut.php">Log Out</a>
+      <a href="ProfilePage.php">Account</a><br/>
+      <a href="LogOut.php">Log Out</a><br/>
       <a href="" onclick="redirect()">Report</a>
     </div>
   </div> 

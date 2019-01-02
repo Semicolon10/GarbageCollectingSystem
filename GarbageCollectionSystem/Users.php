@@ -21,14 +21,14 @@ include('connection.php');
 
   
 <div class="navigationbar" id="navbar">
-  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+
   <div class="profileMenu">
-    <button class="profileButton"><i class="fa fa-bars"></i></button>
+    <button class="profileButton" id="active"> <i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-        <a href="ProfilePageAdmin.php">Account</a><br>
-      <a href="adminControlPage.php">Admin Controls</a><br>
+        <a href="ProfilePageAdmin.php">Account</a><br/>
+      <a href="adminControlPage.php">Admin Controls</a><br/>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -44,8 +44,9 @@ echo "<table id='table'>
 <th>User Name</th>
 <th>Email</th>
 <th>Contact Number</th>
-<th></th>
-<th></th>
+<th><i class='fa fa-question-circle'></i></th>
+<th><i class='fa fa-question-circle'></i></th>
+
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -57,8 +58,9 @@ echo "<td id='pn'>" . $row['Email'] . "</td>";
 
 $UserName=$row['UserName'];
 echo "<td>" . $row['ContactNumber'] . "</td>";
-echo "<td><a href='deleteAccountAdmin.php?UserName=$UserName'>" . "Remove" . "</td>";
-echo "<td><a href='promoteToAdmin.php?UserName=$UserName'>" . "Promote to Admin" . "</td>";
+echo "<td><a href='deleteAccountAdmin.php?UserName=$UserName' style='text-decoration: none;'>" . "Remove" . "</td>";
+echo "<td><a href='promoteToAdmin.php?UserName=$UserName' style='text-decoration: none;'>" . "Promote to Admin" . "</td>";
+
 
 
 

@@ -20,12 +20,12 @@ include('connection.php');
   <a href="WelcomePage.php"><i class="fa fa-home"></i> Home</a>
   <a class="active" href="PostsPage.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="ContactPage.php"><i class="fa fa-phone-square"></i> Contact Us</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
-      <a href="LogOut.php">Log Out</a>
+      <a href="ProfilePage.php">Account</a><br/>
+      <a href="LogOut.php">Log Out</a><br/>
       <a href="" onclick="redirect()">Report</a>
     </div>
   </div> 
@@ -33,6 +33,8 @@ include('connection.php');
 <br>
 <br>
 <br>
+
+
 
 <div id="postmap" style="width:25%; height:300px; position: absolute; top: 42%; right: 20%;"></div>
 
@@ -113,22 +115,20 @@ if (isset($_GET['id']))
 				echo "<br>";
 				echo "<a href='PostsPage.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
 				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
+				echo "<h2 style='color:red;'>".$row['PriorityLevel']." priority"."</h2>";
 				echo "<hr>";
 
 				//echo "<div id='postmap' style='width:50%;height:400px;'></div>";
 
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
-				
 				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" height="250px"/>';
-
-				//echo "<div id='postdescription'";
-				echo "<h2>".$row['PostDescription']."</h2>";
-				//echo "</div>";
 				
+				
+				echo "<h2>".$row['PostDescription']."</h2>"; 
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
 				echo "<hr>";
-				echo "<h6 style='text-align:right;'>Is there a problem with this? <a href='reportPostPage.php?id=$id'>" . "Report" . "</h6>";
+				echo "<h6 style='text-align:right;'>Is there a problem with this? <a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</h6>";
 
 				//echo "<h3> on ".$row['date']."</h3>";
 

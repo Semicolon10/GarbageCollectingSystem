@@ -24,11 +24,11 @@ include('connection.php');
   <a href="WelcomePage.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPage.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="ContactPage.php"><i class="fa fa-phone-square"></i> Contact Us</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu" id="active">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a><br>
+      <a href="ProfilePage.php">Account</a><br/>
       <a href="LogOut.php">Log Out</a>
     </div>
   </div> 
@@ -40,12 +40,12 @@ $result = mysqli_query($connection,"SELECT * FROM Posts WHERE UserName='$user' O
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
-<tr style='color:white; border-radius: 15px 50px;'>
+<tr>
 <th>Post no</th>
 <th>User</th>
 <th>Post Topic</th>
 <th>Image</th>
-<th><i class='fa fa-remove'></th>
+<th><i class='fa fa-question-circle'></i></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -56,12 +56,12 @@ echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 
-echo "<td><a href='postUser.php?id=$id'>" . $row['PostTopic'] . "</td>";
+echo "<td><a href='postUser.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . $row['PostTopic'] . "</td>";
 
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
-echo "<td><a href='deletePost.php?id=$id'>" . "Delete" . "</td>";
+echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . "Delete" . "</td>";
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
 }

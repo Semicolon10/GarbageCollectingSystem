@@ -17,12 +17,12 @@ include('session.php');
 <div class="navigationbar" id="navbar">
   <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
+  
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-        <a href="ProfilePageAdmin.php">Account</a><br>
-      <a href="adminControlPage.php">Admin Controls</a><br>
+        <a href="ProfilePageAdmin.php">Account</a><br/>
+      <a href="adminControlPage.php">Admin Controls</a><br/>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -43,8 +43,8 @@ include('session.php');
     <br/>
      
       <p id="PostLocationParagraph">Please click on the location on the map to obtain the coordinates</p>
-      <input id="latitude" type="text" name="latitude"  placeholder="latitude" />
-      <input id="longitude" type="text" name="longitude"  placeholder="longitude" />
+      <input id="latitude" type="text" name="latitude"  placeholder="latitude" readonly="" />
+      <input id="longitude" type="text" name="longitude"  placeholder="longitude" readonly="" />
        <input type="button" value="Post" name="submit_image" class="post" onclick="formValidation()" />
       <br/>
 
