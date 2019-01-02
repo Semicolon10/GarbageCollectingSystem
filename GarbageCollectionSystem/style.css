@@ -85,6 +85,10 @@ hr {
 
 .executeButton:hover {
     background-color: #111;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 }
 
 .changePasswordWindow{
@@ -184,6 +188,7 @@ hr {
     opacity: 1;
     float: left;
     border-radius: 25px;
+
 }
 .guestsMessagesBtn,.adminsBtn,.createPostBtn,.leaveAdminBtn{
   float: right;
@@ -196,6 +201,10 @@ hr {
 }
 .reportedPostsBtn:hover,.guestsMessagesBtn:hover,.usersBtn:hover,.adminsBtn:hover,.createPostBtn:hover,.yourPostsBtn:hover,.userMessagesBtn:hover{
   background-color: #111;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 }
 #adminControlButtonsContainer{
   padding-left: 20%;
@@ -254,9 +263,9 @@ hr {
   right: 1%;
   background-color: #242f34;
 
-  min-width: 100px;
+  /*min-width: 100px;*/
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 99;
   border-radius: 25px;
 
 }
@@ -496,6 +505,10 @@ a{
 
 .fileToUpload:hover, .post:hover{
   background-color: #111;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
 }
 
 #latitude{

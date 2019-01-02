@@ -28,7 +28,7 @@ include('connection.php');
   <div class="profileMenu" id="active">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
+      <a href="ProfilePage.php">Account</a><br>
       <a href="LogOut.php">Log Out</a>
     </div>
   </div> 
@@ -40,12 +40,12 @@ $result = mysqli_query($connection,"SELECT * FROM Posts WHERE UserName='$user' O
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
-<tr>
+<tr style='color:white; border-radius: 15px 50px;'>
 <th>Post no</th>
 <th>User</th>
 <th>Post Topic</th>
 <th>Image</th>
-<th></th>
+<th><i class='fa fa-remove'></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))

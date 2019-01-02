@@ -13,7 +13,7 @@ include('session.php');
 <body>
 
 <div class="containerContent">
-    <h2 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h2>
+    <h1 style="text-align: center;">Welcome To Colombo Garbage Collection Service</h1>
 
     
     
@@ -39,50 +39,51 @@ include('session.php');
   
 <!-- Slideshow................................-->
 <!-- Slideshow container -->
+<br>
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-    <div class="numbertext">1 / 6</div>
-    <img src="Images/gray-background.jpg" style="width:100%">
-    <div class="text">
+    <div class="numbertext">1 / 4</div>
+    <img src="Images/Picture5.jpg" style="width:100%">
+   <!--  <div class="text">
       <p>
         Hey there!.
         Thank you for being interested on our latest
       </p>
-  </div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 6</div>
-    <img src="Images/Map.GIF" style="width:100%">
-    <div class="text" style="left: 20%; top:80%; font-weight: bold; color: black;">Administrative Areas</div>
-    <div class="text" style="left: 80%; font-weight: bold; color: red;">What's your Area?..</div>
+  </div> -->
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 6</div>
-    <img src="Images/Webp.jpg" style="width:100%">
-    <div class="text" style="top: 70%; color: #FFD700; font-weight: bolder; font-size: 30px;">Join with us<br>&<br>Be a<br>Better Recycler</div>
+    <div class="numbertext">2 / 4</div>
+    <img src="Images/Picture6.jpg" style="width:100%">
+    <!-- <div class="text" style="left: 20%; top:80%; font-weight: bold; color: black;">Administrative Areas</div>
+    <div class="text" style="left: 80%; font-weight: bold; color: red;">What's your Area?..</div> -->
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">4 / 6</div>
-    <img src="Images/waste.jpg" style="width:100%">
-    <div class="text" style="top: 85%; font-weight: bolder; color: red; font-size: 30px;">Properly Dispose of Waste</div>
+    <div class="numbertext">3 / 4</div>
+    <img src="Images/Picture7.jpg" style="width:100%">
+    <!-- <div class="text" style="top: 70%; color: #FFD700; font-weight: bolder; font-size: 30px;">Join with us<br>&<br>Be a<br>Better Recycler</div> -->
   </div>
 
   <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="Images/Picture8.jpg" style="width:100%">
+    <!-- <div class="text" style="top: 85%; font-weight: bolder; color: red; font-size: 30px;">Properly Dispose of Waste</div> -->
+  </div>
+
+<!--   <div class="mySlides fade">
     <div class="numbertext">4 / 6</div>
     <img src="Images/cleaning.jpg" style="width:100%">
     <div class="text" style="left: 20%; font-weight: bolder; color: green;">We'll Come & Clean It..</div>
-  </div>
+  </div> -->
 
-  <div class="mySlides fade">
+ <!--  <div class="mySlides fade">
     <div class="numbertext">6 /6</div>
     <img src="Images/Colombo_Municipal_Council.jpg" style="width:100%">
     <div class="text" style="top: 80%; color: white;">Another Proud Project Of The Colombo Municipal Council</div>
-  </div>
+  </div> -->
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -96,8 +97,6 @@ include('session.php');
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span>
   <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span> 
 </div>
 
 <!--End Of Slideshow..................................-->

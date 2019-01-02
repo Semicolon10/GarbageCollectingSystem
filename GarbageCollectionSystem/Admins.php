@@ -21,11 +21,11 @@ include('connection.php');
 
   
 <div class="navigationbar" id="navbar">
-  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
-    <button class="profileButton"  id="active"><i class="fa fa-bars"></i></button>
+    <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
         <a href="ProfilePageAdmin.php">Account</a>
       <a href="adminControlPage.php">Admin Controls</a>
@@ -36,7 +36,7 @@ include('connection.php');
 
 <?php
 
-$result = mysqli_query($connection,"SELECT * FROM UserDetails WHERE UserType='admin' OR UserType='captain' ORDER BY UserName ASC");
+$result = mysqli_query($connection,"SELECT * FROM UserDetails WHERE UserType='admin' ORDER BY UserName ASC");
 echo "<br>";
 echo "<div id='tablecontainer'>";
 echo "<table id='table'>
@@ -44,8 +44,6 @@ echo "<table id='table'>
 <th>User Name</th>
 <th>Email</th>
 <th>Contact Number</th>
-<th>Level</th>
-<th></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -54,10 +52,10 @@ while($row = mysqli_fetch_array($result))
 echo "<tr>";
 echo "<td>".$row['UserName']."</td>";
 echo "<td id='pn'>" . $row['Email'] . "</td>";
+
+
 echo "<td>" . $row['ContactNumber'] . "</td>";
-echo "<td>" . $row['UserType'] . "</td>";
-$UserName=$row['UserName'];
-echo "<td><a href='promoteToCaptain.php?UserName=$UserName'>" . "Promote to Captain" . "</td>";
+
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";

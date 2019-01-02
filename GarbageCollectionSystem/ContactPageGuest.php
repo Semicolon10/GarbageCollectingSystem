@@ -19,7 +19,7 @@
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="index.php">Log In</a>
+      <a href="index.php">Log In</a><br>
       <a href="SignUpPage.php">Sign Up</a>
     </div>
   </div> 

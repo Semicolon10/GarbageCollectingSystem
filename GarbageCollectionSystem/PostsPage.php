@@ -24,8 +24,8 @@ include('connection.php');
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePage.php">Account</a>
-      <a href="LogOut.php">Log Out</a>
+      <a href="ProfilePage.php">Account</a><br>
+      <a href="LogOut.php">Log Out</a><br>
       <a href="" onclick="redirect()">Report</a>
     </div>
   </div> 
@@ -49,7 +49,6 @@ echo "<table id='table'>
 <th>User</th>
 <th>Topic</th>
 <th>Image</th>
-<th>Priority Level</th>
 <th><i class='fa fa-question-circle'></i></th>
 </tr>";
 
@@ -66,7 +65,6 @@ echo "<td><a href='post.php?id=$id' style='text-decoration: none; font-weight: b
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
 echo "<td><a href='post.php?id=$id'>".'<img  src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
-echo "<td>".$row['PriorityLevel']."</td>";
 echo "<td><a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</td>";
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
@@ -90,6 +88,7 @@ echo "</div>";
     window.open("reportPostPage.php");
   }
 </script>
+
 </html>
 
 <?php 

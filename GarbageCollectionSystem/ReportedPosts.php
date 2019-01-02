@@ -21,8 +21,8 @@ include('connection.php');
 
   
 <div class="navigationbar" id="navbar">
-  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
-  <a class="active" href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
@@ -45,21 +45,19 @@ echo "<table id='table'>
 <th>Post Number</th>
 <th>Complaint Subject</th>
 <th>Complaint Description</th>
-<th></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
-  @$UserName=$row['UserName'];
 echo "<tr>";
 echo "<td>".$row['UserName']."</td>";
 echo "<td id='pn'><a href='postAdmin.php?id=$id'>" . $row['PostNumber'] . "</td>";
 
 
 echo "<td>" . $row['ComplaintSubject'] . "</td>";
-echo "<td>".$row['ComplaintDescription']."</td>";
-echo "<td><a href='removeComplaint.php?id=$id&username=$UserName'>"."Remove"."</td>";
+echo "<td>".$row['ComplaintDescription']."<td/>";
+
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
 }

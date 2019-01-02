@@ -23,11 +23,10 @@ if(!empty( $_POST['userName'] ) )
 
                 if(password_verify($password, $hashedPassword['password']))
                 { 
-                    $selectQuery="SELECT * from UserDetails where UserName='$userName'";
+                    $selectQuery="SELECT * from UserDetails where UserName='$userName' AND UserType='admin'";
                     $result=mysqli_query($connection,$selectQuery);
-                    $array=mysqli_fetch_assoc($result);
                     unset($selectQuery);
-                    if($array['UserType']=='admin'||$array['UserType']=='captain')
+                    if(mysqli_num_rows($result)>0)
                     {
                         $_SESSION['username']=$userName;
                         $_SESSION['timeout'] = time();

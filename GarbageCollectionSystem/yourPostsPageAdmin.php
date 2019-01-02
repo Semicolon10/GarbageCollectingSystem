@@ -18,14 +18,14 @@ include('connection.php');
 
 		
 <div class="navigationbar" id="navbar">
-  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
-  <a class="active" href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-        <a href="ProfilePageAdmin.php">Account</a>
-      <a href="adminControlPage.php">Admin Controls</a>
+        <a href="ProfilePageAdmin.php">Account</a><br>
+      <a href="adminControlPage.php">Admin Controls</a><br>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -42,8 +42,7 @@ echo "<table id='table'>
 <th>User</th>
 <th>Post Topic</th>
 <th>Image</th>
-<th>Priority Level</th>
-<th><i class='fa fa-question-circle'></i></th>
+<th></th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -59,7 +58,6 @@ echo "<td><a href='postAdmin.php?id=$id'>" . $row['PostTopic'] . "</td>";
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
-echo "<td>".$row['PriorityLevel']."</td>";
 echo "<td><a href='deletePost.php?id=$id'>" . "Delete" . "</td>";
 
 

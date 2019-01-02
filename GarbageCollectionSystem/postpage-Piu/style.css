@@ -1,0 +1,438 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+       
+  background-image: url("Images/colombo.jpg");
+  background-size: cover;
+}
+* {
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.containerContent {
+   background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  /*background-color: white;*/
+    padding: 16px;
+    top: 1%;
+    right: 1%;
+    bottom: 1%;
+    left: 1%;
+    
+    overflow: hidden;
+    position: relative;
+    color: white;
+    
+    max-width: 98%;
+    min-width: 100px;
+    max-height: 100%;
+
+
+}
+
+.containerContentSpecial{
+  background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  /*background-color: white;*/
+    padding: 16px;
+    top: 1%;
+    right: 1%;
+    bottom: 1%;
+    left: 1%;
+    
+    overflow: hidden;
+    position: absolute;
+    color: white;
+    max-width: 98%;
+    min-width: 100px;
+    max-height: 100%;
+    
+}
+
+
+
+input[type=text], input[type=password] {
+  color: white;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    /*background: #f1f1f1;*/
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+    border-radius: 25px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    color: black;
+    background-color: #ddd;
+    outline: none;
+    
+}
+hr {
+    border: 1px solid #242f34;
+    margin-bottom: 25px;
+}
+.executeButton {
+    background-color: #242f34;
+    
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    float: bottom;
+    border-radius: 25px;
+}
+
+.executeButton:hover {
+    background-color: #111;
+}
+
+.executeButtonChange{
+    background-color: #242f34;
+    background-color: rgba(0,0,0, 0.8);
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: left;
+    border-radius: 25px;
+}
+.executeButtonDelete{
+    background-color: rgba(184,0,0, 0.8);
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: right;
+    border-radius: 25px;
+}
+.executeButtonChange:hover{
+  background-color: #111;
+}
+
+.executeButtonDeleteLive{
+    background-color: rgba(255,0,0, 0.8);
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    opacity: 1;
+    float: right;
+    border-radius: 25px;
+}
+.executeButtonDeleteLive:hover{
+  background-color: #111;
+}
+.executeButtonClicked{
+    background-color: #242f34;
+    background-color: rgba(255,0,0, 0.8); /* Black w/opacity/see-through */
+    color: white;
+    font-size: 16pt; 
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+    float: bottom;
+    border-radius: 25px;
+}
+
+.executeButtonClicked:hover{
+    background-color: rgba(170,0,0, 0.8);
+}
+
+
+/*
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #242f34;
+  position: relative;
+  float: right;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #ff0000;
+}
+#SignUpList{
+    float: right;
+}
+#LogInList{
+    float: right;
+}
+*/
+
+.navigationbar {
+  overflow: hidden;
+  background-color: #242f34;
+
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 25px;
+}
+
+.navigationbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.profileMenu {
+  float: right;
+  overflow: hidden;
+  border-radius: 25px;
+
+}
+
+.profileMenu .profileButton {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 25px;
+}
+
+.navigationbar a:hover, .profileMenu:hover .profileButton {
+  background-color: #111;
+}
+
+.profileMenu-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  background-color: #242f34;
+
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 25px;
+
+}
+
+.profileMenu-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align:center;
+  border-radius: 25px;
+}
+
+.profileMenu-content a:hover {
+  background-color: #ddd;
+  color: #242f34;
+
+}
+
+.profileMenu:hover .profileMenu-content {
+  display: block;
+}
+.active{
+  background-color: #ff0000;
+}
+.active:hover{
+  background-color: #111;
+}
+#active {
+  background-color: #ff0000;
+}
+#active:hover{
+    background-color: #111;
+}
+a{
+  color: red;
+}
+
+/*----------------------------------------SLIDE SHOW--------------------------------*/
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 850px;
+  /*min-height: 70%;*/
+  /*max-height: 500px;*/
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #FFFAFA/*#f2f2f2*/;
+  font-size: 15px;
+  font-style: italic;
+  /*padding: 8px 12px;*/
+  position: absolute;
+  /*bottom: 8px;*/
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active_slides, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/*.......................END of Slide Show CSS...............*/
+
+
+/* css for uploading post*/
+.uploadforam{
+  display: inline-block;
+  margin: auto;
+  box-align: center;
+}
+
+.status{
+  overflow: hidden;
+  display: block;
+  resize:none;
+  margin-top:40px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40%;
+  width: 60%;
+  border: 1px solid rgb(216, 25, 25);
+  border-radius:15px;
+  padding:2%;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;  
+  align-content: center;  
+}
+
+.fileToUpload,.post{
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  background-color: #242f34;
+  color: white;
+  font-size: 16pt; 
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  float: left;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+.fileToUpload:hover, .post:hover{
+  background-color: #111;
+}
+

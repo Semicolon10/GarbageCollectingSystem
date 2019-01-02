@@ -1,16 +1,5 @@
 <?php
 include('session.php');
-include('connection.php');
-$UserName=$_SESSION['username'];
-$selectQuery="SELECT UserType from UserDetails WHERE UserName='$UserName'";
-$result=mysqli_query($connection,$selectQuery);
-$array=mysqli_fetch_assoc($result);
-if($array['UserType']=='captain')
-{
-  header("location:captainControlPage.php");
-  mysqli_close($connection);
-  exit();
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,14 +20,14 @@ if($array['UserType']=='captain')
 
   
 <div class="navigationbar" id="navbar">
-  <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
+  <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
   <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
-  <div class="profileMenu" id="active">
+  <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
         <a href="ProfilePageAdmin.php">Account</a>
-      
+      <br>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 

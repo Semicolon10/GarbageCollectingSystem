@@ -23,8 +23,8 @@ include('connection.php');
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePageAdmin.php">Account</a>
-      <a href="adminControlPage.php">Admin Controls</a>
+      <a href="ProfilePageAdmin.php">Account</a><br>
+      <a href="adminControlPage.php">Admin Controls</a><br>
       <a href="LogOut.php">Log Out</a>
     </div>
   </div> 
@@ -110,9 +110,8 @@ if (isset($_GET['id']))
 			{
 				echo "<div id='postcontainer'>";
 				echo "<br>";
-				echo "<a href='PostsPageAdmin.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
+				echo "<a href='PostsPage.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
 				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
-				echo "<h2 style='color:red;'>".$row['PriorityLevel']." priority"."</h2>";
 				echo "<hr>";
 
 				//echo "<div id='postmap' style='width:50%;height:400px;'></div>";
