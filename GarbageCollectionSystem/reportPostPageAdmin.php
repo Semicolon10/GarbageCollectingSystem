@@ -18,12 +18,12 @@ include('session.php');
   <a href="WelcomePageAdmin.php">Welcome</a>
   <a class="active" href="PostsPageAdmin.php">Posts</a>
   
-  <a href="#about">About Us</a>
+  <a href="about.php">About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
-      <a href="ProfilePageAdmin.php">Account</a>
-      <a href="adminControlPage.php">Admin Controls</a>
+      <a href="ProfilePageAdmin.php">Account</a><br>
+      <a href="adminControlPage.php">Admin Controls</a><br>
       <a href="LogOut.php">Log Out</a>
       
     </div>

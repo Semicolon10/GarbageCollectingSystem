@@ -26,7 +26,7 @@ if($_SESSION['username']!=NULL)
   <a class="active" href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
   
   <a href="ContactPageGuest.php"><i class="fa fa-phone-square"></i> Contact Us</a>
-  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
   <a href="SignUpPage.php" style="float: right;">Sign Up</a>
 </div>
 

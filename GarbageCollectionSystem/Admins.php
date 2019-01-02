@@ -23,7 +23,7 @@ include('connection.php');
 <div class="navigationbar" id="navbar">
   <a class="active" href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+  <a href="about.php"><i class="fa fa-question-circle"></i> About Us</a>
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">

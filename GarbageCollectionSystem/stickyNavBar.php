@@ -19,7 +19,7 @@
   <a href="WelcomePage.php">Welcome</a>
   <a href="PostsPage.php">Posts</a>
   <a href="ContactPage.php">Contact Us</a>
-  <a href="#about">About Us</a>
+  <a href="about.php">About Us</a>
   <div id="active" class="profileMenu">
     <button class="profileButton">Profile</button>
     <div class="profileMenu-content">
