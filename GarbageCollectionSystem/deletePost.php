@@ -12,6 +12,8 @@ if(isset($_GET['id']))
 		{
 			if($_SESSION['userType']=='admin')
 							header("refresh:0;url=PostsPageAdmin.php");
+						else if($_SESSION['userType']=='captain')
+							header("refresh:0;url=PostsPageCaptain.php");
 						else
 							header("refresh:0;url=PostsPage.php");
 		}
@@ -20,6 +22,8 @@ if(isset($_GET['id']))
 			echo "<script>alert('Unable to delete');</script>";
 			if($_SESSION['userType']=='admin')
 							header("refresh:0;url=PostsPageAdmin.php");
+						else if($_SESSION['userType']=='captain')
+							header("refresh:0;url=PostsPageCaptain.php");
 						else
 							header("refresh:0;url=PostsPage.php");
 		}
@@ -29,6 +33,8 @@ if(isset($_GET['id']))
 			echo "<script>alert('Unable to delete');</script>";
 			if($_SESSION['userType']=='admin')
 							header("refresh:0;url=PostsPageAdmin.php");
+						else if($_SESSION['userType']=='captain')
+							header("refresh:0;url=PostsPageCaptain.php");
 						else
 							header("refresh:0;url=PostsPage.php");
 	}

@@ -63,7 +63,7 @@ echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 
-echo "<td><a href='postAdmin.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . $row['PostTopic'] . "</td>";
+echo "<td><a href='postCaptain.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . $row['PostTopic'] . "</td>";
 
 $ImageContent=$row['ImageContent'];
 $ImageContent=base64_encode($ImageContent);

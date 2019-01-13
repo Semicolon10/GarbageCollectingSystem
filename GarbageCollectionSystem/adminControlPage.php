@@ -41,12 +41,10 @@ if($_SESSION['userType']=='captain')
   </div> 
 </div>
 <div id="adminControlButtonsContainer">
-<form method="post" action="ReportedPosts.php">
+<!--<form method="post" action="ReportedPosts.php">
   <button class="reportedPostsBtn" onclick="submit()">Reported Posts</button>
-</form>
-<form method="post" action="GuestMessages.php">
-  <button class="guestsMessagesBtn" onclick="submit()">Guests messages</button>
-</form>
+</form>-->
+
 <form method="post" action="Users.php">
   <button class="usersBtn" onclick="submit()">Users</button>
 </form>
@@ -55,6 +53,9 @@ if($_SESSION['userType']=='captain')
 </form>
 <form method="post" action="UserMessages.php">
   <button class="userMessagesBtn" onclick="submit()">User messages</button>
+</form>
+<form method="post" action="GuestMessages.php">
+  <button class="guestsMessagesBtn" onclick="submit()">Guests messages</button>
 </form>
 <form action="leaveAdminship.php" id="leaveAdminForm">
   <button class="leaveAdminBtn" onclick="leaveAdmin()">Leave adminship</button>

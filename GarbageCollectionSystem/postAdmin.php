@@ -1,6 +1,10 @@
 <?php
 include('session.php');
 include('connection.php');
+if($_SESSION['userType']=='captain')
+{
+	header("location:postCaptain.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -123,7 +127,8 @@ if (isset($_GET['id']))
 				echo "<h2>".$row['PostDescription']."</h2>";
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
-				echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none;'>" . "Delete" . "</td>";
+					echo "<h6 style='text-align:right;'>Is there a problem with this? <a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</h6>";
+				/*echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none;'>" . "Delete" . "</td>";*/
 				echo "<hr>";
 				
 				

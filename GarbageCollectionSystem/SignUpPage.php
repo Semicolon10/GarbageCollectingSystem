@@ -14,7 +14,7 @@
     <h2 style="text-align: center;">Sign Up For Colombo Garbage Collection Service</h2>
 
 <div class="navigationbar" id="navbar">
-  <a class="active" href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
+  <a href="WelcomePageGuest.php"><i class="fa fa-home"></i> Home</a>
   
   <a href="ContactPageGuest.php"><i class="fa fa-phone-square"></i> Contact Us</a>
   <a href="aboutGuest.php"><i class="fa fa-question-circle"></i> About Us</a>

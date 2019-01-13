@@ -78,7 +78,9 @@ $ImageContent=base64_encode($ImageContent);
 
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
 echo "<td>".$row['PriorityLevel']."</td>";
-echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none;'>" . "Delete" . "</td>";
+/*echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none;'>" . "Delete" . "</td>";*/
+echo "<td><a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</td>";
+
 
 
 echo "</tr>";

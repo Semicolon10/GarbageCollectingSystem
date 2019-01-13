@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 1);
-
+include('PHPMailerAutoload.php');
 include('connection.php');
-
+//$user = new user();
 if(!empty($_POST['email']))
 {
     $email=$_POST['email'];
@@ -20,6 +20,34 @@ if(!empty($_POST['email']))
 		{
 			if(mysqli_query($connection,$queryUpdate))
 			{
+				/*
+				PASSWORD RECOVERY EMAIL SENDO
+				*/
+				//get user details
+               /* $connection['where'] = array('email'=>$_POST['email']);
+                $connection['return_type'] = 'single';*/
+                $selectQuery="SELECT * FROM UserDetails WHERE Email='$email'";
+                $result=mysqli_query($connection,$selectQuery);
+                $array=mysqli_fetch_assoc($result);
+
+                //send reset password email
+                $to = $array['Email'];
+                $subject = "Password Update Request";
+                $mailContent = 'Dear '.$array['UserName'].' 
+                <br/>Recently a request was submitted to reset a password for your account. If this was a mistake, just ignore this email and nothing will happen.
+                <br/>your password is'. $newTempPassword.' 
+                <br/><br/>Regards,
+                <br/>Indrajith';
+                //set content-type header for sending HTML email
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                //additional headers
+                $headers .= 'From: <ekanayakeindrajith@gmail.com>' . "\r\n";
+                //send email
+                mail($to,$subject,$mailContent,$headers);
+
+                $sessData['status']['type'] = 'success';
+                $sessData['status']['msg'] = 'Please check your e-mail.';
 				$message="Password Resetted Successfully";
 				echo "<script type='text/javascript'>alert('$message');</script>";
 				header("refresh:0; url=LogOut.php");
