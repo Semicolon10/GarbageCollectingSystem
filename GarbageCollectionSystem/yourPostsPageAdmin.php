@@ -25,7 +25,7 @@ include('connection.php');
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content"><br/>
         <a href="ProfilePageAdmin.php">Account</a><br/>
-      <a href="adminControlPage.php">Admin Controls</a><br/>
+      <a href="adminControlPage.php">Control Panel</a><br/>
       <a href="LogOut.php">Log Out</a><br/>
    </div>
   </div> 
@@ -49,6 +49,8 @@ echo "<table id='table'>
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
+  @$ImageContent=$row['ImageContent'];
+@$ImageContent=base64_encode($ImageContent);
 echo "<tr>";
 echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
@@ -56,9 +58,8 @@ echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 echo "<td><a href='postAdmin.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . $row['PostTopic'] . "</td>";
 
-$ImageContent=$row['ImageContent'];
-$ImageContent=base64_encode($ImageContent);
-echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" width="50%"/>'."</td>";
+
+echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
 echo "<td>".$row['PriorityLevel']."</td>";
 echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . "Delete" . "</td>";
 

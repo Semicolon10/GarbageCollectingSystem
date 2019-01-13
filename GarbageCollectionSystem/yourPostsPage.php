@@ -33,7 +33,9 @@ include('connection.php');
     </div>
   </div> 
 </div>
-
+<form action="createPostPage.php">
+<input type="submit" value="New" class="executeButton" style="float: right; width: 8%; text-align: center;"/>
+</form>
 <?php
 $user=$_SESSION['username'];
 $result = mysqli_query($connection,"SELECT * FROM Posts WHERE UserName='$user' ORDER BY PostNumber DESC");
@@ -51,6 +53,8 @@ echo "<table id='table'>
 while($row = mysqli_fetch_array($result))
 {
   @$id = $row['PostNumber'];
+  @$ImageContent=$row['ImageContent'];
+@$ImageContent=base64_encode($ImageContent);
 echo "<tr>";
 echo "<td>".$row['PostNumber']."</td>";
 echo "<td id='pn'>" . $row['UserName'] . "</td>";
@@ -58,8 +62,7 @@ echo "<td id='pn'>" . $row['UserName'] . "</td>";
 
 echo "<td><a href='postUser.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . $row['PostTopic'] . "</td>";
 
-$ImageContent=$row['ImageContent'];
-$ImageContent=base64_encode($ImageContent);
+
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
 echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none; font-weight: bold;'>" . "Delete" . "</td>";
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
@@ -82,6 +85,7 @@ echo "</div>";
   {
     window.open("reportPostPage.php");
   }
+  
 </script>
 </html>
 

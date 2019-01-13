@@ -120,10 +120,17 @@ if (isset($_GET['id']))
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
 				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" height="250px"/>';
-				echo "<h2>".$row['PostDescription']."</h2>";
+				echo "<h3 style='width:50%;'>".$row['PostDescription']."</h3>"; 
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
-				echo "<td><a href='deletePost.php?id=$id'>" . "Delete" . "</td>";
+				if($row['UserName']==$_SESSION['username'])
+				{
+					echo "<td><a href='deletePost.php?id=$id' style='text-decoration:none;'>" . "Delete" . "</td>";
+				}
+				else
+				{
+					echo "<h6 style='text-align:right;'>Is there a problem with this? <a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</h6>";
+				}
 				echo "<hr>";
 				
 				

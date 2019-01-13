@@ -19,12 +19,12 @@ include('connection.php');
 <div class="navigationbar" id="navbar">
   <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a class="active" href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+ 
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
       <a href="ProfilePageAdmin.php">Account</a><br/>
-      <a href="adminControlPage.php">Admin Controls</a><br/>
+      <a href="adminControlPage.php">Control Panel</a><br/>
       <a href="LogOut.php">Log Out</a>
     </div>
   </div> 
@@ -120,7 +120,7 @@ if (isset($_GET['id']))
 				$ImageContent=$row['ImageContent'];
 				$ImageContent=base64_encode($ImageContent);
 				echo '<img src="data:image/jpeg;base64,'.$ImageContent.'" height="250px"/>';
-				echo "<h2>".$row['PostDescription']."</h2>";
+				echo "<h3 style='width:50%;'>".$row['PostDescription']."</h3>"; 
 				
 				echo "<right><h5>by ".$row['UserName']."</h5></right>";
 					

@@ -12,7 +12,7 @@ if($_SESSION['userType']=='captain')
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin control page</title>
+	<title>Control Panel</title>
 	<link rel="icon" type="image/jpg" href="Images/CMC_Logo.jpg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -21,7 +21,7 @@ if($_SESSION['userType']=='captain')
 <body>
 
 <div class="containerContent">
-		<h2 style="text-align: center;">Admin Controls</h2>
+		<h2 style="text-align: center;">Control Panel</h2>
 
 		
 		

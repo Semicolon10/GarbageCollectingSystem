@@ -1,11 +1,7 @@
 <?php
 include('session.php');
 include('connection.php');
-$UserName=$_SESSION['username'];
-$selectQuery="SELECT UserType from UserDetails WHERE UserName='$UserName'";
-$result=mysqli_query($connection,$selectQuery);
-$array=mysqli_fetch_assoc($result);
-if($array['UserType']=='captain')
+if($_SESSION['userType']=='captain')
 {
   header("location:PostsPageCaptain.php");
   mysqli_close($connection);
@@ -35,7 +31,7 @@ if($array['UserType']=='captain')
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
         <a href="ProfilePageAdmin.php">Account</a><br/>
-      <a href="adminControlPage.php">Admin Controls</a><br/>
+      <a href="adminControlPage.php">Control Panel</a><br/>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -79,7 +75,14 @@ $ImageContent=base64_encode($ImageContent);
 echo "<td>".'<img src="data:image/jpeg;base64,'.$ImageContent.'" height="100px"/>'."</td>";
 echo "<td>".$row['PriorityLevel']."</td>";
 /*echo "<td><a href='deletePost.php?id=$id' style='text-decoration: none;'>" . "Delete" . "</td>";*/
-echo "<td><a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</td>";
+if($row['UserName']==$_SESSION['username'])
+        {
+          echo "<td><a href='deletePost.php?id=$id' style='text-decoration:none;'>" . "Delete" . "</td>";
+        }
+        else
+        {
+         echo "<td><a href='reportPostPage.php?id=$id' style='text-decoration: none;'>" . "Report" . "</td>";
+        }
 
 
 

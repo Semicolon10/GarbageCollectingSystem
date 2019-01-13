@@ -28,7 +28,7 @@ include('connection.php');
     <button class="profileButton"  id="active"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
         <a href="ProfilePageAdmin.php">Account</a><br/>
-      <a href="adminControlPage.php">Admin Controls</a><br/>
+      <a href="adminControlPage.php">Control Panel</a><br/>
       <a href="LogOut.php">Log Out</a>
    </div>
   </div> 
@@ -50,14 +50,22 @@ echo "<table id='table'>
 
 while($row = mysqli_fetch_array($result))
 {
-  @$id = $row['PostNumber'];
+ @$UserName=$row['UserName'];
 echo "<tr>";
 echo "<td>".$row['UserName']."</td>";
 echo "<td id='pn'>" . $row['Email'] . "</td>";
 echo "<td>" . $row['ContactNumber'] . "</td>";
 echo "<td>" . $row['UserType'] . "</td>";
-$UserName=$row['UserName'];
-echo "<td><a href='promoteToCaptain.php?UserName=$UserName' style='text-decoration: none;'>" . "Promote to Captain" . "</td>";
+
+if($row['UserType']=='captain')
+{
+  echo "<td><a href='removeCaptain.php?UserName=$UserName' style='text-decoration: none;'>" . "Remove Captain" . "</td>";
+}
+else
+{
+  echo "<td><a href='promoteToCaptain.php?UserName=$UserName' style='text-decoration: none;'>" . "Promote to Captain" . "</td>";
+}
+
 
 //echo "<td><img src='images/".$row['ImageContent']."'></td>";
 echo "</tr>";
