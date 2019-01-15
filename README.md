@@ -17,15 +17,17 @@ An admin is a user of the site with added privileges. An admin has a control pan
 ### Captain
 A captain is a subset of admins, whom duty is to review every published post and set a priority level. A Captain can also delete the posts he thinks are unnecessary. There is only one captain.
 ***
-![](githubReedmeImages/usecase.jpg)
+![](GarbageCollectionSystem/githubReedmeImages/er.png)
 ***
 ## Screen shots
-![](githubReedmeImages/home.png)
-![](githubReedmeImages/signin.png)
-![](githubReedmeImages/admin.png)
-![](githubReedmeImages/adminhome.png)
-![](githubReedmeImages/cheff.png)
-![](githubReedmeImages/cheffhome.png)
-![](githubReedmeImages/payment.png)
-![](githubReedmeImages/recipt.png)
-![](githubReedmeImages/takaway.png)
+![](GarbageCollectionSystem/githubReedmeImages/signup.png)
+![](GarbageCollectionSystem/githubReedmeImages/login.png)
+![](GarbageCollectionSystem/githubReedmeImages/reover.png)
+![](GarbageCollectionSystem/githubReedmeImages/home.png)
+![](GarbageCollectionSystem/githubReedmeImages/contactUs.png)
+![](GarbageCollectionSystem/githubReedmeImages/posts.png)
+![](GarbageCollectionSystem/githubReedmeImages/postsPage.png)
+![](GarbageCollectionSystem/githubReedmeImages/postsPgeCaptain.png)
+![](GarbageCollectionSystem/githubReedmeImages/vivingpostsUsers.png)
+![](GarbageCollectionSystem/githubReedmeImages/vivingpostsCaptain.png)
+![](GarbageCollectionSystem/githubReedmeImages/adminControlPanel.png)
