@@ -15,37 +15,31 @@ if(!empty( $_POST['userName'] ) )
             $password=mysqli_real_escape_string($connection,$password);
             //Compare the hashes of the passwords(entered and what's in the database)
 
-            $selectQuery="SELECT password from UserDetails where UserName='$userName'";
+            $selectQuery="SELECT * from UserDetails where UserName='$userName'";
             $result=mysqli_query($connection,$selectQuery);
             if(mysqli_num_rows($result)>0)
             {
-                $hashedPassword=mysqli_fetch_assoc($result);
+                $array=mysqli_fetch_assoc($result);
 
-                if(password_verify($password, $hashedPassword['password']))
+                if(password_verify($password, $array['password']))
                 { 
-                    $selectQuery="SELECT * from UserDetails where UserName='$userName'";
-                    $result=mysqli_query($connection,$selectQuery);
-                    $array=mysqli_fetch_assoc($result);
-                    unset($selectQuery);
+
+                    $_SESSION['username']=$userName;
+                    $_SESSION['timeout'] = time();
+                    $_SESSION['userType']=$array['UserType'];
                     if($array['UserType']=='admin')
                     {
-                        $_SESSION['username']=$userName;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['userType']="admin";
+                        
                         header("refresh:0;url=WelcomePageAdmin.php");
                     }
                     else if($array['UserType']=='captain')
                     {
-                        $_SESSION['username']=$userName;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['userType']="captain";
+                        
                         header("refresh:0;url=WelcomePageAdmin.php");
                     }
                     else
                     {
-                        $_SESSION['username']=$userName;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['userType']="normal";
+                        
                         header("refresh:0; url=WelcomePage.php");
                     }
                     

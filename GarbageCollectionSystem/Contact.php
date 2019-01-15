@@ -11,7 +11,7 @@ if($username==NULL)
 	{
 		$errorMessage="Please enter your name";
 		echo("<script>alert('$errorMessage');</script>");
-		header("refresh:50;url=ContactPageGuest.php");
+		header("refresh:0;url=ContactPageGuest.php");
 		unset($errorMessage);
 						
 	}

@@ -66,7 +66,7 @@
     }
     function highlight(id,word)
     {
-        alert("Please enter "+word);
+        //alert("Please enter "+word);
         document.getElementById(id).style.backgroundColor="Yellow";
         document.getElementById(id).style.color="black";
     }
