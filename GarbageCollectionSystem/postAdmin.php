@@ -23,7 +23,7 @@ if($_SESSION['userType']=='captain')
 <div class="navigationbar" id="navbar">
   <a href="WelcomePageAdmin.php"><i class="fa fa-home"></i> Home</a>
   <a class="active" href="PostsPageAdmin.php"><i class="fa fa-pencil-square"></i> Posts</a>
-  <a href="#about"><i class="fa fa-question-circle"></i> About Us</a>
+   
   <div class="profileMenu">
     <button class="profileButton"><i class="fa fa-bars"></i></button>
     <div class="profileMenu-content">
@@ -37,7 +37,7 @@ if($_SESSION['userType']=='captain')
 <br>
 <br>
 
-<div id="postmap" style="width:25%; height:300px; position: absolute; top: 42%; right: 20%;"></div>
+<div id="postmap" style="width:25%; height:50%; position: absolute; top: 40%; right: 20%;"></div>
 
 <?php
 
@@ -116,7 +116,7 @@ if (isset($_GET['id']))
 				echo "<br>";
 				echo "<a href='PostsPageAdmin.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
 				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
-				echo "<h2 style='color:red;'>".$row['PriorityLevel']." priority"."</h2>";
+				echo "<h3 style='color:red;'>".$row['PriorityLevel']." priority"."</h3>";
 				echo "<hr>";
 
 				//echo "<div id='postmap' style='width:50%;height:400px;'></div>";

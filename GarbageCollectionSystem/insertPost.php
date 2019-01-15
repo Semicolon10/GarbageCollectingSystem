@@ -48,60 +48,74 @@ else
 				$errorMessage= "Please enter an image";
     			echo("<script>alert('$errorMessage');</script>");
     			if($_SESSION['userType']=='admin')
-					header("refresh:0;url=createPostPageAdmin.php");
-				else
-					header("refresh:0;url=createPostPage.php");
-    			unset($errorMessage);
+						header("refresh:0;url=createPostPageAdmin.php");
+					else
+						header("refresh:0;url=createPostPage.php");
+    					unset($errorMessage);
     			
 			}
 			else
 			{
-				$imagename=$_FILES["myimage"]["name"]; 
-				if(empty($_POST["latitude"]||empty($_POST["longitude"])))
-				{
-					$errorMessage= "Please select the location on the map";
-    				echo("<script>alert('$errorMessage');</script>");
-    				if($_SESSION['userType']=='admin')
+				$check=getimagesize($_FILES["myimage"]["tmp_name"]);
+        		if($check==false)
+        		{
+            		echo "<script>alert('Please enter an image');</script>";
+            		if($_SESSION['userType']=='admin')
 						header("refresh:0;url=createPostPageAdmin.php");
 					else
 						header("refresh:0;url=createPostPage.php");
-    				unset($errorMessage);
-    				
-				}
-				else
-				{
-					$latitude=$_POST["latitude"];
-					$longitude=$_POST["longitude"];
-					
-					//Get the content of the image and then add slashes to it 
-					$ImageContent=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
-
-					//Insert the image name and image content in image_table
-					$insertQuery="INSERT INTO Posts(UserName,PostTopic,PostDescription,ImageContent,ImageName,Latitude,Longitude) VALUES('$UserName','$PostTopic','$PostDescription','$ImageContent','$imagename','$latitude','$longitude')";
-
-					if(mysqli_query($connection,$insertQuery))
+    					unset($errorMessage);
+        		}
+        		else
+        		{
+            		$imagename=$_FILES["myimage"]["name"]; 
+					if(empty($_POST["latitude"]||empty($_POST["longitude"])))
 					{
-						echo "<script>alert('Successfully Published');</script>";
-						if($_SESSION['userType']=='admin')
-							header("refresh:0;url=PostsPageAdmin.php");
+						$errorMessage= "Please select the location on the map";
+    					echo("<script>alert('$errorMessage');</script>");
+    					if($_SESSION['userType']=='admin')
+							header("refresh:0;url=createPostPageAdmin.php");
 						else
-							header("refresh:0;url=PostsPage.php");
+							header("refresh:0;url=createPostPage.php");
+    					unset($errorMessage);
+    				
 					}
 					else
-					{	
-						echo "<script>alert('Failed');</script>";
-						echo mysqli_error($connection);
-						if($_SESSION['userType']=='admin')
-							header("refresh:50;url=PostsPageAdmin.php");
+					{
+						$latitude=$_POST["latitude"];
+						$longitude=$_POST["longitude"];
+					
+						//Get the content of the image and then add slashes to it 
+						$ImageContent=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
+
+						//Insert the image name and image content in image_table
+						$insertQuery="INSERT INTO Posts(UserName,PostTopic,PostDescription,ImageContent,ImageName,Latitude,Longitude) VALUES('$UserName','$PostTopic','$PostDescription','$ImageContent','$imagename','$latitude','$longitude')";
+
+						if(mysqli_query($connection,$insertQuery))
+						{
+							echo "<script>alert('Successfully Published');</script>";
+							if($_SESSION['userType']=='admin')
+								header("refresh:0;url=PostsPageAdmin.php");
+							else
+								header("refresh:0;url=PostsPage.php");
+						}
 						else
-							header("refresh:50;url=PostsPage.php");
+						{	
+							echo "<script>alert('Failed');</script>";
+							echo mysqli_error($connection);
+							if($_SESSION['userType']=='admin')
+								header("refresh:50;url=PostsPageAdmin.php");
+							else
+								header("refresh:50;url=PostsPage.php");
+						}
+						unset($latitude);
+						unset($longitude);
+						unset($ImageContent);
+						unset($insertQuery);
 					}
-					unset($latitude);
-					unset($longitude);
-					unset($ImageContent);
-					unset($insertQuery);
-				}
-				unset($imagename);
+        		}
+				
+				unset($check);
 			}
 			unset($PostDescription);
 	}

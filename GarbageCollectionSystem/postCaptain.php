@@ -33,7 +33,7 @@ include('connection.php');
 <br>
 <br>
 
-<div id="postmap" style="width:25%; height:300px; position: absolute; top: 42%; right: 20%;"></div>
+<div id="postmap" style="width:25%; height:50%; position: absolute; top: 40%; right: 20%;"></div>
 
 <?php
 
@@ -112,7 +112,7 @@ if (isset($_GET['id']))
 				echo "<br>";
 				echo "<a href='PostsPageCaptain.php' style='text-decoration: none; font-weight: bold;'><i class='fa fa-arrow-left'></i> Back to Posts</a>";
 				echo "<h1>".$row['PostNumber'].". ".$row['PostTopic']."</h1>";
-				echo "<h2 style='color:red;'>".$row['PriorityLevel']." priority"."</h2>";
+				echo "<h3 style='color:red;'>".$row['PriorityLevel']." priority"."</h3>";
 				echo "<hr>";
 
 				//echo "<div id='postmap' style='width:50%;height:400px;'></div>";

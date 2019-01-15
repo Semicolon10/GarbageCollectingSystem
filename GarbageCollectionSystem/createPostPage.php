@@ -42,7 +42,7 @@ include('session.php');
 </textarea>
 
   <br/>
-  <p id="PostImageParagraph">Please Make sure that the format is JPG/JPEG</p>
+  <p id="PostImageParagraph">Please Make sure that the format is JPG/JPEG/PNG OR GIF</p>
       <input id="Image" type="file"  value="Browse" name="myimage" class="fileToUpload"/>
     <br/>
      
