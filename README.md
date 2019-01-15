@@ -16,3 +16,16 @@ A normal user creates posts and submit. A normal user has the ability to report 
 An admin is a user of the site with added privileges. An admin has a control panel where he can view the users, messages sent by users and guests and review the reported posts. An admin can delete any post or remove any user. An admin also appoints the Captain. There can be multiple admins.
 ### Captain
 A captain is a subset of admins, whom duty is to review every published post and set a priority level. A Captain can also delete the posts he thinks are unnecessary. There is only one captain.
+***
+![](githubReedmeImages/usecase.jpg)
+***
+## Screen shots
+![](githubReedmeImages/home.png)
+![](githubReedmeImages/signin.png)
+![](githubReedmeImages/admin.png)
+![](githubReedmeImages/adminhome.png)
+![](githubReedmeImages/cheff.png)
+![](githubReedmeImages/cheffhome.png)
+![](githubReedmeImages/payment.png)
+![](githubReedmeImages/recipt.png)
+![](githubReedmeImages/takaway.png)
