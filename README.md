@@ -1,4 +1,4 @@
-# Overview of the project scenario
+# Overview of the project scenario  
 
 A website that enables Colombo municipal council(CMC)l to provide an efficient garbage collection service. People can register to this website and post the pictures and the location (on a google map) of places with garbage where they have been observed along with a brief description about the situation so that the cleaning staff of the CMC can take care of the garbage. 
 
